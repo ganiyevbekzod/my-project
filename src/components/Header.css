@@ -16,6 +16,12 @@
     display: flex;
     align-items: center;
 }
+.button{
+    border: none;
+    background: none;
+    padding: 10px 0px;
+}
+
 .darkmodeimg{
     margin-right: 10px;
 }

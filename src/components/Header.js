@@ -8,7 +8,7 @@ const Header=()=>{
         <h1 className="header_title">Where in the world ?</h1>
              <div className="darkmode">
                 <img className="darkmodeimg" src={MoonLogo} alt="logo" width="30" height="30"/>
-                <h3>Dark mode</h3>
+                <button className="button" type="button">Dark mode</button>
              </div>
         </div>
             </div>
