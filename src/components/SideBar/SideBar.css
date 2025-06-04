@@ -1,0 +1,29 @@
+.sidebar {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    max-width: 250px;
+    height: 100vh;
+}
+
+.navbar {
+    width: 150px;
+}
+
+.navbar_list {
+    padding: 0px;
+    list-style-type: none;
+}
+
+.navbar_item {
+    padding: 25px 15px;
+    margin-bottom: 10px;
+}
+
+.navbar_link {
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}

@@ -1,0 +1,89 @@
+.header_navbar_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.header_navigation {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.header_navigation:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.header_input {
+    border: transparent;
+    padding: 5px 15px;
+    outline: none;
+    border-radius: 15px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.header_navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_navbar_list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.dropdown-toggle {
+    margin-left: 10px;
+    color: white;
+    border: none;
+    background-color: transparent;
+    opacity: 1;
+}
+.dropdown-item_strong {
+    color: white;
+}
+
+.dropdown_link {
+    text-decoration: none;
+    margin: 10px 0px;
+    padding: 15px 0px;
+    outline: none;
+    color: white;
+    background-color: transparent;
+}
+
+.dropdown_link:hover {
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    color: white;
+}
+
+.dropdown_item {
+    list-style-type: none
+}
+
+.dropdown-menu {
+    padding: 0px;
+    width: 1000px;
+}
+
+.dropdown-item_strong {
+    padding: 0px;
+}
+
+.dropdown_block {
+    background-image: url("../../assets/img/HeaderIcons/meyubg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1000px;
+    padding: 25px 0px;
+}
