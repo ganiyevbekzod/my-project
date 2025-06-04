@@ -1,27 +1,46 @@
+.site-header {
+    /* position: sticky; */
+    display: block;
+    /* min-width: 1340px; */
+    background-color: #fff;
+}
+
+
+.Uty_logo {
+    margin-left: 50px;
+}
+
 .header_navbar_list {
     display: flex;
     align-items: center;
     justify-content: space-between;
     list-style: none;
+    margin: 0px;
+    padding: 0px;
 }
-
-.header_navigation {
-    padding: 5px 10px;
-    border-radius: 5px;
+.header_navbar_search {
+    background-color: #F3F3F9;
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: 219px;
 }
 
 .header_navigation:hover {
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(218, 210, 210, 0.05) 0px 5px 10px;
+}
+
+.header_navbar_item {
+    margin-left: 40px;
 }
 
 .header_input {
     border: transparent;
-    padding: 5px 15px;
     outline: none;
-    border-radius: 15px;
+    color: #5F6576;
+    font-size: 14px;
     background-color: transparent;
-    color: white;
-    cursor: pointer;
+    padding-left: 10px;
+    width: 165px;
 }
 
 .header_navbar {
@@ -29,61 +48,108 @@
     align-items: center;
     justify-content: space-between;
 }
+@media only screen and(max-width:1190px){
 
-.header_navbar_list {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
+    .site-header{
+        width: 1100px;
+    }
 }
-
 .dropdown-toggle {
-    margin-left: 10px;
-    color: white;
+    margin-left: 30px;
+    font-size: 14px;
+    color: #5F6576;
     border: none;
     background-color: transparent;
     opacity: 1;
 }
+
 .dropdown-item_strong {
-    color: white;
+  color:#5F6576;
+  font-size: 14px;
 }
 
 .dropdown_link {
     text-decoration: none;
-    margin: 10px 0px;
+    margin: 5px 0px;
     padding: 15px 0px;
+    font-size: 12px;
     outline: none;
-    color: white;
+    color:#5F6576;
     background-color: transparent;
 }
 
-.dropdown_link:hover {
+/* .dropdown_link:hover {
     background-color: transparent;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
     color: white;
-}
+} */
 
 .dropdown_item {
-    list-style-type: none
+    list-style-type: none;
+    
 }
 
 .dropdown-menu {
+    border: none;
     padding: 0px;
     width: 1000px;
+    height: auto;
+    background-color: #fff;
 }
 
 .dropdown-item_strong {
+    text-decoration: none;
+    color:#5F6576;
     padding: 0px;
+    margin: 0px;
 }
-
 .dropdown_block {
-    background-image: url("../../assets/img/HeaderIcons/meyubg.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 1000px;
-    padding: 25px 0px;
+}
+
+/* Header Navbar o'ng tomon kodi */
+
+.header_navbar_right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+}
+
+.important_block {
+    /* background-image: url("../../assets/img/HeaderIcons/meyubg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+.important_button{
+    cursor: pointer;
+    border: none;
+}
+.important_list {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    text-align: center;
+}
+
+.dropdownadmin_list {
+    width: 200px !important;
+    padding: 20px;
+}
+
+/* Admin panel */
+.admin_button{
+    border: none;
+    margin-right: 10px;
+}
+.admin_name_span {
+    color:#5F6576;
 }

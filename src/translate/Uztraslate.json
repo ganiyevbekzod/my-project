@@ -1,0 +1,10 @@
+{
+  "header": {
+    "title": "Mening loyiham",
+    "description": "Xush kelibsiz!"
+  },
+  "buttons": {
+    "login": "Kirish",
+    "register": "Ro'yxatdan o'tish"
+  }
+}

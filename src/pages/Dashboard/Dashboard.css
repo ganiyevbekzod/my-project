@@ -1,3 +1,34 @@
-.dashboard_title{
-    color: white;
+.users_title{
+    color: #5F6576;
+    font-weight: bold;
+    margin: 0px;
+    padding-left: 20px;
+}
+.Dashboard_box{
+    width: 855px;
+    margin: 25px;
+    border: 1px solid #5F6576;
+    border-radius: 10px;
+    padding: 10px;
+}
+.d12,.dashboard_users,.users_main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dashboard_users{
+    padding: 25px;
+}
+.user_main_title{
+    color: #5F6576;
+    font-size: 16px;
+    font-weight: normal;
+}
+.users_text{
+    font-weight: 700;
+    color: #5F6576;
+    font-size: 24px;
+}
+.users_span{
+    color: #5F6576;
 }

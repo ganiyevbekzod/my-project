@@ -1,11 +1,14 @@
+import "./Mijozlar.css"
+import "../Dashboard/Dashboard.css"
 import Image from "../../assets/img/HeaderIcons/image.png"
 import { ApexChart } from "../../components/Diagram/Diagram"
 import users from "../../assets/img/HeaderIcons/users.svg"
-import "../Dashboard/Dashboard.css"
-export const Dashboard = () => {
+import React from 'react'
+
+const Mijozlar = () => {
   return (
     <>
-      <div className="d12">
+    <div className="d12">
         <div div className='Dashboard_box'>
           <h3 className='users_title'>Mijozlar</h3>
           <div className='dashboard_users'>
@@ -60,8 +63,8 @@ export const Dashboard = () => {
           </div>
           <div></div>
         </div>
-      </div>
-    </>
+      </div></>
   )
 }
-export default Dashboard
+export default Mijozlar
+

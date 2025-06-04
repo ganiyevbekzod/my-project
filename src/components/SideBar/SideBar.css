@@ -1,29 +1,135 @@
+.navbar_link {
+    padding: 10px 5px;
+    color: #5F6576;
+    font-size: 14px;
+    text-decoration: none;
+}
+.sidebar_logocontent{
+    display: flex;
+    align-items: center;
+}
+.sidebar_logocontent h2{
+    margin: 0px;
+}
+.navbar_link:hover {
+    color: white;
+}
+.navbar_link:focus {
+    color: white;
+}
+
+.SidebarLogo_link {
+    text-decoration: none;
+    padding: 5px;
+    color: #5F6576;
+}
+
 .sidebar {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    max-width: 250px;
+    position: relative;
+    background-color: #2A3042;
+    color: white;
+    transition: width 0.3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
 }
 
-.navbar {
-    width: 150px;
+.sidebar-closed {
+    width: 100px;
+}
+.sidebar-open .navbar_link{
+    width: 180px;
 }
 
-.navbar_list {
-    padding: 0px;
-    list-style-type: none;
+.sidebar-open {
+    width: 280px;
 }
 
-.navbar_item {
-    padding: 25px 15px;
-    margin-bottom: 10px;
+.toggle-button {
+    position: absolute;
+    top: 25px;
+    right: -40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 5;
 }
 
-.navbar_link {
-    color:white;
-    font-size: 20px;
+.sidebar-header {
+    padding: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sidebar-header h1 {
+    font-size: 18px;
     font-weight: bold;
-    text-decoration: none;
+    margin: 0;
+}
+
+.sidebar-content {
+    overflow-y: scroll;
+    flex: 1;
+    padding: 16px;
+}
+
+.sidebar-content h2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #5F6576;
+}
+
+.sidebar-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar_item{
+    margin: 10px 5px;
+}
+.sidebar-content li {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-content li:hover {
+    color: white;
+}
+
+
+.sidebar-content li span {
+    margin-right: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+.badge-hot {
+    margin-left: 8px;
+    background-color: #9f7aea;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.badge-beta {
+    margin-left: 8px;
+    background-color: #48bb78;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.main-content {
+    flex: 1;
+    background-color: #f7fafc;
+    padding: 16px;
+}
+
+.main-content h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
 }
