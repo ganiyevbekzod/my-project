@@ -9,7 +9,7 @@
                 width: 380,
                 type: 'pie',
               },
-              labels: ['Jismoniy shaxslar', 'Yuridik shaxslar', 'Team C', 'Team D', 'Team E'],
+              labels: ['Jismoniy shaxslar', 'Yuridik shaxslar'],
               responsive: [{
                 breakpoint: 480,
                 options: {
@@ -26,9 +26,9 @@
           
         });
         return (
-          <div>
+          <div className="diagramm_box" >
             <div id="chart">
-                <ReactApexChart options={state.options} series={state.series} type="pie" width={380} />
+                <ReactApexChart options={state.options} series={state.series} type="pie" width={300} height={500} />
               </div>
             <div id="html-dist"></div>
           </div>

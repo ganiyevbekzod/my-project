@@ -11,6 +11,7 @@ export const SidebarProvider = ({ children }) => {
 //   const [isOpenSidebar, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {  //Holatni o'zgartirish
+    
     setIsOpen(!isOpen);
   };
 //    const openSidebar = () => {
@@ -38,3 +39,5 @@ export const useSidebar = () => {
   }
   return context;
 };
+
+

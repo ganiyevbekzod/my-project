@@ -13,6 +13,7 @@
 }
 .navbar_link:hover {
     color: white;
+    transition: 1s ease-in-out;
 }
 .navbar_link:focus {
     color: white;
@@ -26,7 +27,6 @@
 
 .sidebar {
     position: relative;
-    background-color: #2A3042;
     color: white;
     transition: width 0.3s;
     position: relative;
@@ -37,6 +37,7 @@
 
 .sidebar-closed {
     width: 100px;
+    background-color: #2A3042;
 }
 .sidebar-open .navbar_link{
     width: 180px;
@@ -44,6 +45,7 @@
 
 .sidebar-open {
     width: 280px;
+    background-color: #2A3042;
 }
 
 .toggle-button {

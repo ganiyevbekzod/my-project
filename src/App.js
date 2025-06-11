@@ -9,7 +9,6 @@ import Dashboard from "./pages/Dashboard/Dashboard"
 import Arizalar from "./pages/Arizalar/Arizalar"
 import MahalliyTashuvlar from "./pages/MahalliyTashuvlar/MahalliyTashuvlar"
 import Mijozlar from "./pages/Mijozlar/Mijozlar.jsx"
-import { XalqaroTashuvlar } from "./pages/XalqaroTashuvlar/XalqaroTashuvlar"
 import { PulTushumlari } from "./pages/PulTushulari/PulTushumlari"
 import { Daromadlar } from "./pages/Daromadlar/Daromadlar"
 import { TelegrammalarChegirmalar } from "./pages/TelegrammalarChegirmalar/TelegrammalarChegirmalar"
@@ -21,13 +20,14 @@ import { Ekspeditorlar } from "./pages/Ekspeditorlar/Ekspeditorlar"
 import { ShahobchaYollari } from "./pages/ShahobchaYollari/ShahobchaYollari"
 import { MesplanKelishuvlar } from "./pages/MesplanKelishuvlar/MesplanKelishuvlar"
 import { Poyezdlar } from "./pages/Poyezdlar/Poyezdlar"
+import International from "./pages/XalqaroTashuvlar/XalqaroTashuvlar.jsx"
 const App = () => {
 
     return (
         <>
          <SidebarProvider>
             <div className="grid-container">
-                <div className="item1">
+                <div className="item1 ">
                     <Sidebar />
                 </div>
                 <div className="item2">
@@ -39,7 +39,7 @@ const App = () => {
                         <Route path="/Mijozlar" element={<Mijozlar />} />
                         <Route path="/Arizalar" element={<Arizalar />} />
                         <Route path="/MahalliyTashuvlar" element={<MahalliyTashuvlar />} />
-                        <Route path="/XalqaroTashuvlar" element={<XalqaroTashuvlar />} />
+                        <Route path="/XalqaroTashuvlar" element={<International/>} />
                         <Route path="/PulTushumlari" element={<PulTushumlari />} />
                         <Route path="/Daromadlar" element={<Daromadlar />} />
                         <Route path="/TelegrammalarChegirmalar" element={<TelegrammalarChegirmalar/>} />

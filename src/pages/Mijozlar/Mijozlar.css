@@ -119,3 +119,7 @@ body {
   height: 60px;
   width: 100%;
 }
+.one-column-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}

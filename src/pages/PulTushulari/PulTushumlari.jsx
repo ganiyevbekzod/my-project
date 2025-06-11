@@ -5,3 +5,4 @@ export const PulTushumlari = () => {
     <div>PulTushumlari</div>
   )
 }
+

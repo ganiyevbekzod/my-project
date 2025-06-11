@@ -16,7 +16,7 @@ const Sidebar = () => {
     const { toggleSidebar } = useSidebar();
     return (
         <div className="sidebar">
-            <div className={`sidebar ${isOpen ? "sidebar-open" : "sidebar-closed"}`}>
+            <div className={`sidebar ${isOpen ? "sidebar-open " : "sidebar-closed"}`}>
                 <button onClick={toggleSidebar} className="toggle-button" width={25} height={25}>
                     <span><img src={MenuButton} alt="menu_toggle_btn" /></span>
                 </button>

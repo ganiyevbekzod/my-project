@@ -8,7 +8,7 @@ import React from 'react'
 const Mijozlar = () => {
   return (
     <>
-    <div className="d12">
+    <div className="d12 one-column-grid">
         <div div className='Dashboard_box'>
           <h3 className='users_title'>Mijozlar</h3>
           <div className='dashboard_users'>

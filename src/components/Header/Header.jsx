@@ -4,6 +4,7 @@ import FlagSelect from "../HeaderNavbar/FlagSelect";
 import header_uty from "../../assets/img/HeaderIcons/image.png"
 import View_comfy from "../../assets/img/HeaderIcons/view_comfy.svg"
 import Message from "../HeaderNavbar/Message";
+import Search_icon from "../../assets/img/HeaderIcons/searchicon.svg"
 import RightSlideModal from "../RightSlideModal/RightSlideModal";
 const Header = () => {
     return (
@@ -16,11 +17,7 @@ const Header = () => {
                         <li className="header_navbar_item ">
                                 <div className="header_navbar_search d-flex align-items-center">
                                     <span className="header_span">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                        class="lucide lucide-search absolute left-3 h-4 w-4 text-gray-400">
-                                        <circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path>
-                                    </svg>
+                                    <img src={Search_icon} alt="Search_icon" width={25} height={25} />
                                 </span>
                                 <input className="header_input" type="text" placeholder="Qidiruv"/>
                                 </div>
