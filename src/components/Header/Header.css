@@ -89,6 +89,12 @@
     text-align: center;
 
 }
+.dropdown-item{
+    width: 200px;
+}
+.dropdown_list{
+    padding: 0px;
+}
 .dropdown_link:hover{
             box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
         rgba(17, 17, 26, 0.1) 0px 8px 24px,
@@ -102,7 +108,8 @@
     height: auto;
     background-color: #fff;
     border: 2px solid #F8F8FB;
-}
+
+} 
 
 .dropdown-item_strong {
     text-decoration: none;

@@ -31,7 +31,7 @@ const Header = () => {
                                 <button class="dropdown_button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     Mega Menu
                                 </button>
-                                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+                                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton1" >
                                     <div className="dropdown_block">
                                         <ul className="dropdown_list">
                                             <li className="dropdown_item">
@@ -44,7 +44,7 @@ const Header = () => {
                                                 <a href="" className="dropdown_link dropdown-item">Stansiya_6</a>
                                             </li>
                                         </ul>
-                                        <ul>
+                                        <ul className="dropdown_list">
                                             <li className="dropdown_item">
                                                 <strong class="dropdown-item_strong" href="#">Vagonlar</strong>
                                                 <a href="" className="dropdown_link dropdown-item">Vagon_1</a>
@@ -55,7 +55,7 @@ const Header = () => {
                                                 <a href="" className="dropdown_link dropdown-item">Vagon_6</a>
                                             </li>
                                         </ul>
-                                        <ul>
+                                        <ul className="dropdown_list">
                                             <li className="dropdown_item">
                                                 <strong class="dropdown-item_strong" href="#">Hujjatlar</strong>
                                                 <a href="#" className="dropdown_link dropdown-item">Hujjat_1</a>
