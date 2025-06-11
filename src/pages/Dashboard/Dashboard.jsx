@@ -96,7 +96,6 @@ export const Dashboard = () => (
       </div>
       <Link className="Users_to" to="/XalqaroTashuvlar">Batafsil</Link>
     </div>
-
       <div className="d12 two-column-grid">
         <div className="Dashboard_box">
       <h3 className="money_title">Pul tushumlari</h3>

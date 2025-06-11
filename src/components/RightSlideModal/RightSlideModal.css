@@ -98,3 +98,42 @@
 .modal_header{
     margin-bottom: 25px;
 }
+.accordion_text{
+    margin: 0px;
+    font-size: 16px;
+    margin-right: 20px;
+}
+.accordion_main{
+    display: flex;
+    align-items: center;
+}
+.accordion-body{
+    text-align: center;
+}
+.accordion1_button{
+    border: none;
+}
+.accordion1_button:hover{
+    background-color: #c4d4fe;
+}
+.theme_button,.fonts_button{
+    width: 200px;
+}
+.theme_list{
+    padding: 0px;
+}
+.theme_item{
+    
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+.fonts_button{
+    margin-bottom: 5px;
+    background-color: #F8F8FB;
+}
+.fonts_button:hover{
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.1) 0px 8px 24px,
+        rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    transition: box-shadow 0.8s ease-in-out;
+}
