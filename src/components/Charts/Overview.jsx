@@ -1,4 +1,5 @@
-
+import React from "react";
+import ReactApexChart from "react-apexcharts";
 import { BarChart } from '@mui/x-charts/BarChart';
 
 export default function ChartsOverviewDemo() {
@@ -20,8 +21,7 @@ export default function ChartsOverviewDemo() {
         />
     );
 }
-import React from "react";
-import ReactApexChart from "react-apexcharts";
+
 export const Overview = () => {
         const [state, setState] = React.useState({
           

@@ -43,7 +43,8 @@ export const MoneyCharts = () => {
                 colors: ['#fff']
               },
               xaxis: {
-                categories: ['TEXPD1', 'TEXPD2', 'TEXPD3', 'TEXPD4', 'TEXPD5', 'TEXPD6', 'TEXPD7', 'TEXPD8', 'TEXPD9', 'TEXPD10'
+                categories: ['Buxoro TexPD', "Qo'qon TexPD", 'Xorazm TexPD', 'Andijon TexPD', 'Qarshi TexPD', 'Surhandaryo TexPD', 
+                  'Jizzax TexPD','Samarqand TexPD', "Qo'ng'irot TexPD", 'Toshkent TexPD'
                 ],
               },
               yaxis: {

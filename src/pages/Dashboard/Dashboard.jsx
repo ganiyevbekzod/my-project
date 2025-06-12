@@ -1,5 +1,4 @@
 import Image from "../../assets/img/HeaderIcons/image.png"
-import { ApexChart } from "../../components/Diagram/Diagram"
 import users from "../../assets/img/HeaderIcons/users.svg"
 import "../Dashboard/Dashboard.css"
 import { Link } from "react-router-dom"
@@ -7,8 +6,8 @@ import PieAnimation from "../../components/Charts/Barcharts"
 import BarAnimation from "../../components/Charts/Localcharts"
 import International from "../XalqaroTashuvlar/XalqaroTashuvlar"
 import ChartsOverviewDemo, { Overview } from "../../components/Charts/Overview"
-import FunnelGap from "../../components/Charts/Funel"
 import { MoneyCharts } from "../../components/Charts/MoneyCharts"
+import TableComponent from "../../components/Road/Road"
 export const Dashboard = () => (
   <>
     <div className="d12 two-column-grid">
@@ -111,6 +110,11 @@ export const Dashboard = () => (
     <div className="Dashboard_box">
       <h3 className="money_title">Daromadlar</h3>
       <MoneyCharts/>
+      <Link className="Users_to" to="/Daromadlar">Batafsil</Link>
+    </div>
+    <div className="Dashboard_box">
+      <h3 className="money_title">Shahobcha yo'llari</h3>
+      <TableComponent/>
       <Link className="Users_to" to="/Daromadlar">Batafsil</Link>
     </div>
   </>
