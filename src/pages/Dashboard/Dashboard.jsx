@@ -8,8 +8,9 @@ import International from "../XalqaroTashuvlar/XalqaroTashuvlar"
 import ChartsOverviewDemo, { Overview } from "../../components/Charts/Overview"
 import { MoneyCharts } from "../../components/Charts/MoneyCharts"
 import TableComponent from "../../components/Road/Road"
-export const Dashboard = () => (
-  <>
+export const Dashboard = () =>{
+  return(
+    <>
     <div className="d12 two-column-grid">
       <div className='Dashboard_box '>
         <h3 className='users_title'>Mijozlar</h3>
@@ -118,5 +119,7 @@ export const Dashboard = () => (
       <Link className="Users_to" to="/Daromadlar">Batafsil</Link>
     </div>
   </>
-)
+  )
+}
+
 export default Dashboard

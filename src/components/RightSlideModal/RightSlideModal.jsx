@@ -6,11 +6,10 @@ import Setting_icon from "../../assets/img/HeaderIcons/setting_link.svg"
 import SwapSidebar from "../../assets/img/HeaderIcons/swap_sidebar.svg"
 const RightSlideModal = () => {
     const [isOpen, setIsOpen] = useState(false);
-
     const toggleModal = () => {
         setIsOpen(!isOpen);
     };
-    const { toggleSidebar } = useSidebar()
+    const { toggleSidebar,setSidebarColor } = useSidebar()
     return (
         <div className="rs-modal-container">
             <button className="modal_button" onClick={toggleModal}>
@@ -18,7 +17,6 @@ const RightSlideModal = () => {
             </button>
             {isOpen && (
                 <>
-
                     <div className="rs-modal-overlay" onClick={toggleModal} />
                     <div className="rs-modal-content">
                         <div className='modal_header'>
@@ -55,18 +53,44 @@ const RightSlideModal = () => {
                                         <div class="accordion-body">
                                             <ul className='theme_list'>
                                                 <li className='theme_item'>
-                                                    <button className='theme_button btn btn-primary'>
-                                                        Blue Sidebar
+                                                    <button  onClick={() => setSidebarColor({
+                                                        backgroundColor: '#2A3042',
+                                                        text: 'white'
+                                                    })} className='theme_button btn btn-secondary '>
+                                                        Default Sidebar
                                                     </button>
                                                 </li>
                                                 <li className='theme_item'>
-                                                    <button className='theme_button btn btn-warning'>
-                                                        Yellow Sidebar
+                                                    <button style={{
+                                                        backgroundColor: '#0B1D51',
+                                                        color: '#fff'
+                                                    }} onClick={() => setSidebarColor({
+                                                        backgroundColor: '#0B1D51',
+                                                        text: '#fff'
+                                                    })} className='theme_button btn '>
+                                                        Midnight Blue Sidebar
                                                     </button>
                                                 </li>
                                                 <li className='theme_item'>
-                                                    <button className='theme_button btn btn-success'>
-                                                        Green Sidebar
+                                                    <button style={{
+                                                         backgroundColor: '#330867',
+                                                        color: 'white' 
+                                                    }} onClick={() => setSidebarColor({
+                                                        backgroundColor: '#330867',
+                                                        text: 'white'
+                                                    })} className='theme_button btn'>
+                                                        Purple Sidebar
+                                                    </button>
+                                                </li>
+                                                <li className='theme_item'>
+                                                    <button style={{
+                                                        backgroundColor: '#EFE4D2',
+                                                        color: '#202124'
+                                                    }} onClick={() => setSidebarColor({
+                                                        backgroundColor: '#EFE4D2',
+                                                        text: '#202124'
+                                                    })} className='theme_button btn '>
+                                                        Pearl White Sidebar
                                                     </button>
                                                 </li>
                                             </ul>

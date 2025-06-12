@@ -74,6 +74,10 @@
     overflow-y: scroll;
     flex: 1;
     padding: 16px;
+    border-right: 1px solid #F3F3F9;
+}
+.sidebar-content::-webkit-scrollbar {
+  display: none; /* Scrollni butunlay yo‘q qilish */
 }
 
 .sidebar-content h2 {

@@ -9,12 +9,22 @@ import edit_icon from "../../assets/img/HeaderIcons/edit_icon.svg"
 import AdminIcon from "../../assets/img/HeaderIcons/admin.svg"
 import Logout from "../../assets/img/HeaderIcons/logout.svg"
 import RightSlideModal from "../RightSlideModal/RightSlideModal";
+import { useSidebar } from "../../Context/SidebarContext";
 
 const Header = () => {
+    const {sidebarColor } = useSidebar();
+    const headerStyle={
+        backgroundColor: sidebarColor.backgroundColor,
+        color: sidebarColor.text
+    }
+    const linkStyle = {
+    color: sidebarColor.text,
+  };
     return (
         <>
-            <header className="site-header"  >
-                {/* style={{ width: isSidebarOpen ? '1600px' : '1800px' }} */}
+            <header
+            className="site-header"  >
+                
                 <nav className="header_navbar">
                     <img className="Uty_logo" src={header_uty} alt="UTY_logopicture" width={60} height={60} />
                     <ul className="header_navbar_list">
@@ -28,7 +38,7 @@ const Header = () => {
                         </li>
                         <li>
                             <div class="dropdown">
-                                <button class="dropdown_button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button  class="dropdown_button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     Mega Menu
                                 </button>
                                 <div class="dropdown-menu " aria-labelledby="dropdownMenuButton1" >

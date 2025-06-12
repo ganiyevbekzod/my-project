@@ -138,8 +138,3 @@ canvas {
   grid-column-start: 2;
   grid-column-end: 4;
 }
-.item3 {
-  z-index: 0;
-  grid-column-start: 2;
-  grid-column-end: 4;
-}
