@@ -1,4 +1,6 @@
 import Image from "../../assets/img/HeaderIcons/image.png"
+import React from "react"
+import ApexCharts from "apexcharts"
 import users from "../../assets/img/HeaderIcons/users.svg"
 import "../Dashboard/Dashboard.css"
 import { Link } from "react-router-dom"
@@ -8,6 +10,7 @@ import International from "../XalqaroTashuvlar/XalqaroTashuvlar"
 import ChartsOverviewDemo, { Overview } from "../../components/Charts/Overview"
 import { MoneyCharts } from "../../components/Charts/MoneyCharts"
 import TableComponent from "../../components/Road/Road"
+import { Requestcharts } from "../../components/Charts/Requestcharts"
 export const Dashboard = () =>{
   return(
     <>
@@ -111,6 +114,11 @@ export const Dashboard = () =>{
     <div className="Dashboard_box">
       <h3 className="money_title">Daromadlar</h3>
       <MoneyCharts/>
+      <Link className="Users_to" to="/Daromadlar">Batafsil</Link>
+    </div>
+        <div className="Dashboard_box">
+      <h3 className="money_title mb-3">Arizalar</h3>
+        <Requestcharts/>
       <Link className="Users_to" to="/Daromadlar">Batafsil</Link>
     </div>
     <div className="Dashboard_box">

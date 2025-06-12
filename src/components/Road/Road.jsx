@@ -58,22 +58,22 @@ const TableComponent = () => {
         <thead  className="tables">
           
           <tr>
-            <th style={{ backgroundColor: '#ea9a62', color: '#1F2937' }} >ID</th>
-            <th style={{ backgroundColor: '#ea9a62', color: '#1F2937' }} >Shahobcha KODI</th>
-            <th style={{ backgroundColor: '#ea9a62', color: '#1F2937' }} >Shahobcha NOMI</th>
-            <th style={{ backgroundColor: '#ea9a62', color: '#1F2937' }} >TexPD</th>
-            <th style={{ backgroundColor: '#ea9a62', color: '#1F2937' }} >Paragref</th>
+            <th style={{color: '#1F2937' }} >ID</th>
+            <th style={{color: '#1F2937' }} >Shahobcha KODI</th>
+            <th style={{color: '#1F2937' }} >Shahobcha NOMI</th>
+            <th style={{color: '#1F2937' }} >TexPD</th>
+            <th style={{color: '#1F2937' }} >Paragref</th>
           </tr>
         </thead>
         <tbody  >
           {currentData.length > 0 ? (
             currentData.map((item) => (
               <tr  key={item.id}>
-                <td style={{ backgroundColor: '#FCF5E6', color: '#1F2937' }}>{item.id}</td>
-                <td style={{ backgroundColor: '#FCF5E6', color: '#1F2937' }}>{item.kod}</td>
-                <td style={{ backgroundColor: '#FCF5E6', color: '#1F2937' }}>{item.nomi}</td>
-                <td style={{ backgroundColor: '#FCF5E6', color: '#1F2937' }}>{item.texPd}</td>
-                <td style={{ backgroundColor: '#FCF5E6', color: '#1F2937' }}>{item.Paragref}</td>
+                <td style={{color: '#1F2937' }}>{item.id}</td>
+                <td style={{color: '#1F2937' }}>{item.kod}</td>
+                <td style={{color: '#1F2937' }}>{item.nomi}</td>
+                <td style={{color: '#1F2937' }}>{item.texPd}</td>
+                <td style={{color: '#1F2937' }}>{item.Paragref}</td>
               </tr>
             ))
           ) : (
@@ -94,7 +94,7 @@ const TableComponent = () => {
               key={i}
               className={`page-item ${currentPage === i + 1 ? 'active' : ''}`}
             >
-              <button style={{ backgroundColor: '#ea9a62', color: '#1F2937' }} onClick={() => paginate(i + 1)} className="page-link">
+              <button style={{color: '#1F2937' }} onClick={() => paginate(i + 1)} className="page-link">
                 {i + 1}
               </button>
             </li>
