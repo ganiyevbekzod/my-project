@@ -9,7 +9,7 @@ const RightSlideModal = () => {
     const toggleModal = () => {
         setIsOpen(!isOpen);
     };
-    const { toggleSidebar,setSidebarColor } = useSidebar()
+    const { toggleSidebar, setSidebarColor } = useSidebar()
     return (
         <div className="rs-modal-container">
             <button className="modal_button" onClick={toggleModal}>
@@ -27,91 +27,99 @@ const RightSlideModal = () => {
                         </div>
                         <hr />
                         <div className="rs-modal-body">
-                            <div class="accordion" id="accordionPanelsStayOpenExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                            Theme Layout
-                                        </button>
-                                    </h2>
-                                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                                        <div class="accordion-body accordion_main">
-                                            <p className='accordion_text'>Swap sidebar</p>
-                                            <button onClick={toggleSidebar} className='btn accordion1_button'>
-                                                <img src={SwapSidebar} alt="swap sidebar icon" width={25} height={25} />
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                            Theme Mode
-                                        </button>
-                                    </h2>
-                                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                                        <div class="accordion-body">
-                                            <ul className='theme_list'>
-                                                <li className='theme_item'>
-                                                    <button  onClick={() => setSidebarColor({
-                                                        backgroundColor: '#2A3042',
-                                                        text: 'white'
-                                                    })} className='theme_button btn btn-secondary '>
-                                                        Default Sidebar
-                                                    </button>
-                                                </li>
-                                                <li className='theme_item'>
-                                                    <button style={{
-                                                        backgroundColor: '#0B1D51',
-                                                        color: '#fff'
-                                                    }} onClick={() => setSidebarColor({
-                                                        backgroundColor: '#0B1D51',
-                                                        text: '#fff'
-                                                    })} className='theme_button btn '>
-                                                        Midnight Blue Sidebar
-                                                    </button>
-                                                </li>
-                                                <li className='theme_item'>
-                                                    <button style={{
-                                                         backgroundColor: '#330867',
-                                                        color: 'white' 
-                                                    }} onClick={() => setSidebarColor({
-                                                        backgroundColor: '#330867',
-                                                        text: 'white'
-                                                    })} className='theme_button btn'>
-                                                        Purple Sidebar
-                                                    </button>
-                                                </li>
-                                                <li className='theme_item'>
-                                                    <button style={{
-                                                        backgroundColor: '#EFE4D2',
-                                                        color: '#202124'
-                                                    }} onClick={() => setSidebarColor({
-                                                        backgroundColor: '#EFE4D2',
-                                                        text: '#202124'
-                                                    })} className='theme_button btn '>
-                                                        Pearl White Sidebar
-                                                    </button>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                                            Font Family
-                                        </button>
-                                    </h2>
-                                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                                        <div class="accordion-body  ">
-                                            <button className='fonts_button btn '>Roboto</button>
-                                            <button className='fonts_button btn  '>Edu NSW</button>
-                                            <button className='fonts_button btn  '>Montserrat</button>
-                                        </div>
-                                    </div>
+                            <div class="layout">
+                                <h6 class="layout_title" >
+                                    Layouts
+                                </h6>
+                                <button onClick={toggleSidebar}
+                                    className='layout_button '>
+                                    Swap sidebar
+                                </button>
+                            </div>
+                            <hr />
+                            <div class="layout_theme">
+                                <h6 class="layout_theme_title" >
+                                    Layouts Mode    
+                                </h6>
+                                <div className='layout_theme_box'>
+                                    <button
+                                        className='layout_theme_button'>
+                                        Light
+                                    </button>
+                                    <button
+                                        className='layout_theme_button'>
+                                        Dark
+                                    </button>
                                 </div>
                             </div>
+                            <hr />
+                            <div class="topbar_theme">
+                                <h6 class="topbar_theme_title" >
+                                    Topbar theme
+                                </h6>
+                                <div className='topbar_theme_box'>
+                                    <button
+                                        className='topbar_theme_button '>
+                                        Light
+                                    </button>
+                                    <button
+                                        className='topbar_theme_button '>
+                                        Dark
+                                    </button>
+                                </div>
+                            </div>
+                            <hr />
+                            
+                            <div class="sidebar_theme">
+                                <h6 className='sidebar_theme_title' >
+                                    Left Sidebar Color Options
+                                </h6>
+                                <ul className='sidebar_theme_list '>
+                                    <li className='sidebar_theme_item'>
+                                        <label style={{
+                                            backgroundColor: '#2A3042',
+                                            text: 'white'
+                                        }} onClick={() => setSidebarColor({
+                                            backgroundColor: '#2A3042',
+                                            text: 'white'
+                                        })} className='sidebar_theme_label   '>
+                                        </label>
+                                    </li>
+                                    <li className='sidebar_theme_item'>
+                                        <label style={{
+                                            backgroundColor: '#0B1D51',
+                                            color: '#fff'
+                                        }} onClick={() => setSidebarColor({
+                                            backgroundColor: '#0B1D51',
+                                            text: '#fff'
+                                        })} className='sidebar_theme_label  '>
+
+                                        </label>
+                                    </li>
+                                    <li className='sidebar_theme_item'>
+                                        <label style={{
+                                            backgroundColor: '#330867',
+                                            color: 'white'
+                                        }} onClick={() => setSidebarColor({
+                                            backgroundColor: '#330867',
+                                            text: 'white'
+                                        })} className='sidebar_theme_label '>
+
+                                        </label>
+                                    </li>
+                                    <li className='sidebar_theme_item'>
+                                        <label style={{
+                                            backgroundColor: '#EFE4D2',
+                                            color: '#202124'
+                                        }} onClick={() => setSidebarColor({
+                                            backgroundColor: '#EFE4D2',
+                                            text: '#202124'
+                                        })} className='sidebar_theme_label  '>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <hr />
                         </div>
                     </div>
                 </>

@@ -6,7 +6,7 @@ import "./Road.css"
 
 const TableComponent = () => {
   // Data shu yerda joylashgan
-  const tableData = Array.from({ length: 89 }, (_, index) => ({
+  const tableData = Array.from({ length: 200 }, (_, index) => ({
     id: index + 1,
     kod: `SHK-${1000 + index}`,
     nomi: `Shahobcha ${index + 1}`,
@@ -16,7 +16,7 @@ const TableComponent = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
-  const rowsPerPage = 10;
+  const rowsPerPage = 20;
 
   // Qidiruv natijalari
   const filteredData = tableData.filter((item) =>
