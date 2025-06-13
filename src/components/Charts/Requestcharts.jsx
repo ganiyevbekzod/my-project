@@ -286,7 +286,7 @@ export const Requestcharts = () => {
               chart: {
                 id: 'area-datetime',
                 type: 'area',
-                height: 350,
+                height: 400,
                 zoom: {
                   autoScaleYaxis: true
                 }
@@ -440,7 +440,7 @@ export const Requestcharts = () => {
                 </div>
               
                 <div id="chart-timeline">
-                <ReactApexChart options={state.options} series={state.series} type="area" height={350} />
+                <ReactApexChart options={state.options} series={state.series} type="area" height={400} />
               </div>
               </div>
             <div id="html-dist"></div>

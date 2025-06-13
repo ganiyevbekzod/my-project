@@ -29,7 +29,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 350px;
+    width: 295px;
     height: 100vh;
     background-color: white;
     z-index: 1001;
@@ -56,7 +56,7 @@
 }
 
 .rs-modal-body {
-    margin-top: 20px;
+    padding: 10px 20px 20px;
 }
 
 @keyframes slideInFromRight {
@@ -95,44 +95,81 @@
     font-weight: 700px;
     color: #5F6576;
 }
-.modal_header{
+
+.modal_header {
     margin-bottom: 25px;
 }
-.accordion_text{
-    margin: 0px;
-    font-size: 16px;
-    margin-right: 20px;
+
+/* Modal body qism */
+.layout,
+.layout_theme,
+.sidebar_theme,.topbar_theme {
+    padding: 15px 0px;
 }
-.accordion_main{
+
+.layout_title,
+.layout_theme_title,.topbar_theme_title,
+.sidebar_theme_title {
+    margin: 0px;
+    padding-bottom: 10px;
+    color: #5F6576;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.layout_button {
+    font-size: 14px;
+    background-color: #3367d6;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+    color: #fff;
+}
+.layout_theme_button,.topbar_theme_button {
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+    margin-right: 10px;
+}
+.topbar_theme_button:focus{
+    background-color: #3367d6;
+    color: #fff;
+}
+/* .layout_theme_button:active{
+    background-color: #3367d6;
+    color: #fff;
+} */
+.topbar_theme_box {
     display: flex;
     align-items: center;
 }
-.accordion-body{
-    text-align: center;
-}
-.accordion1_button{
-    border: none;
-}
-.accordion1_button:hover{
-    background-color: #c4d4fe;
-}
-.theme_button,.fonts_button{
-    width: 200px;
-}
-.theme_list{
+
+.sidebar_theme_list {
+    display: flex;
+    align-items: center;
     padding: 0px;
+    margin: 0px;
 }
-.theme_item{
-    
+
+.sidebar_theme_item {
     list-style-type: none;
-    margin-bottom: 5px;
+    margin-right: 5px;
 }
-.fonts_button{
+
+.sidebar_theme_label {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.fonts_button {
     margin-bottom: 5px;
     background-color: #F8F8FB;
 }
-.fonts_button:hover{
-            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+
+.fonts_button:hover {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
         rgba(17, 17, 26, 0.1) 0px 8px 24px,
         rgba(17, 17, 26, 0.1) 0px 16px 56px;
     transition: box-shadow 0.8s ease-in-out;
