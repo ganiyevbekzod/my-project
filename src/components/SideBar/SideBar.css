@@ -16,7 +16,7 @@
     transition: 1s ease-in-out;
 }
 .navbar_link:focus {
-    color: white;
+    color: white !important;
 }
 
 .SidebarLogo_link {
@@ -74,7 +74,7 @@
     overflow-y: scroll;
     flex: 1;
     padding: 16px;
-    border-right: 1px solid #F3F3F9;
+    border-right: 1px solid #5F6576;
 }
 .sidebar-content::-webkit-scrollbar {
   display: none; /* Scrollni butunlay yo‘q qilish */

@@ -89,9 +89,6 @@
     text-align: center;
 
 }
-.dropdown-item{
-    width: 200px;
-}
 .dropdown_list{
     padding: 0px;
 }
@@ -192,7 +189,6 @@
     background-color: #F8F8FB;
 }
 .link_edit,.link_view,.link_setting{
-    position: relative;
     font-weight: 400;
     color: #5F6576;
     padding:15px 0px 15px 50px;
@@ -218,6 +214,6 @@ content:url("../../assets/img/HeaderIcons/edit_icon.svg");
 hr{
     margin: 0px;
 }
-.adminItem_link:hover{
+/* .adminItem_link:hover{
     background-color: #000000 !important;
-}
+} */

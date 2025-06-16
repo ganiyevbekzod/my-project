@@ -21,40 +21,44 @@ import { ShahobchaYollari } from "./pages/ShahobchaYollari/ShahobchaYollari"
 import { MesplanKelishuvlar } from "./pages/MesplanKelishuvlar/MesplanKelishuvlar"
 import { Poyezdlar } from "./pages/Poyezdlar/Poyezdlar"
 import International from "./pages/XalqaroTashuvlar/XalqaroTashuvlar.jsx"
+import { HeaderProvider } from "./Context/HeaderContext.js"
 const App = () => {
 
     return (
         <>
-         <SidebarProvider>
-            <div className="grid-container">
-                <div className="item1 ">
-                    <Sidebar />
+            <SidebarProvider>
+                <div className="grid-container">
+                    <div className="item1 ">
+                        <Sidebar />
+                    </div>
+                    <HeaderProvider>
+                        <div className="item2">
+                            <Header />
+                        </div>
+                    </HeaderProvider>
+
+                    <div className="item3">
+                        <Routes>
+                            <Route path="/" element={<Dashboard />} />
+                            <Route path="/Mijozlar" element={<Mijozlar />} />
+                            <Route path="/Arizalar" element={<Arizalar />} />
+                            <Route path="/MahalliyTashuvlar" element={<MahalliyTashuvlar />} />
+                            <Route path="/XalqaroTashuvlar" element={<International />} />
+                            <Route path="/PulTushumlari" element={<PulTushumlari />} />
+                            <Route path="/Daromadlar" element={<Daromadlar />} />
+                            <Route path="/TelegrammalarChegirmalar" element={<TelegrammalarChegirmalar />} />
+                            <Route path="/KonvensionTaqiqlar" element={<KonvensionTaqiqlar />} />
+                            <Route path="/Aktlar" element={<Aktlar />} />
+                            <Route path="/Vagon" element={<Vagon />} />
+                            <Route path="/Sug'urtaDaromadlari" element={<Polis />} />
+                            <Route path="/Ekspeditorlar" element={<Ekspeditorlar />} />
+                            <Route path="/ShahobchaYo'llari" element={<ShahobchaYollari />} />
+                            <Route path="/MesplanKelishuvlar" element={<MesplanKelishuvlar />} />
+                            <Route path="/Poyezdlar" element={<Poyezdlar />} />
+                        </Routes>
+                    </div>
                 </div>
-                <div className="item2">
-                    <Header />
-                </div>
-                <div className="item3">
-                    <Routes>
-                        <Route path="/" element={<Dashboard />} />
-                        <Route path="/Mijozlar" element={<Mijozlar />} />
-                        <Route path="/Arizalar" element={<Arizalar />} />
-                        <Route path="/MahalliyTashuvlar" element={<MahalliyTashuvlar />} />
-                        <Route path="/XalqaroTashuvlar" element={<International/>} />
-                        <Route path="/PulTushumlari" element={<PulTushumlari />} />
-                        <Route path="/Daromadlar" element={<Daromadlar />} />
-                        <Route path="/TelegrammalarChegirmalar" element={<TelegrammalarChegirmalar/>} />
-                        <Route path="/KonvensionTaqiqlar" element={<KonvensionTaqiqlar/>} />
-                        <Route path="/Aktlar" element={<Aktlar/>} />
-                        <Route path="/Vagon" element={<Vagon />} />
-                        <Route path="/Sug'urtaDaromadlari" element={<Polis />} />
-                        <Route path="/Ekspeditorlar" element={<Ekspeditorlar />} />
-                        <Route path="/ShahobchaYo'llari" element={<ShahobchaYollari />} />
-                        <Route path="/MesplanKelishuvlar" element={<MesplanKelishuvlar />} />
-                        <Route path="/Poyezdlar" element={<Poyezdlar/>} />
-                    </Routes>
-                </div>
-            </div>
-         </SidebarProvider>
+            </SidebarProvider>
 
 
         </>

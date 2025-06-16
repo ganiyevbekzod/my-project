@@ -5,35 +5,25 @@ import header_uty from "../../assets/img/HeaderIcons/image.png"
 import View_comfy from "../../assets/img/HeaderIcons/view_comfy.svg"
 import Message from "../HeaderNavbar/Message";
 import Search_icon from "../../assets/img/HeaderIcons/searchicon.svg"
-import edit_icon from "../../assets/img/HeaderIcons/edit_icon.svg"
 import AdminIcon from "../../assets/img/HeaderIcons/admin.svg"
 import Logout from "../../assets/img/HeaderIcons/logout.svg"
 import RightSlideModal from "../RightSlideModal/RightSlideModal";
-import { useSidebar } from "../../Context/SidebarContext";
-
+import { useHeader } from "../../Context/HeaderContext";
 const Header = () => {
-    const {sidebarColor } = useSidebar();
-    const headerStyle={
-        backgroundColor: sidebarColor.backgroundColor,
-        color: sidebarColor.text
-    }
-    const linkStyle = {
-    color: sidebarColor.text,
-  };
+     const { headerBgColor, headerTextColor } = useHeader();
     return (
         <>
             <header
-            className="site-header"  >
-                
-                <nav className="header_navbar">
+            className="site-header" >
+                <nav style={{ backgroundColor: headerBgColor}} className="header_navbar">
                     <img className="Uty_logo" src={header_uty} alt="UTY_logopicture" width={60} height={60} />
                     <ul className="header_navbar_list">
                         <li className="header_navbar_item ">
-                            <div className="header_navbar_search d-flex align-items-center">
+                            <div style={{backgroundColor:headerBgColor}}  className="header_navbar_search d-flex align-items-center">
                                 <span className="header_span">
                                     <img src={Search_icon} alt="Search_icon" width={25} height={25} />
                                 </span>
-                                <input className="header_input" type="text" placeholder="Qidiruv" />
+                                <input  className="header_input" type="text" placeholder="Qidiruv" />
                             </div>
                         </li>
                         <li>
@@ -85,7 +75,7 @@ const Header = () => {
                         <FlagSelect />
                         <div class="dropdown_important ">
                             <div class="dropdown">
-                                <button class="important_button btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button  class="important_button btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src={View_comfy} alt="Railway_logo" width={24} height={24} />
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -120,6 +110,7 @@ const Header = () => {
                                             </li>
                                             <li className="important_item"> <a class="dropdown-item_strong" href="#">Mahalliy yuk bo'shatish</a>
                                             </li>
+
                                         </ul>
                                     </div>
                                 </div>
