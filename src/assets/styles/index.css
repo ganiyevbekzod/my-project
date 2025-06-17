@@ -88,22 +88,10 @@ img {
   object-fit: cover;
 }
 
-/* .container {
-  display: block;
-  width: 1240px;
-  padding: 0px 20px;
-  margin: 0 auto;
-} */
 
 .MainCards {
   display: flex;
-  /* display: grid;
-  gap: 5px;
-  grid-template-columns: repeat(2,1fr);
-  grid-template-rows:1fr 2fr;
-  grid-template-areas: 
-  "sidebar header"
-  "sidebar main";  */
+
 }
 
 canvas {
@@ -137,4 +125,7 @@ canvas {
   z-index: 0;
   grid-column-start: 2;
   grid-column-end: 4;
+}
+.apexcharts-toolbar{
+  display: none;
 }

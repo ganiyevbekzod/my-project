@@ -5,14 +5,14 @@ export const SidebarProvider = ({ children }) => {
     backgroundColor: '#2A3042',
     text: '#5F6576'
   });
+
   const colors=[
-    {value:'#2A3042',text:'white'},
+    {value:'#2A3042',text:'#5F6576'},
     {value:'#0B1D51',text:'#fff'},
     {value:'#330867',text:'white'},
     {value:'#EFE4D2',text:'#5F6576'},
   ]
 
-  
   const [isOpen, setIsOpen] = useState(false);
   const defaultState = false;
   const toggleSidebar = () => {  //Holatni o'zgartirish
@@ -21,14 +21,6 @@ export const SidebarProvider = ({ children }) => {
   const resetSidebar = () => {
     setIsOpen(defaultState); // Default holatga qaytarish
   };
-
-
-
-
-
-
-
-
   return (
     <SidebarContext.Provider value={{ isOpen, toggleSidebar,resetSidebar,sidebarColor,setSidebarColor,colors}}>
       {children}

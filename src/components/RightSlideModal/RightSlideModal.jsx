@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { useSidebar } from '../../Context/SidebarContext';
+import { useHeader } from '../../Context/HeaderContext';
 import './RightSlideModal.css';
 import "../SideBar/Sidebar"
 import Setting_icon from "../../assets/img/HeaderIcons/setting_link.svg"
-import SwapSidebar from "../../assets/img/HeaderIcons/swap_sidebar.svg"
 const RightSlideModal = () => {
     const [isOpen, setIsOpen] = useState(false);
     const toggleModal = () => {
         setIsOpen(!isOpen);
     };
-    const { toggleSidebar, setSidebarColor } = useSidebar()
+    const { toggleSidebar, setSidebarColor} = useSidebar()
+    const { changeHeaderColors } = useHeader();
     return (
         <div className="rs-modal-container">
             <button className="modal_button" onClick={toggleModal}>
@@ -42,11 +43,11 @@ const RightSlideModal = () => {
                                     Layouts Mode    
                                 </h6>
                                 <div className='layout_theme_box'>
-                                    <button
+                                    <button 
                                         className='layout_theme_button'>
                                         Light
                                     </button>
-                                    <button
+                                    <button 
                                         className='layout_theme_button'>
                                         Dark
                                     </button>
@@ -58,11 +59,11 @@ const RightSlideModal = () => {
                                     Topbar theme
                                 </h6>
                                 <div className='topbar_theme_box'>
-                                    <button
+                                    <button onClick={() => changeHeaderColors('#fff', '#2A3042')} 
                                         className='topbar_theme_button '>
                                         Light
                                     </button>
-                                    <button
+                                    <button onClick={() => changeHeaderColors('#2A3042', '#fff')}
                                         className='topbar_theme_button '>
                                         Dark
                                     </button>
@@ -78,10 +79,10 @@ const RightSlideModal = () => {
                                     <li className='sidebar_theme_item'>
                                         <label style={{
                                             backgroundColor: '#2A3042',
-                                            text: 'white'
+                                            color: '#fff'
                                         }} onClick={() => setSidebarColor({
                                             backgroundColor: '#2A3042',
-                                            text: 'white'
+                                            text: '#5F6576'
                                         })} className='sidebar_theme_label   '>
                                         </label>
                                     </li>
@@ -91,7 +92,7 @@ const RightSlideModal = () => {
                                             color: '#fff'
                                         }} onClick={() => setSidebarColor({
                                             backgroundColor: '#0B1D51',
-                                            text: '#fff'
+                                            text: '#5F6576'
                                         })} className='sidebar_theme_label  '>
 
                                         </label>
@@ -102,7 +103,7 @@ const RightSlideModal = () => {
                                             color: 'white'
                                         }} onClick={() => setSidebarColor({
                                             backgroundColor: '#330867',
-                                            text: 'white'
+                                            text: '#5F6576'
                                         })} className='sidebar_theme_label '>
 
                                         </label>
@@ -113,7 +114,7 @@ const RightSlideModal = () => {
                                             color: '#202124'
                                         }} onClick={() => setSidebarColor({
                                             backgroundColor: '#EFE4D2',
-                                            text: '#202124'
+                                            text: '#5F6576'
                                         })} className='sidebar_theme_label  '>
                                         </label>
                                     </li>

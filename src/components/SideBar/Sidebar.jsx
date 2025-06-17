@@ -1,7 +1,14 @@
 import "./SideBar.css"
 import MenuButton from "../../assets/img/SidebarIcons/menu.svg"
-import Dashboard_logo from "../../assets/img/SidebarIcons/Dashboard_logo.png"
+import Dashboard_logo from "../../assets/img/SidebarIcons/dashboard1.png"
 import UTY_logo from "../../assets/img/HeaderIcons/image.png"
+import Avatar from "../../assets/img/SidebarIcons/Avatar.svg"
+import Cash_logo from "../../assets/img/SidebarIcons/cash.svg"
+import Request_icon from "../../assets/img/SidebarIcons/document.svg"
+import Income_logo from "../../assets/img/SidebarIcons/income.svg"
+import Discounts from "../../assets/img/SidebarIcons/sale.svg"
+import Coach1 from "../../assets/img/SidebarIcons/coach1.svg"
+
 import { Link } from "react-router-dom"
 import { useSidebar } from "../../Context/SidebarContext"
 
@@ -40,46 +47,56 @@ const Sidebar = () => {
                                 </div>
                             </li>
                             <li className="sidebar_item">
-                                <Link className="SidebarLogo_link" to="/Mijozlar">📊</Link>
+                                <Link className="SidebarLogo_link" to="/Mijozlar">
+                                <img src={Avatar} alt="Users_logo sidebar" width={25} height={25} />
+                                </Link>
                                 <span className={!isOpen ? "hidden" : ""}>
                                     <Link style={linkStyle} className="navbar_link d-flex align-items-center" to="/Mijozlar">
                                         Mijozlar</Link>
                                 </span>
                             </li>
                             <li className="sidebar_item">
-                                <Link className="SidebarLogo_link" to="/Arizalar">🛒</Link>
+                                <Link className="SidebarLogo_link" to="/Arizalar">
+                                <img src={Request_icon} alt="Request icon " width={25} height={25} />
+                                </Link>
                                 <span className={!isOpen ? "hidden" : ""}>
                                     <Link style={linkStyle} className="navbar_link d-flex align-items-center" to="/Arizalar">Arizalar</Link>
                                 </span>
                             </li>
                             <li className="sidebar_item">
-                                <Link className="SidebarLogo_link" to="/MahalliyTashuvlar">🌍</Link>
+                                <Link className="SidebarLogo_link" to="/MahalliyTashuvlar">
+                                <img src={Coach1} alt="Coach_logo" width={25}  height={25}/></Link>
                                 <span className={!isOpen ? "hidden" : ""}>
                                     <Link style={linkStyle} className="navbar_link" to="/MahalliyTashuvlar">Maxalliy tashuvlar</Link></span>
                             </li>
                             <li className="sidebar_item">
-                                <Link className="SidebarLogo_link" to="/XalqaroTashuvlar">🎨</Link>
+                                <Link className="SidebarLogo_link" to="/XalqaroTashuvlar">
+                                <img src={Coach1} alt="Coach_logo" width={25}  height={25}/></Link>
                                 <span className={!isOpen ? "hidden" : ""}>
                                     <Link style={linkStyle} className="navbar_link d-flex align-items-center" to="/XalqaroTashuvlar">Xalqaro tashuvlar</Link>
                                 </span>
                             </li>
                             <li className="sidebar_item">
                                 <Link className="SidebarLogo_link" to="/PulTushumlari">
-                                    <img src={Dashboard_logo} alt="Dashboard_logo" width={25} height={25} /></Link>
+                                    <img src={Cash_logo} alt="Cash logo" width={25} height={25} /></Link>
                                 <span className={!isOpen ? "hidden" : ""}>
                                     <Link style={linkStyle} className="navbar_link d-flex align-items-center" to="/PulTushumlari">
                                         Pul tushumlari</Link>
                                 </span>
                             </li>
                             <li className="sidebar_item">
-                                <Link className="SidebarLogo_link" to="/Daromadlar">📊</Link>
+                                <Link className="SidebarLogo_link" to="/Daromadlar">
+                                <img src={Income_logo} alt="income logo " width={25} height={25} />
+                                </Link>
                                 <span className={!isOpen ? "hidden" : ""}>
                                     <Link style={linkStyle} className="navbar_link d-flex align-items-center" to="/Daromadlar">
                                         Daromadlar</Link>
                                 </span>
                             </li>
                             <li className="sidebar_item">
-                                <Link className="SidebarLogo_link" to="/TelegrammaChegirmalar">🛒</Link>
+                                <Link className="SidebarLogo_link" to="/TelegrammaChegirmalar">
+                                <img src={Discounts} alt="discounts and telegrams" width={25} height={25} />
+                                </Link>
                                 <span className={!isOpen ? "hidden" : ""}>
                                     <Link style={linkStyle} className="navbar_link d-flex align-items-center" to="/TelegrammaChegirmalar">Telegrammalar va chegirmalar</Link>
                                 </span>
@@ -89,7 +106,7 @@ const Sidebar = () => {
                                 <span className={!isOpen ? "hidden" : ""}><Link style={linkStyle} className="navbar_link" to="/KonvensionTaqiqlar">Konvensiyon taqiqlar</Link></span>
                             </li>
                             <li className="sidebar_item">
-                                <Link className="SidebarLogo_link" to="/Aktlar">🎨</Link>
+                                <Link className="SidebarLogo_link" to="/Aktlar">🛒</Link>
                                 <span className={!isOpen ? "hidden" : ""}>
                                     <Link style={linkStyle} className="navbar_link d-flex align-items-center" to="/Aktlar">Aktlar</Link>
                                 </span>
@@ -112,7 +129,7 @@ const Sidebar = () => {
                                 </span>
                             </li>
                             <li className="sidebar_item">
-                                <Link className="SidebarLogo_link" to="/Examples">❤️</Link>
+                                <Link className="SidebarLogo_link" to="/Examples">📊</Link>
                                 <span className={!isOpen ? "hidden" : ""}><Link style={linkStyle} className="navbar_link" to="/Examples">Examples</Link></span>
                             </li>
                             <li className="sidebar_item">
@@ -128,13 +145,13 @@ const Sidebar = () => {
                                 </span>
                             </li>
                             <li className="sidebar_item">
-                                <Link className="SidebarLogo_link" to="/MesplanKelishuvlar">❤️</Link>
+                                <Link className="SidebarLogo_link" to="/MesplanKelishuvlar">🛒</Link>
                                 <span className={!isOpen ? "hidden" : ""}>
                                     <Link style={linkStyle} className="navbar_link" to="/MesplanKelishuvlar">Mesplan bilan kelishuvlar</Link>
                                 </span>
                             </li>
                             <li className="sidebar_item">
-                                <Link className="SidebarLogo_link" to="/Poyezdlar">❤️</Link>
+                                <Link className="SidebarLogo_link" to="/Poyezdlar">📊</Link>
                                 <span className={!isOpen ? "hidden" : ""}><Link style={linkStyle} className="navbar_link" to="/Poyezdlar">Poyezdlar</Link></span>
                             </li>
                         </ul>
