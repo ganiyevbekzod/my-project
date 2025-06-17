@@ -21,7 +21,7 @@ export const Dashboard = () =>{
           <div className='users_box'>
             <div className='users_minibox'>
               <div className='users_main'>
-                <h6 className="user_main_title">Yuridik shaxslar</h6>
+                <h6 className="users_main_title">Yuridik shaxslar</h6>
                 <img src={Image} alt="" width={50} height={50} />
               </div>
               <p className='users_text'>10,899</p>
@@ -29,7 +29,7 @@ export const Dashboard = () =>{
             </div>
             <div className='users_minibox'>
               <div className='users_main'>
-                <h6 className="user_main_title">Jismoniy shaxslar</h6>
+                <h6 className="users_main_title">Jismoniy shaxslar</h6>
                 <img src={Image} alt="" width={50} height={50} />
               </div>
               <p className='users_text'>5,657</p>
