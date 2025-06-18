@@ -5,6 +5,10 @@ import { ApexChart } from "../../components/Diagram/Diagram"
 import users from "../../assets/img/HeaderIcons/users.svg"
 import React from 'react'
 import Mijozlarcharts from "./Mijozlarcharts"
+import Mijozlarcharts2 from "./Mijozlarcharts2"
+import FunnelGap from "../../components/Charts/SimpleLineChart"
+import SimpleLineChart from "../../components/Charts/SimpleLineChart"
+import { Gauge } from '@mui/x-charts/Gauge';
 
 const Mijozlar = () => {
   return (
@@ -19,48 +23,53 @@ const Mijozlar = () => {
             </div>
             <p className="user_box_text">17,582</p>
             <span className='user_box_span'>
-              <img className="me-2" src={users} alt=""width={16} height={16}/>O'zbekiston Temir yo'llari bo'yicha
+              <img className="me-2" src={users} alt="" width={16} height={16} />O'zbekiston Temir yo'llari bo'yicha
             </span>
           </div>
-                    <div className="user_box">
+          <div className="user_box">
             <div className="user_box_top">
               <h6 className="user_box_title">Yuridik shaxslar</h6>
               <img src={Image} alt="user_box_img" width={50} height={50} />
             </div>
             <p className="user_box_text">10,899</p>
             <span className='user_box_span'>
-              <img className="me-2" src={users} alt=""width={16} height={16}/>O'zbekiston Temir yo'llari bo'yicha
+              <img className="me-2" src={users} alt="" width={16} height={16} />O'zbekiston Temir yo'llari bo'yicha
             </span>
           </div>
-                    <div className="user_box">
+          <div className="user_box">
             <div className="user_box_top">
               <h6 className="user_box_title">Jismoniy shaxslar</h6>
               <img src={Image} alt="user_box_img" width={50} height={50} />
             </div>
             <p className="user_box_text">5,657</p>
             <span className='user_box_span'>
-              <img className="me-2" src={users} alt=""width={16} height={16}/>O'zbekiston Temir yo'llari bo'yicha
+              <img className="me-2" src={users} alt="" width={16} height={16} />O'zbekiston Temir yo'llari bo'yicha
             </span>
           </div>
-                    <div className="user_box">
+          <div className="user_box">
             <div className="user_box_top">
-              <h6 className="user_box_title">Eng yangi mijozlar</h6>
+              <h6 className="user_box_title">Yakka tartibdagi tadbirkor mijozlar</h6>
               <img src={Image} alt="user_box_img" width={50} height={50} />
             </div>
             <p className="user_box_text">1,026</p>
             <span className='user_box_span'>
-              <img className="me-2" src={users} alt=""width={16} height={16}/>O'zbekiston Temir yo'llari bo'yicha
+              <img className="me-2" src={users} alt="" width={16} height={16} />O'zbekiston Temir yo'llari bo'yicha
             </span>
           </div>
         </div>
-        <div className="user_sity_box mt-3">
+        <div className="user_sity_box ">
           <h3 className="user_title">Viloyatlar kesimida mijozlar</h3>
-        <div className="pt-3 ">
-          <Mijozlarcharts/>
+          <div className="pt-3 ">
+            <Mijozlarcharts />
+          </div>
         </div>
         <div className="tue-column-grid">
-
-        </div>
+          <div className="user_sity2_box">
+            <Mijozlarcharts2 />
+          </div>
+          <div className="user_sity3_box">
+            <SimpleLineChart />
+          </div>
         </div>
       </div>
     </>
@@ -68,4 +77,4 @@ const Mijozlar = () => {
 }
 export default Mijozlar
 
-            // <ApexChart />
+// <ApexChart />
