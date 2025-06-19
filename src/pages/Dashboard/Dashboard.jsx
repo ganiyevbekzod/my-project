@@ -124,7 +124,7 @@ export const Dashboard = () =>{
     <div className="Dashboard_box">
       <h3 className="money_title">Shahobcha yo'llari</h3>
       <TableComponent/>
-      <Link className="Users_to" to="/Daromadlar">Batafsil</Link>
+      <Link className="Users_to" to="/ShahobchaYo'llari">Batafsil</Link>
     </div>
   </>
   )

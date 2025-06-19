@@ -96,6 +96,7 @@ const Mijozlar = () => {
               <img className="me-2" src={users} alt="" width={16} height={16} />O'zbekiston Temir yo'llari bo'yicha
             </span>
           </div>
+<<<<<<< HEAD
           <div className="user_box stat-box">
             <div className="user_box_top">
               <h6 className="user_box_title">Umumiy mijozlar soni</h6>
@@ -136,6 +137,8 @@ const Mijozlar = () => {
               <img className="me-2" src={users} alt="" width={16} height={16} />O'zbekiston Temir yo'llari bo'yicha
             </span>
           </div>
+=======
+>>>>>>> b7ccd49497f75941d10b192da6d5270d1f6a879b
 
         </div>
           <h3 className="user_sity_title">Viloyatlar kesimida mijozlar soni</h3>
