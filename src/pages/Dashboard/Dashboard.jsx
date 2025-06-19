@@ -21,7 +21,7 @@ export const Dashboard = () =>{
           <div className='users_box'>
             <div className='users_minibox'>
               <div className='users_main'>
-                <h6 className="users_main_title">Yuridik shaxslar</h6>
+                <h6 className="users_main_title">Yuridik shaxslar soni</h6>
                 <img src={Image} alt="" width={50} height={50} />
               </div>
               <p className='users_text'>10,899</p>
@@ -29,7 +29,7 @@ export const Dashboard = () =>{
             </div>
             <div className='users_minibox'>
               <div className='users_main'>
-                <h6 className="users_main_title">Jismoniy shaxslar</h6>
+                <h6 className="users_main_title">Jismoniy shaxslar soni</h6>
                 <img src={Image} alt="" width={50} height={50} />
               </div>
               <p className='users_text'>5,657</p>
@@ -48,7 +48,7 @@ export const Dashboard = () =>{
           <div className='appeal_box'>
             <div className='appeal_minibox'>
               <div className='appeal_main'>
-                <h6 className="appeal_main_title">Bo'sh vagonlar</h6>
+                <h6 className="appeal_main_title">Bo'sh vagonlar bo'yicha arizalar soni</h6>
                 <img src={Image} alt="" width={50} height={50} />
               </div>
               <p className='appeal_text'>899</p>
@@ -56,7 +56,7 @@ export const Dashboard = () =>{
             </div>
             <div className='appeal_minibox'>
               <div className='appeal_main'>
-                <h6 className="appeal_main_title">Yukli vagonlar</h6>
+                <h6 className="appeal_main_title">Yukli vagonlar bo'yicha arizalar soni</h6>
                 <img src={Image} alt="" width={50} height={50} />
               </div>
               <p className='appeal_text'>657</p>
@@ -66,7 +66,7 @@ export const Dashboard = () =>{
           <div className="appeal_box2">
             <div className='appeal_minibox'>
               <div className='appeal_main'>
-                <h6 className="appeal_main_title">Konteynerlar</h6>
+                <h6 className="appeal_main_title">Konteynerlar bo'yicha arizalar soni</h6>
                 <img src={Image} alt="" width={50} height={50} />
               </div>
               <p className='appeal_text'>843</p>
@@ -74,7 +74,7 @@ export const Dashboard = () =>{
             </div>
             <div className='appeal_minibox'>
               <div className='appeal_main'>
-                <h6 className="appeal_main_title">Qayta manzillashtirish</h6>
+                <h6 className="appeal_main_title">Manzillashtirish bo'yicha arizalar soni</h6>
                 <img src={Image} alt="" width={50} height={50} />
               </div>
               <p className='appeal_text'>944</p>
@@ -124,6 +124,13 @@ export const Dashboard = () =>{
     <div className="Dashboard_box">
       <h3 className="money_title">Shahobcha yo'llari</h3>
       <TableComponent/>
+      <foreignObject x="0" y="0" width="130" height="46">
+        <div className="e123" xmlns="http://www.w3.org/1999/xhtml" 
+        style={{"position": "relative", "height":" 100%", "width":" 100%"}}>
+          <div class="apexcharts-legend" style={{"max-height":"23px"}}>
+            </div>
+            </div>
+            </foreignObject>
       <Link className="Users_to" to="/Daromadlar">Batafsil</Link>
     </div>
   </>

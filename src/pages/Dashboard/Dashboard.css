@@ -132,9 +132,11 @@
     gap: 10px;
     margin-bottom: 10px;
 }
-
+.e123{
+    z-index: 20;
+}
 .appeal_minibox {
-    min-width: 245px;
+    min-width: 250px;
     border-radius: 10px;
     padding: 20px;
     background-color: #F8F8FB;
