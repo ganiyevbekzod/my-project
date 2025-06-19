@@ -1,14 +1,11 @@
 import "./Mijozlar.css"
 import "../Dashboard/Dashboard.css"
 import Image from "../../assets/img/HeaderIcons/image.png"
-import { ApexChart } from "../../components/Diagram/Diagram"
 import users from "../../assets/img/HeaderIcons/users.svg"
 import React from 'react'
 import Mijozlarcharts from "./Mijozlarcharts"
 import Mijozlarcharts2 from "./Mijozlarcharts2"
-import FunnelGap from "../../components/Charts/SimpleLineChart"
 import SimpleLineChart from "../../components/Charts/SimpleLineChart"
-import { Gauge } from '@mui/x-charts/Gauge';
 
 const Mijozlar = () => {
   return (
