@@ -81,7 +81,7 @@ export const Dashboard = () =>{
               <span className='appeal_span'><img className="me-2" src={users} alt="" width={16} height={16} />O'zbekiston Temir yo'llari bo'yicha</span>
             </div>
           </div>
-          <Link className="Users_to" to="/Arizalar">Batafsil</Link>
+          <Link className="Users_to appeal_user_to" to="/Arizalar">Batafsil</Link>
         </div>
       </div>
     </div>

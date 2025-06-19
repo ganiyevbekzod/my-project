@@ -1,5 +1,10 @@
 /* -----------------------Users box------------------------------------ */
-.users_title,.appeal_title,.local_title,.internetional_title,.money_title,.restrictions_title {
+.users_title,
+.appeal_title,
+.local_title,
+.internetional_title,
+.money_title,
+.restrictions_title {
     color: #5F6576;
     font-weight: bold;
     margin: 0px;
@@ -12,51 +17,60 @@
     border-radius: 10px;
     background-color: white;
     padding: 25px;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.two-column-grid{
+.two-column-grid {
     display: grid;
-  grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
-.users_main,.users_box{
+
+.users_main,
+.users_box {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .users_box {
     gap: 10px;
 }
+
 .users_minibox {
     border-radius: 10px;
     padding: 20px;
     background-color: #F8F8FB;
 }
-.users_minibox:hover{
+
+.users_minibox:hover {
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
         rgba(17, 17, 26, 0.1) 0px 8px 24px,
         rgba(17, 17, 26, 0.1) 0px 16px 56px;
     transition: box-shadow 0.8s ease-in-out;
 }
 
-.dashboard_users,.dashboard_appeal {
+.dashboard_users,
+.dashboard_appeal {
     padding: 20px;
 }
 
-.users_main_title,.appeal_main_title {
+.users_main_title,
+.appeal_main_title {
     margin: 0px;
     color: #5F6576;
     font-size: 16px;
     font-weight: normal;
 }
 
-.users_text,.appeal_text {
+.users_text,
+.appeal_text {
     font-weight: 700;
     color: #5F6576;
     font-size: 24px;
 }
 
-.users_span,.appeal_span {
+.users_span,
+.appeal_span {
     color: #5F6576;
 }
 
@@ -68,7 +82,8 @@
     display: block;
     margin: 0 auto
 }
-.Users_to{
+
+.Users_to {
     position: relative;
     display: block;
     width: 100px;
@@ -80,7 +95,17 @@
     background-color: #F8F8FB;
 
 }
-.Users_to::before{
+
+.appeal_user_to {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    display: block;
+    width: 100px;
+    margin-left: auto;
+}
+
+.Users_to::before {
     position: absolute;
     content: url("../../assets//img//HeaderIcons//arrow.svg");
     background-repeat: no-repeat;
@@ -89,33 +114,40 @@
     top: 10px;
     right: 10px;
 }
-.Users_to:hover{
+
+.Users_to:hover {
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
         rgba(17, 17, 26, 0.1) 0px 8px 24px,
         rgba(17, 17, 26, 0.1) 0px 16px 56px;
     transition: box-shadow 0.8s ease-in-out;
 }
+
 /* -------------------------------appeal box---------------------------------- */
-.appeal_box,.appeal_box2,.appeal_main{
+.appeal_box,
+.appeal_box2,
+.appeal_main {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
     margin-bottom: 10px;
 }
+
 .appeal_minibox {
     min-width: 245px;
     border-radius: 10px;
     padding: 20px;
     background-color: #F8F8FB;
 }
-.appeal_minibox:hover{
+
+.appeal_minibox:hover {
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
         rgba(17, 17, 26, 0.1) 0px 8px 24px,
         rgba(17, 17, 26, 0.1) 0px 16px 56px;
     transition: box-shadow 0.8s ease-in-out;
 }
+
 /*-------------------------------Local box-------------------------- */
-.roadTable_body{
+.roadTable_body {
     background-color: #FFA500;
 }
