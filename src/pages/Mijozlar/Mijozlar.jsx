@@ -1,14 +1,11 @@
 import "./Mijozlar.css"
 import "../Dashboard/Dashboard.css"
 import Image from "../../assets/img/HeaderIcons/image.png"
-import { ApexChart } from "../../components/Diagram/Diagram"
 import users from "../../assets/img/HeaderIcons/users.svg"
 import React from 'react'
 import Mijozlarcharts from "./Mijozlarcharts"
 import Mijozlarcharts2 from "./Mijozlarcharts2"
-import FunnelGap from "../../components/Charts/SimpleLineChart"
 import SimpleLineChart from "../../components/Charts/SimpleLineChart"
-import { Gauge } from '@mui/x-charts/Gauge';
 
 const Mijozlar = () => {
   return (
@@ -18,7 +15,7 @@ const Mijozlar = () => {
         <div className="one-column-grid carousel-track ">
           <div className="user_box stat-box">
             <div className="user_box_top">
-              <h6 className="user_box_title">Umumiy Mijozlar</h6>
+              <h6 className="user_box_title">Umumiy mijozlar soni</h6>
               <img src={Image} alt="user_box_img" width={50} height={50} />
             </div>
             <p className="user_box_text">17,582</p>
@@ -28,7 +25,7 @@ const Mijozlar = () => {
           </div>
           <div className="user_box stat-box">
             <div className="user_box_top">
-              <h6 className="user_box_title">Yuridik shaxslar</h6>
+              <h6 className="user_box_title">Yuridik shaxslar soni</h6>
               <img src={Image} alt="user_box_img" width={50} height={50} />
             </div>
             <p className="user_box_text">10,899</p>
@@ -38,7 +35,7 @@ const Mijozlar = () => {
           </div>
           <div className="user_box stat-box">
             <div className="user_box_top">
-              <h6 className="user_box_title">Jismoniy shaxslar</h6>
+              <h6 className="user_box_title">Jismoniy shaxslar soni</h6>
               <img src={Image} alt="user_box_img" width={50} height={50} />
             </div>
             <p className="user_box_text">5,657</p>
@@ -48,7 +45,7 @@ const Mijozlar = () => {
           </div>
           <div className="user_box stat-box">
             <div className="user_box_top">
-              <h6 className="user_box_title">Yakka tartibdagi tadbirkor mijozlar</h6>
+              <h6 className="user_box_title">Yakka tartibdagi tadbirkor mijozlar soni</h6>
               <img src={Image} alt="user_box_img" width={50} height={50} />
             </div>
             <p className="user_box_text">1,026</p>
@@ -58,7 +55,7 @@ const Mijozlar = () => {
           </div>
           <div className="user_box stat-box">
             <div className="user_box_top">
-              <h6 className="user_box_title">Umumiy Mijozlar</h6>
+              <h6 className="user_box_title">Umumiy Mijozlar soni</h6>
               <img src={Image} alt="user_box_img" width={50} height={50} />
             </div>
             <p className="user_box_text">17,582</p>
@@ -68,7 +65,7 @@ const Mijozlar = () => {
           </div>
           <div className="user_box stat-box">
             <div className="user_box_top">
-              <h6 className="user_box_title">Yuridik shaxslar</h6>
+              <h6 className="user_box_title">Yuridik shaxslar soni</h6>
               <img src={Image} alt="user_box_img" width={50} height={50} />
             </div>
             <p className="user_box_text">10,899</p>
@@ -78,7 +75,7 @@ const Mijozlar = () => {
           </div>
           <div className="user_box stat-box">
             <div className="user_box_top">
-              <h6 className="user_box_title">Jismoniy shaxslar</h6>
+              <h6 className="user_box_title">Jismoniy shaxslar soni</h6>
               <img src={Image} alt="user_box_img" width={50} height={50} />
             </div>
             <p className="user_box_text">5,657</p>
@@ -88,7 +85,7 @@ const Mijozlar = () => {
           </div>
           <div className="user_box stat-box">
             <div className="user_box_top">
-              <h6 className="user_box_title">Yakka tartibdagi tadbirkor mijozlar</h6>
+              <h6 className="user_box_title">Yakka tartibdagi tadbirkor mijozlar soni</h6>
               <img src={Image} alt="user_box_img" width={50} height={50} />
             </div>
             <p className="user_box_text">1,026</p>
@@ -98,7 +95,7 @@ const Mijozlar = () => {
           </div>
           <div className="user_box stat-box">
             <div className="user_box_top">
-              <h6 className="user_box_title">Umumiy Mijozlar</h6>
+              <h6 className="user_box_title">Umumiy mijozlar soni</h6>
               <img src={Image} alt="user_box_img" width={50} height={50} />
             </div>
             <p className="user_box_text">17,582</p>
@@ -108,7 +105,7 @@ const Mijozlar = () => {
           </div>
           <div className="user_box stat-box">
             <div className="user_box_top">
-              <h6 className="user_box_title">Yuridik shaxslar</h6>
+              <h6 className="user_box_title">Yuridik shaxslar soni</h6>
               <img src={Image} alt="user_box_img" width={50} height={50} />
             </div>
             <p className="user_box_text">10,899</p>
@@ -118,7 +115,7 @@ const Mijozlar = () => {
           </div>
           <div className="user_box stat-box">
             <div className="user_box_top">
-              <h6 className="user_box_title">Jismoniy shaxslar</h6>
+              <h6 className="user_box_title">Jismoniy shaxslar soni</h6>
               <img src={Image} alt="user_box_img" width={50} height={50} />
             </div>
             <p className="user_box_text">5,657</p>
@@ -128,7 +125,7 @@ const Mijozlar = () => {
           </div>
           <div className="user_box stat-box">
             <div className="user_box_top">
-              <h6 className="user_box_title">Yakka tartibdagi tadbirkor mijozlar</h6>
+              <h6 className="user_box_title">Yakka tartibdagi tadbirkor mijozlar soni</h6>
               <img src={Image} alt="user_box_img" width={50} height={50} />
             </div>
             <p className="user_box_text">1,026</p>
@@ -136,9 +133,8 @@ const Mijozlar = () => {
               <img className="me-2" src={users} alt="" width={16} height={16} />O'zbekiston Temir yo'llari bo'yicha
             </span>
           </div>
-
         </div>
-          <h3 className="user_sity_title">Viloyatlar kesimida mijozlar</h3>
+          <h3 className="user_sity_title">Viloyatlar kesimida mijozlar soni</h3>
         <div className="user_sity_box ">
           <div className="pt-3 ">
             <Mijozlarcharts />

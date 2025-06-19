@@ -22,8 +22,8 @@ export default function Mijozlarcharts() {
         <BarChart
             height={400}
             series={[
-                { data: pData, label: 'Jismoniy shaxslar', id: 'pvId', stack: 'total' },
-                { data: uData, label: 'Yuridik shaxslar', id: 'uvId', stack: 'total' },
+                { data: pData, label: 'Jismoniy shaxslar soni', id: 'pvId', stack: 'total' },
+                { data: uData, label: 'Yuridik shaxslar soni', id: 'uvId', stack: 'total' },
             ]}
             xAxis={[{ data: xLabels }]}
             yAxis={[{ width: 50 }]}

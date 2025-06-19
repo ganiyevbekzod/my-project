@@ -122,7 +122,7 @@
 
 .carousel-container {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1818px;
   overflow: hidden;
   position: relative;
 }
@@ -130,7 +130,7 @@
 .carousel-track {
   display: flex;
   width: max-content;
-  animation: scroll 150s linear infinite;
+  animation: scroll 240s linear infinite;
   /* 1 daqiqalik aylanish */
 }
 
