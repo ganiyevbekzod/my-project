@@ -124,13 +124,6 @@ export const Dashboard = () =>{
     <div className="Dashboard_box">
       <h3 className="money_title">Shahobcha yo'llari</h3>
       <TableComponent/>
-      <foreignObject x="0" y="0" width="130" height="46">
-        <div className="e123" xmlns="http://www.w3.org/1999/xhtml" 
-        style={{"position": "relative", "height":" 100%", "width":" 100%"}}>
-          <div class="apexcharts-legend" style={{"max-height":"23px"}}>
-            </div>
-            </div>
-            </foreignObject>
       <Link className="Users_to" to="/Daromadlar">Batafsil</Link>
     </div>
   </>
