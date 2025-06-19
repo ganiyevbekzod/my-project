@@ -120,6 +120,30 @@
   gap: 20px;
 }
 
+.carousel-container {
+  width: 100%;
+  max-width: 1600px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 150s linear infinite;
+  /* 1 daqiqalik aylanish */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+
 .tue-column-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -134,7 +158,12 @@
 .user_title {
   color: #5F6576;
   font-weight: bold;
-  margin: 0px;
+  
+}
+.user_sity_title{
+    color: #5F6576;
+  font-weight: bold;
+  margin: 20px 0px;
 }
 
 .user_box {
@@ -191,5 +220,5 @@
   background-color: #F8F8FB;
   padding: 25px;
   border-radius: 10px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
