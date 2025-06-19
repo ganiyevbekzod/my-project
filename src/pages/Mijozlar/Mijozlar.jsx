@@ -96,46 +96,6 @@ const Mijozlar = () => {
               <img className="me-2" src={users} alt="" width={16} height={16} />O'zbekiston Temir yo'llari bo'yicha
             </span>
           </div>
-          <div className="user_box stat-box">
-            <div className="user_box_top">
-              <h6 className="user_box_title">Umumiy Mijozlar</h6>
-              <img src={Image} alt="user_box_img" width={50} height={50} />
-            </div>
-            <p className="user_box_text">17,582</p>
-            <span className='user_box_span'>
-              <img className="me-2" src={users} alt="" width={16} height={16} />O'zbekiston Temir yo'llari bo'yicha
-            </span>
-          </div>
-          <div className="user_box stat-box">
-            <div className="user_box_top">
-              <h6 className="user_box_title">Yuridik shaxslar</h6>
-              <img src={Image} alt="user_box_img" width={50} height={50} />
-            </div>
-            <p className="user_box_text">10,899</p>
-            <span className='user_box_span'>
-              <img className="me-2" src={users} alt="" width={16} height={16} />O'zbekiston Temir yo'llari bo'yicha
-            </span>
-          </div>
-          <div className="user_box stat-box">
-            <div className="user_box_top">
-              <h6 className="user_box_title">Jismoniy shaxslar</h6>
-              <img src={Image} alt="user_box_img" width={50} height={50} />
-            </div>
-            <p className="user_box_text">5,657</p>
-            <span className='user_box_span'>
-              <img className="me-2" src={users} alt="" width={16} height={16} />O'zbekiston Temir yo'llari bo'yicha
-            </span>
-          </div>
-          <div className="user_box stat-box">
-            <div className="user_box_top">
-              <h6 className="user_box_title">Yakka tartibdagi tadbirkor mijozlar</h6>
-              <img src={Image} alt="user_box_img" width={50} height={50} />
-            </div>
-            <p className="user_box_text">1,026</p>
-            <span className='user_box_span'>
-              <img className="me-2" src={users} alt="" width={16} height={16} />O'zbekiston Temir yo'llari bo'yicha
-            </span>
-          </div>
 
         </div>
           <h3 className="user_sity_title">Viloyatlar kesimida mijozlar</h3>
