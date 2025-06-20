@@ -8,3 +8,39 @@
     background-color: white;
     padding: 25px;
 }   
+
+.modern-international-box {
+    background: linear-gradient(120deg, #f8fafc 80%, #e0e7ff 100%);
+    border-radius: 18px;
+    box-shadow: 0 6px 24px 0 rgba(80, 80, 180, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.08);
+    padding: 32px 28px 28px 28px;
+    margin: 20px 0;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+.modern-international-box:hover {
+    box-shadow: 0 12px 32px 0 rgba(80, 80, 180, 0.18), 0 3px 12px 0 rgba(0,0,0,0.13);
+    transform: scale(1.025);
+    z-index: 2;
+}
+
+/* Yonma-yon boxlar uchun grid yoki flex */
+.users_box, .appeal_box {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.users_minibox, .appeal_minibox {
+    flex: 1 1 0;
+    min-width: 180px;
+    max-width: 100%;
+}
+
+@media (max-width: 900px) {
+    .users_box, .appeal_box {
+        flex-direction: column;
+        gap: 12px;
+    }
+}   

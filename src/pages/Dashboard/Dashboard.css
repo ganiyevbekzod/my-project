@@ -1,155 +1,170 @@
-/* -----------------------Users box------------------------------------ */
-.users_title,
-.appeal_title,
-.local_title,
-.internetional_title,
-.money_title,
-.restrictions_title {
-    color: #5F6576;
-    font-weight: bold;
-    margin: 0px;
-    padding-left: 20px;
-}
-
+/* -----------------------Modern Dashboard Styles-------------------- */
 .Dashboard_box {
     position: relative;
-    margin: 15px 25px;
-    border-radius: 10px;
-    background-color: white;
-    padding: 25px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin: 20px 30px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #f8fafc 60%, #e0e7ff 100%);
+    padding: 32px 28px 28px 28px;
+    box-shadow: 0 6px 24px 0 rgba(80, 80, 180, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.08);
+    /* transition: box-shadow 0.3s, transform 0.3s; */
+}
+/* .Dashboard_box:hover {
+    box-shadow: 0 12px 32px 0 rgba(80, 80, 180, 0.18), 0 3px 12px 0 rgba(0,0,0,0.13);
+    transform: scale(1.025);
+    z-index: 2;
+} */
+
+.users_minibox, .appeal_minibox {
+    border-radius: 14px;
+    padding: 22px 18px;
+    background: linear-gradient(120deg, #f0f4ff 70%, #e0ffe7 100%);
+    box-shadow: 0 2px 8px 0 rgba(80, 80, 180, 0.07);
+    border: 1.5px solid #e0e7ff;
+    transition: box-shadow 0.3s, border 0.3s, transform 0.3s;
+}
+.users_minibox:hover, .appeal_minibox:hover {
+    box-shadow: 0 6px 24px 0 rgba(80, 80, 180, 0.13);
+    border: 1.5px solid #7f9cf5;
+    transform: scale(1.04);
 }
 
-.two-column-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+/* Iconlar uchun rangli filter */
+.users_main img, .appeal_main img {
+    filter: drop-shadow(0 2px 8px #7f9cf5) saturate(1.5) brightness(1.1);
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e0e7ff 60%, #f0fff4 100%);
+    padding: 6px;
 }
 
-.users_main,
-.users_box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* Diagramma joyi uchun zamonaviy style */
+.users_diagramma, .diagramm {
+    padding-top: 18px;
+    border-radius: 16px;
+    background: linear-gradient(120deg, #f8fafc 80%, #e0e7ff 100%);
+    box-shadow: 0 2px 8px 0 rgba(80, 80, 180, 0.07);
 }
 
-.users_box {
-    gap: 10px;
-}
-
-.users_minibox {
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #F8F8FB;
-}
-
-.users_minibox:hover {
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-        rgba(17, 17, 26, 0.1) 0px 8px 24px,
-        rgba(17, 17, 26, 0.1) 0px 16px 56px;
-    transition: box-shadow 0.8s ease-in-out;
-}
-
-.dashboard_users,
-.dashboard_appeal {
-    padding: 20px;
-}
-
-.users_main_title,
-.appeal_main_title {
-    margin: 0px;
-    color: #5F6576;
-    font-size: 16px;
-    font-weight: normal;
-}
-
-.users_text,
-.appeal_text {
-    font-weight: 700;
-    color: #5F6576;
-    font-size: 24px;
-}
-
-.users_span,
-.appeal_span {
-    color: #5F6576;
-}
-
-.users_diagramma {
-    padding-top: 20px;
-}
-
-.diagramm {
-    display: block;
-    margin: 0 auto
-}
-
+/* Linklar uchun zamonaviy style */
 .Users_to {
     position: relative;
     display: block;
-    width: 100px;
+    width: 110px;
     margin-left: auto;
     text-decoration: none;
-    color: #5F6576;
-    padding: 10px 15px;
-    border-radius: 10px;
-    background-color: #F8F8FB;
-
+    color: #4f46e5;
+    font-weight: 600;
+    padding: 11px 18px 11px 18px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #e0e7ff 60%, #f0fff4 100%);
+    box-shadow: 0 1.5px 6px 0 rgba(80, 80, 180, 0.08);
+    transition: box-shadow 0.3s, background 0.3s, color 0.3s;
 }
-
-.appeal_user_to {
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
-    display: block;
-    width: 100px;
-    margin-left: auto;
+.Users_to:hover {
+    box-shadow: 0 6px 24px 0 rgba(80, 80, 180, 0.13);
+    background: linear-gradient(90deg, #7f9cf5 60%, #34d399 100%);
+    color: #fff;
 }
-
 .Users_to::before {
     position: absolute;
     content: url("../../assets//img//HeaderIcons//arrow.svg");
-    background-repeat: no-repeat;
     width: 20px;
     height: 20px;
     top: 10px;
     right: 10px;
+    filter: drop-shadow(0 2px 4px #7f9cf5);
 }
 
-.Users_to:hover {
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-        rgba(17, 17, 26, 0.1) 0px 8px 24px,
-        rgba(17, 17, 26, 0.1) 0px 16px 56px;
-    transition: box-shadow 0.8s ease-in-out;
+/* Title ranglari va fontlari */
+.users_title, .appeal_title, .local_title, .internetional_title, .money_title, .restrictions_title {
+    color: #3730a3;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin: 0px 0 12px 0;
+    padding-left: 10px;
+    letter-spacing: 0.5px;
 }
 
-/* -------------------------------appeal box---------------------------------- */
-.appeal_box,
-.appeal_box2,
-.appeal_main {
+/* Responsive grid */
+.two-column-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+@media (max-width: 900px) {
+    .two-column-grid {
+        grid-template-columns: 1fr;
+    }
+    .Dashboard_box {
+        margin: 16px 6px;
+        padding: 18px 8px 16px 8px;
+    }
+}
+
+/* Diagramma uchun joy */
+.diagramm, .users_diagramma {
+    min-height: 180px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-.e123{
-    z-index: 20;
-}
-.appeal_minibox {
-    min-width: 250px;
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #F8F8FB;
+    justify-content: center;
 }
 
-.appeal_minibox:hover {
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-        rgba(17, 17, 26, 0.1) 0px 8px 24px,
-        rgba(17, 17, 26, 0.1) 0px 16px 56px;
-    transition: box-shadow 0.8s ease-in-out;
+/* Kichik matnlar va raqamlar */
+.users_main_title, .appeal_main_title {
+    margin: 0px;
+    color: #6366f1;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.users_text, .appeal_text {
+    font-weight: 700;
+    color: #0e1726;
+    font-size: 2rem;
+    margin: 8px 0 0 0;
+}
+.users_span, .appeal_span {
+    color: #64748b;
+    font-size: 0.95rem;
 }
 
-/*-------------------------------Local box-------------------------- */
+/* Table va boshqa elementlar uchun ham zamonaviy style */
 .roadTable_body {
-    background-color: #FFA500;
+    background-color: #e0e7ff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 0 rgba(80, 80, 180, 0.07);
+}
+
+.appeal_box {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.appeal_minibox {
+    flex: 1 1 0;
+    min-width: 180px;
+    max-width: 100%;
+}
+
+@media (max-width: 900px) {
+    .appeal_box {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+.appeal_box2 {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+@media (max-width: 900px) {
+    .appeal_box2 {
+        flex-direction: column;
+        gap: 12px;
+    }
 }
