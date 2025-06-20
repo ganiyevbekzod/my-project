@@ -90,7 +90,7 @@ const Sidebar = () => {
                     ? "sidebar sidebar-horizontal"
                     : `sidebar ${isOpen ? "sidebar-open" : "sidebar-closed"}`
             }
-            style={layout === "topbar" ? { ...sidebarStyle, width: "1395px" } : sidebarStyle}
+            style={layout === "topbar" ? { ...sidebarStyle, width: "1920px" } : sidebarStyle}
         >
             {layout !== "topbar" && (
                 <button onClick={toggleSidebar} className="toggle-button" width={25} height={25}>

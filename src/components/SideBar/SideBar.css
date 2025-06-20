@@ -260,7 +260,6 @@
 
 .sidebar-horizontal {
   height: 50px !important;
-
   flex-direction: row !important;
   border-radius: 0 0 18px 18px;
   box-shadow: 0 2px 8px 0 rgba(80, 80, 180, 0.10);
