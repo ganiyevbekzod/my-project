@@ -4,6 +4,19 @@ import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
 import { BarChart } from '@mui/x-charts/BarChart';
 
+const barColors = [
+  '#6366f1', // Indigo
+  '#34d399', // Green
+  '#f59e42', // Orange
+  '#f43f5e', // Red
+  '#06b6d4', // Cyan
+  '#a21caf', // Purple
+  '#fbbf24', // Yellow
+  '#10b981', // Emerald
+  '#3b82f6', // Blue
+  '#eab308', // Amber
+];
+
 export default function BarAnimation() {
   const [seriesNb, setSeriesNb] = React.useState(2);
   const [itemNb, setItemNb] = React.useState(5);
@@ -23,15 +36,42 @@ export default function BarAnimation() {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{
+      width: '100%',
+      background: 'linear-gradient(120deg, #f8fafc 80%, #e0e7ff 100%)',
+      borderRadius: 4,
+      boxShadow: '0 2px 8px 0 rgba(80, 80, 180, 0.10)',
+      p: 2,
+      mb: 2,
+    }}>
       <BarChart
         height={300}
         series={series
           .slice(0, seriesNb)
-          .map((s) => ({ ...s, data: s.data.slice(0, itemNb) }))}
+          .map((s, idx) => ({
+            ...s,
+            color: barColors[idx % barColors.length],
+            highlightScope: { faded: 'global', highlighted: 'series' },
+            faded: {
+              additionalRadius: -8,
+              color: 'rgba(200,200,200,0.2)',
+            },
+            highlighted: {
+              additionalRadius: 4,
+              color: undefined,
+              style: {
+                filter: 'drop-shadow(0 0 8px #6366f1)',
+              },
+            },
+          }))}
         skipAnimation={skipAnimation}
+        sx={{
+          borderRadius: 3,
+          boxShadow: '0 4px 16px 0 rgba(80, 80, 180, 0.13)',
+          background: 'transparent',
+        }}
       />
-      <Typography id="input-item-number" gutterBottom>
+      <Typography id="input-item-number" gutterBottom sx={{ mt: 2, color: '#6366f1', fontWeight: 600 }}>
         Kerakli ma'lumotlar hajmini belgilang !
       </Typography>
       <Slider
@@ -41,6 +81,7 @@ export default function BarAnimation() {
         min={0}
         max={30}
         aria-labelledby="input-item-number"
+        sx={{ color: '#6366f1' }}
       />
     </Box>
   );

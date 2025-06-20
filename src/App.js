@@ -14,6 +14,13 @@ import { Daromadlar } from "./pages/Daromadlar/Daromadlar"
 import { TelegrammalarChegirmalar } from "./pages/TelegrammalarChegirmalar/TelegrammalarChegirmalar"
 import { Aktlar } from "./pages/Aktlar/Aktlar"
 import { Vagon } from "./pages/Vagon/Vagon"
+import { useTheme } from "./Context/ThemeContext"
+import { useRtl } from "./Context/RtlContext"
+import { useCompact } from "./Context/CompactContext"
+import { useLayout } from "./Context/LayoutContext"
+import { useColorScheme } from "./Context/ColorContext"
+import { usePreset } from "./Context/PresetContext"
+import { useFont } from "./Context/FontContext"
 import { KonvensionTaqiqlar } from "./pages/KonvensionTaqiqlar/KonvensionTaqiqlar"
 import { Polis } from "./pages/Sugurta/Sugurta"
 import { Ekspeditorlar } from "./pages/Ekspeditorlar/Ekspeditorlar"
@@ -22,46 +29,70 @@ import { MesplanKelishuvlar } from "./pages/MesplanKelishuvlar/MesplanKelishuvla
 import { Poyezdlar } from "./pages/Poyezdlar/Poyezdlar"
 import International from "./pages/XalqaroTashuvlar/XalqaroTashuvlar.jsx"
 import { HeaderProvider } from "./Context/HeaderContext.js"
+import { useContrast } from "./Context/ContrastContext"
+
 const App = () => {
+    const { theme } = useTheme();
+    const { contrastMode } = useContrast();
+    const { isRtl } = useRtl();
+    const { isCompact } = useCompact();
+    const { layout } = useLayout();
+    const { colorScheme } = useColorScheme();
+    const { preset } = usePreset();
+    const { fontFamily, fontSize } = useFont();
+    const { isOpen } = require("./Context/SidebarContext").useSidebar();
 
+    const classes = [
+        theme === "dark" ? "dark-mode" : "",
+        contrastMode ? "contrast-mode" : "",
+        isRtl ? "rtl" : "",
+        isCompact ? "compact" : "",
+        `layout-${layout}`,
+        `color-${colorScheme}`,
+        `preset-${preset}`,
+        `font-${fontFamily.replace(/\s/g, "")}`,
+        `font-size-${fontSize}`
+    ].join(" ");
     return (
-        <>
-            <SidebarProvider>
-                <div className="grid-container">
-                    <div className="item1 ">
-                        <Sidebar />
-                    </div>
-                    <HeaderProvider>
-                        <div className="item2">
-                            <Header />
-                        </div>
-                    </HeaderProvider>
-
-                    <div className="item3">
-                        <Routes>
-                            <Route path="/" element={<Dashboard />} />
-                            <Route path="/Mijozlar" element={<Mijozlar />} />
-                            <Route path="/Arizalar" element={<Arizalar />} />
-                            <Route path="/MahalliyTashuvlar" element={<MahalliyTashuvlar />} />
-                            <Route path="/XalqaroTashuvlar" element={<International />} />
-                            <Route path="/PulTushumlari" element={<PulTushumlari />} />
-                            <Route path="/Daromadlar" element={<Daromadlar />} />
-                            <Route path="/TelegrammalarChegirmalar" element={<TelegrammalarChegirmalar />} />
-                            <Route path="/KonvensionTaqiqlar" element={<KonvensionTaqiqlar />} />
-                            <Route path="/Aktlar" element={<Aktlar />} />
-                            <Route path="/Vagon" element={<Vagon />} />
-                            <Route path="/Sug'urtaDaromadlari" element={<Polis />} />
-                            <Route path="/Ekspeditorlar" element={<Ekspeditorlar />} />
-                            <Route path="/ShahobchaYo'llari" element={<ShahobchaYollari />} />
-                            <Route path="/MesplanKelishuvlar" element={<MesplanKelishuvlar />} />
-                            <Route path="/Poyezdlar" element={<Poyezdlar />} />
-                        </Routes>
-                    </div>
+        <div className={classes} style={{ fontFamily, fontSize }}>
+            <div
+                className={`grid-container ${layout === 'sidebar' ? 'grid-sidebar' : layout === 'topbar' ? 'grid-topbar' : ''}`}
+                style={
+                    layout === "sidebar"
+                        ? { gridTemplateColumns: `${isOpen ? 260 : 100}px 1fr` }
+                        : undefined
+                }
+            >
+                <div className="item1 ">
+                    <Sidebar />
                 </div>
-            </SidebarProvider>
-
-
-        </>
+                <HeaderProvider>
+                    <div className="item2">
+                        <Header />
+                    </div>
+                </HeaderProvider>
+                <div className="item3">
+                    <Routes>
+                        <Route path="/" element={<Dashboard />} />
+                        <Route path="/Mijozlar" element={<Mijozlar />} />
+                        <Route path="/Arizalar" element={<Arizalar />} />
+                        <Route path="/MahalliyTashuvlar" element={<MahalliyTashuvlar />} />
+                        <Route path="/XalqaroTashuvlar" element={<International />} />
+                        <Route path="/PulTushumlari" element={<PulTushumlari />} />
+                        <Route path="/Daromadlar" element={<Daromadlar />} />
+                        <Route path="/TelegrammalarChegirmalar" element={<TelegrammalarChegirmalar />} />
+                        <Route path="/KonvensionTaqiqlar" element={<KonvensionTaqiqlar />} />
+                        <Route path="/Aktlar" element={<Aktlar />} />
+                        <Route path="/Vagon" element={<Vagon />} />
+                        <Route path="/Sug'urtaDaromadlari" element={<Polis />} />
+                        <Route path="/Ekspeditorlar" element={<Ekspeditorlar />} />
+                        <Route path="/ShahobchaYo'llari" element={<ShahobchaYollari />} />
+                        <Route path="/MesplanKelishuvlar" element={<MesplanKelishuvlar />} />
+                        <Route path="/Poyezdlar" element={<Poyezdlar />} />
+                    </Routes>
+                </div>
+            </div>
+        </div>
     )
 }
 export default App 

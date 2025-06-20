@@ -76,6 +76,9 @@ body {
   background-color: #F8F8FB;
 }
 
+.contrast-mode {
+  background-color: #F4F6F8 !important;
+}
 
 main {
   flex-grow: 1;
@@ -129,3 +132,30 @@ canvas {
 .apexcharts-toolbar{
   display: none;
 }
+
+.grid-container.grid-sidebar {
+  display: grid;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: 80px 1fr;
+  height: 100vh;
+}
+.grid-container.grid-sidebar .item1 { grid-area: sidebar; }
+.grid-container.grid-sidebar .item2 { grid-area: header; }
+.grid-container.grid-sidebar .item3 { grid-area: main; }
+
+.grid-container.grid-topbar {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "sidebar"
+    "main";
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 60px 1fr;
+  height: 100vh;
+}
+.grid-container.grid-topbar .item1 { grid-area: sidebar; display: block; }
+.grid-container.grid-topbar .item2 { grid-area: header; }
+.grid-container.grid-topbar .item3 { grid-area: main; }
