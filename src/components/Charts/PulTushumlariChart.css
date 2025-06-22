@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+.pul-tushumlari-card {
+    background: linear-gradient(127.09deg, #F4F7FE 19.41%, rgba(244, 247, 254, 0.5) 76.65%);
+    border-radius: 20px;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0px 18px 40px rgba(112, 144, 176, 0.12);
+}
+
+.pul-tushumlari-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.pul-tushumlari-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2B3674;
+}
+
+.batafsil-button {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 8px 16px;
+    color: #4318FF;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.batafsil-button:hover {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 6px 12px rgba(67, 24, 255, 0.2);
+}
+
+.batafsil-button span {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.batafsil-button:hover span {
+    transform: translateX(4px);
+} 

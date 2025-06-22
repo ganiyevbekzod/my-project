@@ -78,7 +78,7 @@ export const Dashboard = () =>{
             </div>
             <div className='appeal_minibox'>
               <div className='appeal_main'>
-                <h6 className="appeal_main_title">Manzillashtirish bo'yicha arizalar soni</h6>
+                <h6 className="appeal_main_title">Qayta manzillashtirish bo'yicha arizalar soni</h6>
                 <img src={settingIcon} alt="Manzillashtirish" width={50} height={50} />
               </div>
               <p className='appeal_text'>944</p>
@@ -107,7 +107,7 @@ export const Dashboard = () =>{
         <div className="Dashboard_box">
       <h3 className="money_title">Pul tushumlari</h3>
       <ChartsOverviewDemo/>
-      <Link className="Users_to" to="/PulTushumlari">Batafsil</Link>
+      <Link className="Users_to mt-3" to="/PulTushumlari">Batafsil</Link>
     </div>
     <div className="Dashboard_box">
       <h3 className="restrictions_title">Konvension cheklovlar</h3>

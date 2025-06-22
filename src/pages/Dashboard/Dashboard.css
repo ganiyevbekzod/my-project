@@ -1,7 +1,7 @@
 /* -----------------------Modern Dashboard Styles-------------------- */
 .Dashboard_box {
     position: relative;
-    margin: 20px 30px;
+    margin: 10px ;
     border-radius: 18px;
     background: linear-gradient(135deg, #f8fafc 60%, #e0e7ff 100%);
     padding: 32px 28px 28px 28px;
@@ -88,7 +88,6 @@
 .two-column-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
 }
 @media (max-width: 900px) {
     .two-column-grid {
