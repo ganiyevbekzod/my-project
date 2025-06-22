@@ -8,9 +8,9 @@ import { Routes, Route } from "react-router-dom"
 import Dashboard from "./pages/Dashboard/Dashboard"
 import Arizalar from "./pages/Arizalar/Arizalar"
 import MahalliyTashuvlar from "./pages/MahalliyTashuvlar/MahalliyTashuvlar"
-import Mijozlar from "./pages/Mijozlar/Mijozlar.jsx"
-import { PulTushumlari } from "./pages/PulTushulari/PulTushumlari"
-import { Daromadlar } from "./pages/Daromadlar/Daromadlar"
+import {PulTushumlari} from "./pages/PulTushulari/PulTushumlari"
+import DaromadlarDashboard from "./pages/Daromadlar/Daromadlar"
+import RevenueDashboard from "./pages/Daromadlar/Daromadlar.jsx"
 import { TelegrammalarChegirmalar } from "./pages/TelegrammalarChegirmalar/TelegrammalarChegirmalar"
 import { Aktlar } from "./pages/Aktlar/Aktlar"
 import { Vagon } from "./pages/Vagon/Vagon"
@@ -30,6 +30,7 @@ import { Poyezdlar } from "./pages/Poyezdlar/Poyezdlar"
 import International from "./pages/XalqaroTashuvlar/XalqaroTashuvlar.jsx"
 import { HeaderProvider } from "./Context/HeaderContext.js"
 import { useContrast } from "./Context/ContrastContext"
+import CustomerDashboard from "./pages/Mijozlar/Customer.jsx"
 
 const App = () => {
     const { theme } = useTheme();
@@ -74,12 +75,12 @@ const App = () => {
                 <div className="item3">
                     <Routes>
                         <Route path="/" element={<Dashboard />} />
-                        <Route path="/Mijozlar" element={<Mijozlar />} />
+                        <Route path="/Mijozlar" element={<CustomerDashboard/>} />
                         <Route path="/Arizalar" element={<Arizalar />} />
                         <Route path="/MahalliyTashuvlar" element={<MahalliyTashuvlar />} />
                         <Route path="/XalqaroTashuvlar" element={<International />} />
                         <Route path="/PulTushumlari" element={<PulTushumlari />} />
-                        <Route path="/Daromadlar" element={<Daromadlar />} />
+                        <Route path="/Daromadlar" element={<RevenueDashboard/>} />
                         <Route path="/TelegrammalarChegirmalar" element={<TelegrammalarChegirmalar />} />
                         <Route path="/KonvensionTaqiqlar" element={<KonvensionTaqiqlar />} />
                         <Route path="/Aktlar" element={<Aktlar />} />

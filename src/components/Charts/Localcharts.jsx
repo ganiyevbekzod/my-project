@@ -56,13 +56,13 @@ export default function BarAnimation() {
               additionalRadius: -8,
               color: 'rgba(200,200,200,0.2)',
             },
-            highlighted: {
-              additionalRadius: 4,
-              color: undefined,
-              style: {
-                filter: 'drop-shadow(0 0 8px #6366f1)',
-              },
-            },
+            // highlighted: {
+            //   additionalRadius: 4,
+            //   color: undefined,
+            //   style: {
+            //     filter: 'drop-shadow(0 0 8px #6366f1)',
+            //   },
+            // },
           }))}
         skipAnimation={skipAnimation}
         sx={{
@@ -71,18 +71,18 @@ export default function BarAnimation() {
           background: 'transparent',
         }}
       />
-      <Typography id="input-item-number" gutterBottom sx={{ mt: 2, color: '#6366f1', fontWeight: 600 }}>
+      {/* <Typography id="input-item-number" gutterBottom sx={{ mt: 2, color: '#6366f1', fontWeight: 600 }}>
         Kerakli ma'lumotlar hajmini belgilang !
-      </Typography>
-      <Slider
+      </Typography> */}
+      {/* <Slider
         value={itemNb}
-        onChange={handleItemNbChange}
+        // onChange={handleItemNbChange}
         valueLabelDisplay="auto"
         min={0}
         max={30}
         aria-labelledby="input-item-number"
         sx={{ color: '#6366f1' }}
-      />
+      /> */}
     </Box>
   );
 }
