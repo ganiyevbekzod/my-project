@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
+import { FaStar, FaSmileBeam } from 'react-icons/fa';
 import './Customer.css';
 
 // Sample data
@@ -25,6 +26,38 @@ const regionData = [
   { region: "Andijon", count: 87, percentage: 12 },
   { region: "Farg'ona", count: 76, percentage: 11 },
   { region: "Boshqalar", count: 42, percentage: 6 },
+];
+
+// New data for additional charts
+const customerSatisfactionData = [
+  { rating: 5, count: 45, percentage: 30 },
+  { rating: 4, count: 67, percentage: 45 },
+  { rating: 3, count: 23, percentage: 15 },
+  { rating: 2, count: 10, percentage: 7 },
+  { rating: 1, count: 5, percentage: 3 },
+];
+
+const ageDistributionData = [
+  { age: "18-25", count: 89, percentage: 12 },
+  { age: "26-35", count: 234, percentage: 32 },
+  { age: "36-45", count: 198, percentage: 27 },
+  { age: "46-55", count: 156, percentage: 21 },
+  { age: "56+", count: 53, percentage: 8 },
+];
+
+const customerRetentionData = [
+  { month: "Avg", new: 58, retained: 49, churned: 9 },
+  { month: "Sen", new: 64, retained: 55, churned: 9 },
+  { month: "Okt", new: 71, retained: 61, churned: 10 },
+  { month: "Noy", new: 69, retained: 59, churned: 10 },
+  { month: "Dek", new: 76, retained: 65, churned: 11 },
+  { month: "Yan", new: 45, retained: 38, churned: 7 },
+  { month: "Fev", new: 52, retained: 44, churned: 8 },
+  { month: "Mar", new: 48, retained: 41, churned: 7 },
+  { month: "Apr", new: 61, retained: 52, churned: 9 },
+  { month: "May", new: 55, retained: 47, churned: 8 },
+  { month: "Iyun", new: 67, retained: 58, churned: 9 },
+  { month: "Iyul", new: 73, retained: 62, churned: 11 },
 ];
 
 const recentCustomers = [
@@ -53,21 +86,21 @@ const performanceData = [
   { metric: "O'rtacha daromad", value: 4250000, change: 15.2, trend: "up" },
 ];
 
+const goodReviews = [
+  { name: "Dilshod R.", text: "Xizmatdan juda mamnunman! 👏", rating: 5 },
+  { name: "Gulnoza A.", text: "Tez va qulay xizmat uchun rahmat!", rating: 5 },
+  { name: "Azizbek T.", text: "Yaxshi qo'llab-quvvatlash va qulay interfeys.", rating: 4 },
+  { name: "Malika K.", text: "Hammasi zo'r, yana foydalanaman!", rating: 5 },
+  { name: "Javohir S.", text: "Tavsiya qilaman!", rating: 4 }
+];
+
 const CustomerDashboard = () => {
-  // Function to get different colors for regions
-  const getRegionColor = (index) => {
-    const colors = [
-      '#3b82f6', // Blue
-      '#ef4444', // Red
-      '#10b981', // Green
-      '#f59e0b', // Yellow
-      '#8b5cf6', // Purple
-      '#06b6d4', // Cyan
-      '#84cc16', // Lime
-      '#f97316', // Orange
-    ];
-    return colors[index % colors.length];
-  };
+  // State for retention data filtering
+  const [retentionPeriod, setRetentionPeriod] = React.useState('6'); // Default to 6 months
+
+  // Calculate satisfaction summary
+  const totalSatisfactionResponses = customerSatisfactionData.reduce((acc, item) => acc + item.count, 0);
+  const averageSatisfactionRating = '4.2';
 
   // Function to get beautiful gradients for regions
   const getRegionGradient = (index) => {
@@ -86,140 +119,147 @@ const CustomerDashboard = () => {
 
   // Area chart options for monthly registration trend
   const areaChartOptions = {
-    chart: {
-      type: 'area',
-      height: 300,
-      toolbar: {
-        show: false
-      },
-      background: 'transparent'
-    },
-    dataLabels: {
-      enabled: false
-    },
-    stroke: {
-      curve: 'smooth',
-      width: 3
-    },
-    xaxis: {
-      categories: monthlyData.map(item => item.month),
-      labels: {
-        style: {
-          colors: '#3730a3'
-        }
-      }
-    },
-    yaxis: {
-      labels: {
-        style: {
-          colors: '#3730a3'
-        }
-      }
-    },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shadeIntensity: 1,
-        opacityFrom: 0.7,
-        opacityTo: 0.9,
-        stops: [0, 90, 100]
-      }
-    },
+    chart: { type: 'area', height: 300, toolbar: { show: false }, background: 'transparent' },
+    dataLabels: { enabled: false },
+    stroke: { curve: 'smooth', width: 3 },
+    xaxis: { categories: monthlyData.map(item => item.month), labels: { style: { colors: '#3730a3' } } },
+    yaxis: { labels: { style: { colors: '#3730a3' } } },
+    fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.7, opacityTo: 0.9, stops: [0, 90, 100] } },
     colors: ['#3b82f6', '#ef4444', '#10b981'],
-    legend: {
-      position: 'top',
-      labels: {
-        colors: '#3730a3'
-      }
-    },
-    grid: {
-      borderColor: 'rgba(112, 156, 245, 0.1)',
-      strokeDashArray: 3
-    }
+    legend: { position: 'top', labels: { colors: '#3730a3' } },
+    grid: { borderColor: 'rgba(112, 156, 245, 0.1)', strokeDashArray: 3 }
   };
 
   const areaChartSeries = [
-    {
-      name: 'Jismoniy shaxslar',
-      data: monthlyData.map(item => item.jismoniy)
-    },
-    {
-      name: 'Yuridik shaxslar',
-      data: monthlyData.map(item => item.yuridik)
-    },
-    {
-      name: 'Yakka tartibdagilar',
-      data: monthlyData.map(item => item.yakka)
-    }
+    { name: 'Jismoniy shaxslar', data: monthlyData.map(item => item.jismoniy) },
+    { name: 'Yuridik shaxslar', data: monthlyData.map(item => item.yuridik) },
+    { name: 'Yakka tartibdagilar', data: monthlyData.map(item => item.yakka) }
   ];
 
   // Pie chart options for customer type distribution
   const pieChartOptions = {
-    chart: {
-      type: 'pie',
-      height: 300
-    },
+    chart: { type: 'pie', height: 300 },
     labels: customerTypeData.map(item => item.name),
     colors: customerTypeData.map(item => item.color),
-    legend: {
-      position: 'bottom',
-      labels: {
-        colors: '#3730a3'
-      }
-    }
+    legend: { position: 'bottom', labels: { colors: '#3730a3' } }
   };
 
   const pieChartSeries = customerTypeData.map(item => item.value);
 
   // Line chart options for revenue
   const lineChartOptions = {
-    chart: {
-      type: 'line',
-      height: 350,
-      toolbar: {
-        show: false
-      },
-      background: 'transparent'
-    },
-    dataLabels: {
-      enabled: false
-    },
-    stroke: {
-      curve: 'smooth',
-      width: 3
-    },
-    xaxis: {
-      categories: monthlyData.map(item => item.month),
-      labels: {
-        style: {
-          colors: '#3730a3'
-        }
-      }
-    },
-    yaxis: {
-      title: {
-        text: 'Daromad (so\'m)',
-        style: {
-          color: '#3730a3'
-        }
-      },
-      labels: {
-        style: {
-          colors: '#3730a3'
-        }
-      }
-    },
+    chart: { type: 'line', height: 350, toolbar: { show: false }, background: 'transparent' },
+    dataLabels: { enabled: false },
+    stroke: { curve: 'smooth', width: 3 },
+    xaxis: { categories: monthlyData.map(item => item.month), labels: { style: { colors: '#3730a3' } } },
+    yaxis: { title: { text: 'Daromad (so\'m)', style: { color: '#3730a3' } }, labels: { style: { colors: '#3730a3' } } },
     colors: ['#8b5cf6'],
-    grid: {
-      borderColor: 'rgba(112, 156, 245, 0.1)',
-      strokeDashArray: 3
-    }
+    grid: { borderColor: 'rgba(112, 156, 245, 0.1)', strokeDashArray: 3 }
   };
 
-  const lineChartSeries = [{
-    name: 'Oylik daromad',
-    data: monthlyData.map(item => item.revenue)
-  }];
+  const lineChartSeries = [{ name: 'Oylik daromad', data: monthlyData.map(item => item.revenue) }];
+
+  // Bar chart options for customer satisfaction (vertical, bright colors)
+  const satisfactionBarOptions = {
+    chart: {
+      type: 'bar',
+      height: 280,
+      toolbar: { show: false },
+      background: 'transparent',
+      animations: { enabled: true, easing: 'easeinout', speed: 800 }
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '55%',
+        borderRadius: 8,
+        distributed: true,
+      }
+    },
+    dataLabels: {
+      enabled: true,
+      style: { colors: ['#fff'], fontSize: '16px', fontWeight: 700 },
+      formatter: (val) => `${val}%`,
+      offsetY: -10,
+      dropShadow: { enabled: true, top: 2, left: 2, blur: 3, opacity: 0.3 }
+    },
+    xaxis: {
+      categories: customerSatisfactionData.map(item => `${item.rating} ★`),
+      labels: { style: { colors: '#2563eb', fontWeight: 700, fontSize: '1.1rem' } }
+    },
+    yaxis: { show: false },
+    grid: { show: false },
+    tooltip: { enabled: false },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        type: 'vertical',
+        shadeIntensity: 0.8,
+        gradientToColors: [
+          '#f43f5e', // pink
+          '#f59e42', // orange
+          '#fbbf24', // yellow
+          '#38bdf8', // blue
+          '#a21caf', // purple
+        ],
+        inverseColors: false,
+        opacityFrom: 0.95,
+        opacityTo: 1,
+        stops: [0, 100]
+      }
+    },
+    colors: [
+      '#f43f5e', // pink
+      '#f59e42', // orange
+      '#fbbf24', // yellow
+      '#38bdf8', // blue
+      '#a21caf', // purple
+    ],
+    legend: { show: false },
+  };
+
+  const satisfactionBarSeries = [{ name: 'Mamnuniyat', data: customerSatisfactionData.map(item => item.percentage) }];
+
+  // Horizontal bar chart for age distribution
+  const ageBarOptions = {
+    chart: { type: 'bar', height: 300, toolbar: { show: false }, background: 'transparent' },
+    plotOptions: { bar: { horizontal: true, barHeight: '70%', distributed: true, borderRadius: 4 } },
+    dataLabels: { enabled: true, textAnchor: 'start', style: { colors: ['#fff'] }, formatter: (val, opt) => `${opt.w.globals.labels[opt.dataPointIndex]}: ${val}%`, offsetX: 0 },
+    xaxis: { categories: ageDistributionData.map(item => item.age), labels: { style: { colors: '#3730a3' } } },
+    yaxis: { labels: { show: false } },
+    colors: ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'],
+    grid: { borderColor: 'rgba(112, 156, 245, 0.1)', strokeDashArray: 3 }
+  };
+
+  const ageBarSeries = [{ name: 'Yosh guruhlari', data: ageDistributionData.map(item => item.percentage) }];
+
+  // Filter retention data based on selected period
+  const getFilteredRetentionData = () => {
+    const periods = { '3': 3, '6': 6, '12': 12 };
+    return customerRetentionData.slice(-periods[retentionPeriod]);
+  };
+
+  const filteredRetentionData = getFilteredRetentionData();
+
+  // Updated retention chart options with filtered data
+  const retentionBarOptions = {
+    chart: { type: 'bar', height: 300, stacked: true, toolbar: { show: false }, background: 'transparent' },
+    plotOptions: { bar: { horizontal: false, columnWidth: '55%', borderRadius: 4 } },
+    dataLabels: { enabled: true, formatter: (val) => val, style: { fontSize: '12px', colors: ["#fff"] } },
+    stroke: { show: true, width: 2, colors: ['transparent'] },
+    xaxis: { categories: filteredRetentionData.map(item => item.month), labels: { style: { colors: '#3730a3' } } },
+    yaxis: { title: { text: 'Mijozlar soni', style: { color: '#3730a3' } }, labels: { style: { colors: '#3730a3' } } },
+    fill: { opacity: 1, colors: ['#10b981', '#3b82f6', '#ef4444'] },
+    legend: { position: 'top', labels: { colors: '#3730a3' } },
+    grid: { borderColor: 'rgba(112, 156, 245, 0.1)', strokeDashArray: 3 }
+  };
+
+  const retentionBarSeries = [
+    { name: 'Yangi mijozlar', data: filteredRetentionData.map(item => item.new) },
+    { name: 'Saqlangan mijozlar', data: filteredRetentionData.map(item => item.retained) },
+    { name: 'Yo\'qotilgan mijozlar', data: filteredRetentionData.map(item => item.churned) }
+  ];
 
   return (
     <div className="customer-dashboard">
@@ -244,15 +284,11 @@ const CustomerDashboard = () => {
                       : item.value.toLocaleString()}
                   </div>
                   <div className="kpi-change">
-                    <span className={`trend ${item.trend}`}>
-                      {item.change > 0 ? "+" : ""}{item.change}%
-                    </span>
+                    <span className={`trend ${item.trend}`}>{item.change > 0 ? "+" : ""}{item.change}%</span>
                     <span className="trend-label">o'tgan oyga nisbatan</span>
                   </div>
                 </div>
-                <div className="kpi-icon">
-                  {item.trend === "up" ? "📈" : "📉"}
-                </div>
+                <div className="kpi-icon">{item.trend === "up" ? "📈" : "📉"}</div>
               </div>
             </div>
           ))}
@@ -260,54 +296,91 @@ const CustomerDashboard = () => {
 
         {/* Charts Section */}
         <div className="charts-grid">
-          {/* Monthly Registration Trend */}
           <div className="chart-card">
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Oylik ro'yxatdan o'tish dinamikasi</h3>
               <span className="chart-badge">Mijozlar</span>
             </div>
-            <ReactApexChart 
-              options={areaChartOptions} 
-              series={areaChartSeries} 
-              type="area" 
-              height={300} 
-            />
+            <ReactApexChart options={areaChartOptions} series={areaChartSeries} type="area" height={300} />
           </div>
 
-          {/* Customer Type Distribution */}
           <div className="chart-card">
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Mijozlar taqsimoti</h3>
             </div>
-            <ReactApexChart 
-              options={pieChartOptions} 
-              series={pieChartSeries} 
-              type="pie" 
-              height={300} 
-            />
+            <ReactApexChart options={pieChartOptions} series={pieChartSeries} type="pie" height={300} />
           </div>
         </div>
 
-        {/* Revenue Chart */}
         <div className="chart-card">
           <div className="chart-header">
             <div className="chart-indicator"></div>
             <h3 className="chart-title">Oylik daromad dinamikasi</h3>
             <span className="chart-badge">So'm</span>
           </div>
-          <ReactApexChart 
-            options={lineChartOptions} 
-            series={lineChartSeries} 
-            type="line" 
-            height={350} 
-          />
+          <ReactApexChart options={lineChartOptions} series={lineChartSeries} type="line" height={350} />
         </div>
 
-        {/* Regional Distribution and Recent Customers */}
         <div className="charts-grid">
-          {/* Regional Distribution */}
+          <div className="chart-card satisfaction-widget">
+            <div className="satisfaction-header">
+              <h3 className="chart-title">Mijozlar mamnuniyati</h3>
+              <div className="satisfaction-summary">
+                <div className="summary-avg-rating">
+                  <span className="rating-value animated">{averageSatisfactionRating}</span>
+                  <FaSmileBeam className="animated-icon" />
+                  <div className="rating-stars" style={{"--rating": averageSatisfactionRating}}></div>
+                </div>
+                <div className="summary-total-responses">
+                  <span className="total-value">{totalSatisfactionResponses.toLocaleString()}</span>
+                  <span className="total-label">sharhlar</span>
+                </div>
+              </div>
+            </div>
+            <div className="satisfaction-chart-container">
+          <ReactApexChart 
+                options={satisfactionBarOptions}
+                series={satisfactionBarSeries}
+                type="bar"
+                height={280}
+              />
+            </div>
+            <div className="good-reviews-list">
+              {goodReviews.slice(0, 2).map((review, idx) => (
+                <div className="good-review" key={idx}>
+                  <FaStar className="good-review-star" />
+                  <span className="good-review-name">{review.name}:</span>
+                  <span className="good-review-text">{review.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="chart-card">
+            <div className="chart-header">
+              <div className="chart-indicator"></div>
+              <h3 className="chart-title">Yosh guruhlari</h3>
+            </div>
+            <ReactApexChart options={ageBarOptions} series={ageBarSeries} type="bar" height={300} />
+          </div>
+        </div>
+
+        <div className="chart-card">
+          <div className="chart-header">
+            <div className="chart-indicator"></div>
+            <h3 className="chart-title">Mijozlar saqlanishi</h3>
+            <div className="retention-filters">
+              <button className={`filter-btn ${retentionPeriod === '3' ? 'active' : ''}`} onClick={() => setRetentionPeriod('3')}>3 oy</button>
+              <button className={`filter-btn ${retentionPeriod === '6' ? 'active' : ''}`} onClick={() => setRetentionPeriod('6')}>6 oy</button>
+              <button className={`filter-btn ${retentionPeriod === '12' ? 'active' : ''}`} onClick={() => setRetentionPeriod('12')}>1 yil</button>
+            </div>
+          </div>
+          <ReactApexChart options={retentionBarOptions} series={retentionBarSeries} type="bar" height={300} />
+        </div>
+
+        <div className="charts-grid">
           <div className="chart-card">
             <div className="chart-header">
               <div className="chart-indicator"></div>
@@ -347,28 +420,15 @@ const CustomerDashboard = () => {
                       <div className="region-percentage-display">
                         <div className="percentage-circle">
                           <svg className="percentage-svg" viewBox="0 0 36 36">
-                            <path
-                              className="percentage-bg"
-                              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                            />
-                            <path
-                              className="percentage-fill"
-                              strokeDasharray={`${region.percentage}, 100`}
-                              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                            />
+                          <path className="percentage-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                          <path className="percentage-fill" strokeDasharray={`${region.percentage}, 100`} d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                           </svg>
                           <div className="percentage-text">{region.percentage}%</div>
                         </div>
                       </div>
                     <div className="progress-container">
                       <div className="progress-bar">
-                        <div 
-                          className="progress-fill" 
-                          style={{ 
-                            width: `${region.percentage}%`,
-                            background: getRegionGradient(index)
-                          }}
-                        >
+                        <div className="progress-fill" style={{ width: `${region.percentage}%`, background: getRegionGradient(index) }}>
                           <div className="progress-shine"></div>
                         </div>
                       </div>
@@ -410,7 +470,6 @@ const CustomerDashboard = () => {
             </div>
           </div>
 
-          {/* Recent Customers Table */}
           <div className="chart-card">
             <div className="chart-header">
               <div className="chart-indicator"></div>
@@ -436,14 +495,10 @@ const CustomerDashboard = () => {
                         </div>
                       </td>
                       <td>
-                        <span className={`badge badge-${customer.type === 'Jismoniy' ? 'blue' : customer.type === 'Yuridik' ? 'red' : 'green'}`}>
-                          {customer.type}
-                        </span>
+                        <span className={`badge badge-${customer.type === 'Jismoniy' ? 'blue' : customer.type === 'Yuridik' ? 'red' : 'green'}`}>{customer.type}</span>
                       </td>
                       <td>
-                        <span className={`badge badge-${customer.status === 'Faol' ? 'success' : 'warning'}`}>
-                          {customer.status}
-                        </span>
+                        <span className={`badge badge-${customer.status === 'Faol' ? 'success' : 'warning'}`}>{customer.status}</span>
                       </td>
                       <td className="customer-revenue">{customer.revenue} so'm</td>
                     </tr>
