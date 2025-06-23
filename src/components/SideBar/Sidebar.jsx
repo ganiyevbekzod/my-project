@@ -93,8 +93,6 @@ const Sidebar = () => {
 
             style={layout === "topbar" ? { ...sidebarStyle, } : sidebarStyle}
 
-            style={layout === "topbar" ? { ...sidebarStyle, width: "1920px" } : sidebarStyle}
-
         >
             {layout !== "topbar" && (
                 <button onClick={toggleSidebar} className="toggle-button" width={25} height={25}>
