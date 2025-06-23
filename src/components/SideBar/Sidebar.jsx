@@ -90,7 +90,7 @@ const Sidebar = () => {
                     ? "sidebar sidebar-horizontal"
                     : `sidebar ${isOpen ? "sidebar-open" : "sidebar-closed"}`
             }
-            style={layout === "topbar" ? { ...sidebarStyle, width: "1395px" } : sidebarStyle}
+            style={layout === "topbar" ? { ...sidebarStyle, } : sidebarStyle}
         >
             {layout !== "topbar" && (
                 <button onClick={toggleSidebar} className="toggle-button" width={25} height={25}>
@@ -110,7 +110,7 @@ const Sidebar = () => {
                     onMouseEnter={layout === "topbar" ? handleMouseEnter : undefined}
                     onMouseLeave={layout === "topbar" ? handleMouseLeave : undefined}
                 >
-                    {[...menuItems, ...menuItems].map((item, idx) => (
+                    {menuItems.map((item, idx) => (
                         <li
                             key={item.to + "-" + idx}
                             className={`sidebar_item${location.pathname === item.to ? " sidebar_item-active" : ""}${idx % menuItems.length === 1 ? " sidebar_item2" : ""}${idx % menuItems.length === 2 ? " sidebar_item3" : ""}`}
@@ -119,12 +119,12 @@ const Sidebar = () => {
                                 {item.icon ? (
                                     <img src={item.icon} alt={item.label} width={25} height={25} />
                                 ) : (
-                                    <span style={{ fontSize: 22 }}>{item.emoji}</span>
+                                    <span  style={{ fontSize: 22 }}>{item.emoji}</span>
                                 )}
                             </Link>
-                            <span className={layout === "topbar" ? "horizontal-label" : (!isOpen ? "hidden" : "") }>
+                            <Link to={item.to} className={layout === "topbar" ? "horizontal-label" : (!isOpen ? "hidden" : "") }>
                                 {item.label}
-                            </span>
+                            </Link>
                         </li>
                     ))}
                 </ul>

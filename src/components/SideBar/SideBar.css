@@ -7,6 +7,9 @@
     display: block;
     margin: 2px 0;
 }
+Link{
+  text-decoration: none;
+}
 .sidebar_logocontent{
     display: flex;
     align-items: center;
@@ -218,7 +221,6 @@
   flex-direction: row;
   align-items: center;
   gap: 8px;
-  width: 100%;
   padding: 0 8px;
   margin: 0;
   height: 100%;
@@ -259,6 +261,10 @@
 }
 
 .sidebar-horizontal {
+  display: block;
+  margin: 0 auto;
+  width: 1362px;
+  align-items: center;
   height: 50px !important;
 
   flex-direction: row !important;
@@ -271,7 +277,6 @@
   background: linear-gradient(90deg, #f8fafc 60%, #e0e7ff 100%);
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0 20px;
   box-sizing: border-box;
   overflow-x: hidden;
   min-height: 60px;
@@ -336,4 +341,8 @@
 .sidebar-list-horizontal::-webkit-scrollbar,
 .horizontal-menu::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
+}
+
+.sidebar a, .sidebar .SidebarLogo_link, .sidebar .horizontal-label {
+  text-decoration: none !important;
 }
