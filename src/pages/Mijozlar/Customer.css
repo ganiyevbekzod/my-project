@@ -211,6 +211,12 @@
   margin-left: auto;
 }
 
+.revenue-filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
 .filter-btn {
   padding: 0.5rem 1rem;
   border: 1.5px solid #e0e7ff;

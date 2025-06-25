@@ -687,7 +687,7 @@ export default function LocalTransportDashboard() {
           <div className="chart-card">
             <div className="chart-header">
               <div className="chart-indicator"></div>
-              <h3 className="chart-title">Oylik Trend</h3>
+              <h3 className="chart-title">Mahalliy Tashuvlarning Oylik Analitikasi</h3>
               <div className="trend-filters">
                 <button 
                   className={`filter-btn ${trendPeriod === '3' ? 'active' : ''}`} 
