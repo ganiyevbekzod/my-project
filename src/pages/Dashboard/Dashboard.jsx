@@ -99,7 +99,7 @@ export const Dashboard = () =>{
     <div className="Dashboard_box">
       <h3 className='internetional_title'>Xalqaro tashuvlar</h3>
       <div className="International">
-        <International />
+        {/* <International /> */}
       </div>
       <Link className="Users_to" to="/XalqaroTashuvlar">Batafsil</Link>
     </div>

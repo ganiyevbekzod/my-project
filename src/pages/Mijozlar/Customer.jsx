@@ -5,12 +5,18 @@ import './Customer.css';
 
 // Sample data
 const monthlyData = [
-  { month: "Yan", yuridik: 45, jismoniy: 120, yakka: 35, revenue: 85000 },
-  { month: "Fev", yuridik: 52, jismoniy: 135, yakka: 42, revenue: 92000 },
-  { month: "Mar", yuridik: 48, jismoniy: 128, yakka: 38, revenue: 88000 },
-  { month: "Apr", yuridik: 61, jismoniy: 145, yakka: 45, revenue: 105000 },
-  { month: "May", yuridik: 55, jismoniy: 142, yakka: 48, revenue: 98000 },
-  { month: "Iyun", yuridik: 67, jismoniy: 158, yakka: 52, revenue: 115000 },
+  { month: "Avg", yuridik: 69, jismoniy: 162, yakka: 55, revenue: 88 },
+  { month: "Sen", yuridik: 78, jismoniy: 175, yakka: 62, revenue: 85 },
+  { month: "Okt", yuridik: 82, jismoniy: 180, yakka: 65, revenue: 98 },
+  { month: "Noy", yuridik: 75, jismoniy: 172, yakka: 60, revenue: 128 },
+  { month: "Dek", yuridik: 88, jismoniy: 190, yakka: 70, revenue: 114 },
+  { month: "Yan", yuridik: 45, jismoniy: 120, yakka: 35, revenue: 135 },
+  { month: "Fev", yuridik: 52, jismoniy: 135, yakka: 42, revenue: 142 },
+  { month: "Mar", yuridik: 48, jismoniy: 128, yakka: 38, revenue: 118 },
+  { month: "Apr", yuridik: 61, jismoniy: 145, yakka: 45, revenue: 105 },
+  { month: "May", yuridik: 55, jismoniy: 142, yakka: 48, revenue: 132 },
+  { month: "Iyun", yuridik: 67, jismoniy: 158, yakka: 52, revenue: 115 },
+  { month: "Iyul", yuridik: 73, jismoniy: 165, yakka: 58, revenue: 145 },
 ];
 
 const customerTypeData = [
@@ -97,10 +103,20 @@ const goodReviews = [
 const CustomerDashboard = () => {
   // State for retention data filtering
   const [retentionPeriod, setRetentionPeriod] = React.useState('6'); // Default to 6 months
+  // State for revenue data filtering
+  const [revenuePeriod, setRevenuePeriod] = React.useState('12'); // Default to 12 months
 
   // Calculate satisfaction summary
   const totalSatisfactionResponses = customerSatisfactionData.reduce((acc, item) => acc + item.count, 0);
   const averageSatisfactionRating = '4.2';
+
+  // Function to get filtered revenue data based on selected period
+  const getFilteredRevenueData = () => {
+    const periods = { '3': 3, '6': 6, '12': 12 };
+    return monthlyData.slice(-periods[revenuePeriod]);
+  };
+
+  const filteredRevenueData = getFilteredRevenueData();
 
   // Function to get beautiful gradients for regions
   const getRegionGradient = (index) => {
@@ -151,13 +167,13 @@ const CustomerDashboard = () => {
     chart: { type: 'line', height: 350, toolbar: { show: false }, background: 'transparent' },
     dataLabels: { enabled: false },
     stroke: { curve: 'smooth', width: 3 },
-    xaxis: { categories: monthlyData.map(item => item.month), labels: { style: { colors: '#3730a3' } } },
-    yaxis: { title: { text: 'Daromad (so\'m)', style: { color: '#3730a3' } }, labels: { style: { colors: '#3730a3' } } },
+    xaxis: { categories: filteredRevenueData.map(item => item.month), labels: { style: { colors: '#3730a3' } } },
+    yaxis: { title: { text: 'Daromad (million)', style: { color: '#3730a3' } }, labels: { style: { colors: '#3730a3' } } },
     colors: ['#8b5cf6'],
     grid: { borderColor: 'rgba(112, 156, 245, 0.1)', strokeDashArray: 3 }
   };
 
-  const lineChartSeries = [{ name: 'Oylik daromad', data: monthlyData.map(item => item.revenue) }];
+  const lineChartSeries = [{ name: 'Oylik daromad', data: filteredRevenueData.map(item => item.revenue) }];
 
   // Bar chart options for customer satisfaction (vertical, bright colors)
   const satisfactionBarOptions = {
@@ -317,8 +333,13 @@ const CustomerDashboard = () => {
         <div className="chart-card">
           <div className="chart-header">
             <div className="chart-indicator"></div>
-            <h3 className="chart-title">Oylik daromad dinamikasi</h3>
-            <span className="chart-badge">So'm</span>
+            <h3 className="chart-title">Mijozlarning o'rtacha oylik daromad dinamikasi</h3>
+            <div className="revenue-filters">
+              <button className={`filter-btn ${revenuePeriod === '3' ? 'active' : ''}`} onClick={() => setRevenuePeriod('3')}>3 oy</button>
+              <button className={`filter-btn ${revenuePeriod === '6' ? 'active' : ''}`} onClick={() => setRevenuePeriod('6')}>6 oy</button>
+              <button className={`filter-btn ${revenuePeriod === '12' ? 'active' : ''}`} onClick={() => setRevenuePeriod('12')}>1 yil</button>
+            </div>
+            <span className="chart-badge">Million</span>
           </div>
           <ReactApexChart options={lineChartOptions} series={lineChartSeries} type="line" height={350} />
         </div>
