@@ -91,9 +91,8 @@ const Sidebar = () => {
                     : `sidebar ${isOpen ? "sidebar-open" : "sidebar-closed"}`
             }
 
-            style={layout === "topbar" ? { ...sidebarStyle, } : sidebarStyle}
+            style={layout === "topbar" ? { ...sidebarStyle, display:"grid" ,borderRadius: "10px", padding:"0px 10px",gridTemplateColumns: "1fr",width:"100%" } : sidebarStyle}
 
-            style={layout === "topbar" ? { ...sidebarStyle, width: "1920px" } : sidebarStyle}
 
         >
             {layout !== "topbar" && (
