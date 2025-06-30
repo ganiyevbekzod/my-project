@@ -92,8 +92,6 @@ const Sidebar = () => {
             }
 
             style={layout === "topbar" ? { ...sidebarStyle, display:"grid" ,borderRadius: "10px", padding:"0px 10px",gridTemplateColumns: "1fr",width:"100%" } : sidebarStyle}
-
-
         >
             {layout !== "topbar" && (
                 <button onClick={toggleSidebar} className="toggle-button" width={25} height={25}>
