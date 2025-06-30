@@ -29,7 +29,7 @@ const Sidebar = () => {
   };
   ////////////////////////
     const menuItems = [
-      { to: "/", icon: Dashboard_logo, label: "Dashboard" },
+    //   { to: "/", icon: Dashboard_logo, label: "Dashboard" },
       { to: "/Mijozlar", icon: Avatar, label: "Mijozlar" },
       { to: "/Arizalar", icon: Request_icon, label: "Arizalar" },
       { to: "/MahalliyTashuvlar", icon: Coach1, label: "Mahalliy tashuvlar" },

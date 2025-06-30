@@ -1,6 +1,4 @@
 import Image from "../../assets/img/HeaderIcons/image.png"
-import React from "react"
-import ApexCharts from "apexcharts"
 import users from "../../assets/img/HeaderIcons/users.svg"
 import coachIcon from "../../assets/img/SidebarIcons/coach1.svg"
 import saleIcon from "../../assets/img/SidebarIcons/sale.svg"
@@ -10,10 +8,8 @@ import "../Dashboard/Dashboard.css"
 import { Link } from "react-router-dom"
 import PieAnimation from "../../components/Charts/Barcharts"
 import BarAnimation from "../../components/Charts/Localcharts"
-import International from "../XalqaroTashuvlar/XalqaroTashuvlar"
 import ChartsOverviewDemo, { Overview } from "../../components/Charts/Overview"
 import { MoneyCharts } from "../../components/Charts/MoneyCharts"
-import TableComponent from "../../components/Road/Road"
 import { Requestcharts } from "../../components/Charts/Requestcharts"
 export const Dashboard = () =>{
   return(
@@ -127,7 +123,6 @@ export const Dashboard = () =>{
     </div>
     <div className="Dashboard_box">
       <h3 className="money_title">Shahobcha yo'llari</h3>
-      <TableComponent/>
       <Link className="Users_to" to="/ShahobchaYo'llari">Batafsil</Link>
     </div>
   </>

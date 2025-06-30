@@ -601,7 +601,7 @@ export const PulTushumlari = () => {
               <li key={i} className="source-item">
                 {s.icon}
                 <span className="source-label">{s.label}</span>
-                <span className="source-value">{s.value.toLocaleString()} so'm</span>
+                <span className="source-value">{s.value.toLocaleString()} dollar</span>
               </li>
             ))}
           </ul>
