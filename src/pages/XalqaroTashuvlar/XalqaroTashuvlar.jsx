@@ -17,6 +17,9 @@ export default function InternationalTransportDashboard() {
     { name: "Surxondaryo Xalqaro", value: 720, color: "#DDA0DD", region: "Janubiy", trips: 480, vehicles: 25 },
     { name: "Qo'ng'irot Xalqaro", value: 680, color: "#98D8C8", region: "Markaziy", trips: 420, vehicles: 22 },
     { name: "Xorazm Xalqaro", value: 580, color: "#F7DC6F", region: "Shimoliy", trips: 380, vehicles: 20 },
+    { name: "Qarshi TexPD", value: 420, color: "#00ecb1", region: "Markaziy", trips: 340, vehicles: 18 },
+    { name: "Jizzax TexPD", value: 380, color: "#6ff786", region: "Shimoliy", trips: 390, vehicles: 26 },
+
   ];
 
   // International cargo operations data
@@ -116,6 +119,26 @@ export default function InternationalTransportDashboard() {
       color: "#F7DC6F",
       customsClearance: 85.9,
       internationalRoutes: 2
+    },
+            { 
+      name: "Qarshi TexPD", 
+      loading: 550, 
+      unloading: 400, 
+      loadingEfficiency: 75, 
+      unloadingEfficiency: 70,
+      loadingTime: 3.8,
+      unloadingTime: 3.5,
+      color: "#0adda8" 
+    },
+    { 
+      name: "Jizzax TexPD", 
+      loading: 700, 
+      unloading: 510, 
+      loadingEfficiency: 73, 
+      unloadingEfficiency: 68,
+      loadingTime: 4.0,
+      unloadingTime: 3.7,
+      color: "#6ff786" 
     },
   ];
 

@@ -618,7 +618,7 @@ export const PulTushumlari = () => {
               <thead>
                 <tr>
                   <th>TexPD</th>
-                  <th>Yillik tushum (ming so'm)</th>
+                  <th>Yillik tushum (dollar)</th>
                   <th>O'sish (%)</th>
                   <th>Ulush (%)</th>
                   <th>Oylik tushum (iyul)</th>

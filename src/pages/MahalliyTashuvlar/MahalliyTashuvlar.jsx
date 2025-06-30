@@ -17,6 +17,9 @@ export default function LocalTransportDashboard() {
     { name: "Surxondaryo TexPD", value: 480, color: "#DDA0DD", region: "Janubiy", trips: 380, vehicles: 16 },
     { name: "Qo'ng'irot TexPD", value: 420, color: "#98D8C8", region: "Markaziy", trips: 350, vehicles: 15 },
     { name: "Xorazm TexPD", value: 380, color: "#F7DC6F", region: "Shimoliy", trips: 320, vehicles: 14 },
+    { name: "Qarshi TexPD", value: 420, color: "#00ecb1", region: "Markaziy", trips: 340, vehicles: 18 },
+    { name: "Jizzax TexPD", value: 380, color: "#6ff786", region: "Shimoliy", trips: 390, vehicles: 26 },
+    
   ];
 
   // New data for cargo loading and unloading
@@ -83,7 +86,7 @@ export default function LocalTransportDashboard() {
     },
     { 
       name: "Qo'ng'irot TexPD", 
-      loading: 300, 
+      loading: 530, 
       unloading: 280, 
       loadingEfficiency: 75, 
       unloadingEfficiency: 70,
@@ -93,13 +96,33 @@ export default function LocalTransportDashboard() {
     },
     { 
       name: "Xorazm TexPD", 
-      loading: 280, 
-      unloading: 260, 
+      loading: 480, 
+      unloading: 300, 
       loadingEfficiency: 73, 
       unloadingEfficiency: 68,
       loadingTime: 4.0,
       unloadingTime: 3.7,
       color: "#F7DC6F" 
+    },
+        { 
+      name: "Qarshi TexPD", 
+      loading: 550, 
+      unloading: 400, 
+      loadingEfficiency: 75, 
+      unloadingEfficiency: 70,
+      loadingTime: 3.8,
+      unloadingTime: 3.5,
+      color: "#0adda8" 
+    },
+    { 
+      name: "Jizzax TexPD", 
+      loading: 700, 
+      unloading: 510, 
+      loadingEfficiency: 73, 
+      unloadingEfficiency: 68,
+      loadingTime: 4.0,
+      unloadingTime: 3.7,
+      color: "#6ff786" 
     },
   ];
 

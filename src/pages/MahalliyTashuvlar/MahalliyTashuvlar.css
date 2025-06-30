@@ -201,20 +201,6 @@
   background: #f1f5f9;
 }
 
-.region-rank {
-  width: 32px;
-  height: 32px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.9rem;
-  margin-right: 16px;
-  flex-shrink: 0;
-}
 
 .region-info {
   flex-grow: 1;
@@ -613,13 +599,12 @@
   box-shadow: 0 2px 8px rgba(34,211,238,0.10);
 }
 .safety-badges {
-  display: block;
+  display: block !important;
   gap: 10px;
   margin-top: 10px;
 }
 .safety-badge {
-  display: flex;
-  align-items: center;
+
   font-size: 0.98rem;
   font-weight: 600;
   border-radius: 16px;

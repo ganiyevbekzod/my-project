@@ -322,13 +322,13 @@ padding:24px 16px;
   z-index: 1;
 }
 
-.region-rank {
+/* .region-rank {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
   min-width: 4rem;
-}
+} */
 
 .rank-number {
   font-size: 1.5rem;

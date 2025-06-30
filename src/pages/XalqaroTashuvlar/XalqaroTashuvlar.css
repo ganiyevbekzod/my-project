@@ -492,20 +492,6 @@
   opacity: 1;
 }
 
-.region-rank {
-  width: 2rem;
-  height: 2rem;
-  background: linear-gradient(135deg, #6366f1, #7f9cf5);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.875rem;
-  flex-shrink: 0;
-}
-
 .region-info {
   flex: 1;
 }
