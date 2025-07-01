@@ -26,50 +26,6 @@ const Header = () => {
                                 <input  className="header_input" type="text" placeholder="Qidiruv" />
                             </div>
                         </li>
-                        <li>
-                            <div class="dropdown">
-                                <button  class="dropdown_button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Mega Menu
-                                </button>
-                                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton1" >
-                                    <div className="dropdown_block">
-                                        <ul className="dropdown_list">
-                                            <li className="dropdown_item">
-                                                <strong class="dropdown-item_strong" href="#">Stansiyalar</strong>
-                                                <a href="" className="dropdown_link dropdown-item">Stansiya_1</a>
-                                                <a href="" className="dropdown_link dropdown-item">Stansiya_2</a>
-                                                <a href="" className="dropdown_link dropdown-item">Stansiya_3</a>
-                                                <a href="" className="dropdown_link dropdown-item">Stansiya_4</a>
-                                                <a href="" className="dropdown_link dropdown-item">Stansiya_5</a>
-                                                <a href="" className="dropdown_link dropdown-item">Stansiya_6</a>
-                                            </li>
-                                        </ul>
-                                        <ul className="dropdown_list">
-                                            <li className="dropdown_item">
-                                                <strong class="dropdown-item_strong" href="#">Vagonlar</strong>
-                                                <a href="" className="dropdown_link dropdown-item">Vagon_1</a>
-                                                <a href="" className="dropdown_link dropdown-item">Vagon_2</a>
-                                                <a href="" className="dropdown_link dropdown-item">Vagon_3</a>
-                                                <a href="" className="dropdown_link dropdown-item">Vagon_4</a>
-                                                <a href="" className="dropdown_link dropdown-item">Vagon_5</a>
-                                                <a href="" className="dropdown_link dropdown-item">Vagon_6</a>
-                                            </li>
-                                        </ul>
-                                        <ul className="dropdown_list">
-                                            <li className="dropdown_item">
-                                                <strong class="dropdown-item_strong" href="#">Hujjatlar</strong>
-                                                <a href="#" className="dropdown_link dropdown-item">Hujjat_1</a>
-                                                <a href="#" className="dropdown_link dropdown-item">Hujjat_2</a>
-                                                <a href="#" className="dropdown_link dropdown-item">Hujjat_3</a>
-                                                <a href="#" className="dropdown_link dropdown-item">Hujjat_4</a>
-                                                <a href="#" className="dropdown_link dropdown-item">Hujjat_5</a>
-                                                <a href="#" className="dropdown_link dropdown-item">Hujjat_6</a>
-                                            </li>
-                                        </ul>
-                                        <img src={header_uty} alt="UTY_logopicture" width={200} height={200} />
-                                    </div>
-                                </div>
-                            </div></li>
                     </ul>
                     <div className="header_navbar_right">
                         <FlagSelect />
@@ -139,8 +95,6 @@ const Header = () => {
                                         <a class="dropdown-item link_edit" href="#">Edit Profile</a></li>
                                     <li className="adminItem_link">
                                         <a class="dropdown-item link_view" href="#">View profile</a></li>
-                                    <li className="adminItem_link">
-                                        <a class="dropdown-item link_setting" href="#">Setting</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -1,0 +1,452 @@
+/* Vagon Dashboard Styles (based on XalqaroTashuvlar) */
+.vagon-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 60%, #e0e7ff 100%);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.vagon-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(80,80,180,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+
+/* Header Styles */
+.vagon-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: vagon-fadeInDown 1s ease-out;
+}
+
+.vagon-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #3730a3, #6366f1, #7f9cf5, #4f46e5);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: vagon-gradientShift 3s ease-in-out infinite;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 8px rgba(80,80,180,0.1);
+}
+
+.vagon-subtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.vagon-divider {
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #7f9cf5);
+  margin: 0 auto;
+  border-radius: 2px;
+  animation: vagon-expandWidth 1.5s ease-out 0.5s both;
+}
+
+/* Stats Cards */
+.vagon-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.vagon-stat-card {
+  background: linear-gradient(120deg, #f0f4ff 70%, #e0ffe7 100%);
+  border: 1.5px solid #e0e7ff;
+  border-radius: 18px;
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  animation: vagon-slideInUp 0.6s ease-out;
+  box-shadow: 0 6px 24px 0 rgba(80, 80, 180, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.08);
+}
+
+.vagon-stat-card.vagon-cyan {
+  background: linear-gradient(120deg, #e0f2fe 70%, #f0f9ff 100%);
+  border-color: #0ea5e9;
+}
+
+.vagon-stat-card.vagon-green {
+  background: linear-gradient(120deg, #dcfce7 70%, #f0fdf4 100%);
+  border-color: #10b981;
+}
+
+.vagon-stat-card.vagon-orange {
+  background: linear-gradient(120deg, #fed7aa 70%, #fff7ed 100%);
+  border-color: #f59e0b;
+}
+
+.vagon-stat-card.vagon-purple {
+  background: linear-gradient(120deg, #f3e8ff 70%, #faf5ff 100%);
+  border-color: #a21caf;
+}
+
+.vagon-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vagon-stat-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 32px 0 rgba(80, 80, 180, 0.18), 0 3px 12px 0 rgba(0,0,0,0.13);
+  border: 1.5px solid #7f9cf5;
+}
+
+.vagon-stat-card:hover::before {
+  opacity: 1;
+}
+
+.vagon-stat-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.vagon-stat-info h4 {
+  color: #6366f1;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vagon-stat-info .vagon-stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0e1726;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 2px 4px rgba(80,80,180,0.1);
+}
+
+.vagon-stat-info .vagon-stat-unit {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 400;
+}
+
+.vagon-stat-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 2px 8px #7f9cf5) saturate(1.5) brightness(1.1);
+  animation: vagon-float 3s ease-in-out infinite;
+}
+
+/* Charts Grid */
+.vagon-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0px;
+}
+
+.vagon-chart-card {
+  background: linear-gradient(135deg, #f8fafc 60%, #e0e7ff 100%);
+  border: 1.5px solid #e0e7ff;
+  border-radius: 18px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  animation: vagon-slideInUp 0.8s ease-out;
+  box-shadow: 0 6px 24px 0 rgba(80, 80, 180, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.vagon-chart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px 0 rgba(80, 80, 180, 0.18), 0 3px 12px 0 rgba(0,0,0,0.13);
+  border: 1.5px solid #7f9cf5;
+}
+
+.vagon-chart-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.5s;
+}
+
+.vagon-chart-card:hover::after {
+  left: 100%;
+}
+
+.vagon-chart-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.vagon-chart-indicator {
+  width: 4px;
+  height: 2rem;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #6366f1, #7f9cf5);
+}
+
+.vagon-chart-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  flex: 1;
+}
+
+.vagon-badge {
+  background: linear-gradient(135deg, #6366f1, #7f9cf5);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Trend Filters */
+.vagon-trend-filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.vagon-filter-btn {
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  color: #6366f1;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vagon-filter-btn.active {
+  background: linear-gradient(135deg, #6366f1, #7f9cf5);
+  color: white;
+  border: none;
+}
+
+.vagon-filter-btn:hover {
+  border-color: #10b981;
+  color: #10b981;
+}
+
+/* Pie Chart Legend */
+.vagon-satisfaction-legend {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.vagon-satisfaction-legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+/* Efficiency Section */
+.vagon-efficiency-section {
+  display: flex;
+  gap: 24px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.vagon-eff-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.vagon-eff-bar-label {
+  flex: 1;
+  font-size: 1rem;
+  color: #6366f1;
+  font-weight: 500;
+}
+
+.vagon-eff-bar-percent {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #10b981;
+  min-width: 48px;
+  text-align: right;
+}
+
+.vagon-eff-bar-bg {
+  flex: 2;
+  height: 10px;
+  background: #e0e7ff;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.vagon-eff-bar-fg {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(270deg, #3b82f6, #10b981, #f59e42, #3b82f6);
+  background-size: 400% 100%;
+  animation: vagon-progress-bar-move 2.5s linear infinite;
+  transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes vagon-progress-bar-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Data Table */
+.vagon-data-table-container {
+  margin: 2.5rem 0 1.5rem 0;
+}
+
+.vagon-overflow-x-auto {
+  overflow-x: auto;
+}
+
+.vagon-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(80,80,180,0.07);
+}
+
+.vagon-data-table th,
+.vagon-data-table td {
+  padding: 0.85rem 1.2rem;
+  text-align: left;
+}
+
+.vagon-data-table th {
+  background: #f3f4f6;
+  color: #6366f1;
+  font-weight: 700;
+  font-size: 1rem;
+  border-bottom: 2px solid #e0e7ff;
+}
+
+.vagon-data-table tr {
+  transition: background 0.2s;
+}
+
+.vagon-data-table tr:hover {
+  background: #f0f9ff;
+}
+
+.vagon-font-semibold {
+  font-weight: 600;
+  color: #3730a3;
+}
+
+.vagon-percentage-badge {
+  display: inline-block;
+  padding: 0.3em 0.9em;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+/* Animations */
+@keyframes vagon-fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes vagon-slideInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes vagon-expandWidth {
+  from { width: 0; }
+  to { width: 120px; }
+}
+
+@keyframes vagon-gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes vagon-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .vagon-charts-grid {
+    grid-template-columns: 1fr;
+  }
+  .vagon-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .vagon-container {
+    padding: 1rem;
+  }
+  .vagon-title {
+    font-size: 2rem;
+  }
+  .vagon-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .vagon-charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .vagon-title {
+    font-size: 1.3rem;
+  }
+  .vagon-stat-info .vagon-stat-value {
+    font-size: 1.1rem;
+  }
+  .vagon-stat-card, .vagon-chart-card {
+    padding: 0.7rem;
+  }
+}
