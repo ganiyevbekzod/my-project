@@ -3,6 +3,7 @@ import ReactApexChart from 'react-apexcharts';
 import './Vagon.css';
 import { PieChart, BarChart } from '@mui/x-charts';
 import { FaTrain, FaBalanceScale, FaCogs, FaUsers, FaRegThumbsUp, FaRegThumbsDown, FaSmile } from 'react-icons/fa';
+import { TextField, Box } from '@mui/material';
 
 export default function VagonDashboard() {
   // State for trend period filtering
@@ -115,6 +116,74 @@ vagonUsageData.reduce((sum, v) => sum + v.efficiency, 0) / vagonUsageData.length
     efficiency: (95 + idx).toFixed(1),
   }));
 
+  // Generate large mock data for idle vagons by temir yo'l uzeli and date (2024-01-01 to 2025-07-01)
+  const uzelNames = [
+    "Toshkent temir yo'l uzeli",
+    "Qarshi temir yo'l uzeli",
+    "Termiz temir yo'l uzeli",
+    "Qo'qon temir yo'l uzeli",
+    "Buxoro temir yo'l uzeli",
+    "Qo'ng'irot temir yo'l uzeli"
+  ];
+  function getDateArray(start, end) {
+    const arr = [];
+    let dt = new Date(start);
+    const endDt = new Date(end);
+    while (dt <= endDt) {
+      arr.push(dt.toISOString().slice(0, 10));
+      dt.setDate(dt.getDate() + 1);
+    }
+    return arr;
+  }
+  const allDates = getDateArray('2024-01-01', '2025-07-01');
+  const uzelIdleData = [];
+  for (const date of allDates) {
+    for (const uzel of uzelNames) {
+      uzelIdleData.push({
+        uzel,
+        idle: Math.floor(Math.random() * 11), // 0-10 ta vagon
+        idleDays: +(Math.random() * 7 + 1).toFixed(1), // 1-8 kun, o'rtacha
+        date
+      });
+    }
+  }
+  const [idleStart, setIdleStart] = React.useState('2024-06-01');
+  const [idleEnd, setIdleEnd] = React.useState('2024-06-02');
+  const filteredIdle = uzelIdleData.filter(item => item.date >= idleStart && item.date <= idleEnd);
+  const idleByUzel = {};
+  filteredIdle.forEach(item => {
+    if (!idleByUzel[item.uzel]) {
+      idleByUzel[item.uzel] = { idle: 0, idleDaysSum: 0, count: 0 };
+    }
+    idleByUzel[item.uzel].idle += item.idle;
+    idleByUzel[item.uzel].idleDaysSum += item.idleDays;
+    idleByUzel[item.uzel].count++;
+  });
+  const uzelNamesForChart = Object.keys(idleByUzel);
+  const idleCounts = uzelNamesForChart.map(uzel => idleByUzel[uzel].idle);
+  const avgIdleDays = uzelNamesForChart.map(uzel => idleByUzel[uzel].count ? +(idleByUzel[uzel].idleDaysSum / idleByUzel[uzel].count).toFixed(1) : 0);
+  const idleBarOptions = {
+    chart: { type: 'bar', height: 300, toolbar: { show: false }, background: 'transparent' },
+    plotOptions: { bar: { borderRadius: 4, horizontal: false, columnWidth: '55%' } },
+    dataLabels: { enabled: false },
+    xaxis: { categories: uzelNamesForChart, labels: { style: { colors: '#3730a3' } } },
+    yaxis: [
+      { title: { text: 'Turib qolgan vagonlar', style: { color: '#3730a3' } }, labels: { style: { colors: '#3730a3' } } },
+      { opposite: true, title: { text: "O'rtacha turib qolish vaqti (kun)", style: { color: '#f59e0b' } }, labels: { style: { colors: '#f59e0b' } } }
+    ],
+    fill: { opacity: 1 },
+    colors: ['#ef4444', '#f59e0b'],
+    tooltip: { shared: true, intersect: false, y: [
+      { formatter: val => val + ' ta' },
+      { formatter: val => val + ' kun' }
+    ] },
+    grid: { borderColor: 'rgba(112, 156, 245, 0.1)', strokeDashArray: 3 }
+  };
+  const idleBarSeries = [
+    { name: 'Turib qolgan vagonlar soni', data: idleCounts, type: 'column' },
+    { name: 'O\'rtacha turib qolish vaqti (kun)', data: avgIdleDays, type: 'column', yAxisIndex: 1 }
+  ];
+
   return (
     <div className="vagon-container">
       <div className="vagon-content">
@@ -195,6 +264,37 @@ vagonUsageData.reduce((sum, v) => sum + v.efficiency, 0) / vagonUsageData.length
           </div>
         </div>
 
+        {/* Idle Vagon by Region Chart */}
+        <div className="vagon-charts-grid">
+          <div className="vagon-chart-card">
+            <div className="vagon-chart-header">
+              <div className="vagon-chart-indicator"></div>
+              <h3 className="vagon-chart-title">6 ta temir yo'l uzeli bo'yicha turib qolgan vagonlar va vaqti</h3>
+              <Box sx={{ display: 'flex', gap: 2, mt: 1, mb: 2 }}>
+                <TextField
+                  label="Boshlanish sanasi"
+                  type="date"
+                  size="small"
+                  value={idleStart}
+                  onChange={e => setIdleStart(e.target.value)}
+                  InputLabelProps={{ shrink: true }}
+                  inputProps={{ min: '2024-01-01', max: '2025-07-01' }}
+                />
+                <TextField
+                  label="Tugash sanasi"
+                  type="date"
+                  size="small"
+                  value={idleEnd}
+                  onChange={e => setIdleEnd(e.target.value)}
+                  InputLabelProps={{ shrink: true }}
+                  inputProps={{ min: '2024-01-01', max: '2025-07-01' }}
+                />
+              </Box>
+            </div>
+            <ReactApexChart options={idleBarOptions} series={idleBarSeries} type="bar" height={300} />
+          </div>
+        </div>
+
         {/* Efficiency and Satisfaction */}
         <div className="vagon-charts-grid">
           {/* Line Chart: Efficiency trend */}
@@ -220,13 +320,21 @@ vagonUsageData.reduce((sum, v) => sum + v.efficiency, 0) / vagonUsageData.length
             </div>
           </div>
         </div>
-
-        {/* Efficiency Section */}
-        <div className="vagon-efficiency-section">
+        <div className="vagon-charts-grid">
+          <div className="vagon-chart-card">
+          <div className="vagon-chart-header">
+              <div className="vagon-chart-indicator"></div>
+              <h3 className="vagon-chart-title">Samaradorlik</h3>
+            </div>
+{/* Efficiency Section */}
+<div className="vagon-efficiency-section">
           <VagonEfficiencyBar label="Samaradorlik" percent={efficiencyStats.efficiency} color="linear-gradient(90deg, #22d3ee, #16a34a, #22d3ee)" percentColor="#16a34a" />
           <VagonEfficiencyBar label="O'z vaqtida yetkazib berish" percent={efficiencyStats.onTimeRate} color="linear-gradient(90deg, #6366f1, #a21caf, #6366f1)" percentColor="#0ea5e9" />
           <VagonEfficiencyBar label="Ta'mir samaradorligi" percent={avgEfficiency} color="linear-gradient(90deg, #0ea5e9, #6366f1, #0ea5e9)" percentColor="#6366f1" />
         </div>
+          </div>
+        </div>
+        
 
         {/* Vagon Types Table */}
         <div className="vagon-data-table-container">

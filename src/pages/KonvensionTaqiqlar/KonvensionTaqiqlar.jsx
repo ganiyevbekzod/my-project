@@ -285,7 +285,7 @@ export const KonvensionTaqiqlar = () => {
           <div className="stat-card orange">
             <div className="stat-card-content">
               <div className="stat-info">
-                <h4>O'RTACHA KAMAYISH</h4>
+                <h4>TAQIQLARNING O'RTACHA KAMAYISH</h4>
                 <div className="stat-value">{Math.abs(avgGrowth)}%</div>
                 <div className="stat-trend negative">↘</div>
               </div>
@@ -304,7 +304,7 @@ export const KonvensionTaqiqlar = () => {
           <div className="stat-card green">
             <div className="stat-card-content">
               <div className="stat-info">
-                <h4>HAL QILISH DARAJASI</h4>
+                <h4>TAQIQLARNINGHAL QILINISH DARAJASI</h4>
                 <div className="stat-value">{efficiencyMetrics.resolutionRate}%</div>
               </div>
               <div className="stat-icon"><FaCheckCircle color="#10b981" /></div>
@@ -319,7 +319,7 @@ export const KonvensionTaqiqlar = () => {
           <div className="chart-card">
             <div className="chart-header">
               <div className="chart-indicator"></div>
-              <h3 className="chart-title">Oylik taqiqlar kamayish sur'ati (%)</h3>
+              <h3 className="chart-title">Oylar bo'yicha taqiqlarning kamayish sur'ati (%)</h3>
             </div>
             <ReactApexChart 
               options={trendLineOptions} 

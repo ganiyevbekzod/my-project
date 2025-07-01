@@ -9,18 +9,18 @@ import { LinearProgress, Box, Typography } from '@mui/material';
 
 // Mock data for Telegrammalar va Chegirmalar
 const telegramData = [
-  { name: "Ichki telegrammalar", value: 1200, growth: 8.5, share: 40, color: "#00D4FF", monthly: [90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200] },
-  { name: "Xalqaro telegrammalar", value: 800, growth: 6.2, share: 27, color: "#FF6B35", monthly: [60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115] },
-  { name: "Chegirmali telegrammalar", value: 600, growth: 10.1, share: 20, color: "#4ECDC4", monthly: [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95] },
-  { name: "Boshqa", value: 400, growth: 4.3, share: 13, color: "#F7DC6F", monthly: [30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52] },
+  { name: "Ichki telegrammalar", value: 1200, growth: 8.5, share: 40, color: "#38bdf8", monthly: [90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200] },
+  { name: "Xalqaro telegrammalar", value: 800, growth: 6.2, share: 27, color: "#38bdf8", monthly: [60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115] },
+  { name: "Chegirmali telegrammalar", value: 600, growth: 10.1, share: 20, color: "#38bdf8", monthly: [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95] },
+  { name: "Boshqa", value: 400, growth: 4.3, share: 13, color: "#38bdf8", monthly: [30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52] },
 ];
 
 // Mock data for Chegirmali telegrammalar by season
 const chegirmaliBySeason = [
-  { season: 'Qish', value: 120, color: '#00D4FF' },
-  { season: 'Bahor', value: 210, color: '#4ECDC4' },
-  { season: 'Yoz', value: 340, color: '#FF6B35' },
-  { season: 'Kuz', value: 180, color: '#F7DC6F' },
+  { season: 'Qish', value: 120, color: '#38bdf8' },
+  { season: 'Bahor', value: 210, color: '#38bdf8' },
+  { season: 'Yoz', value: 340, color: '#38bdf8' },
+  { season: 'Kuz', value: 180, color: '#38bdf8' },
 ];
 
 const months = ["Avg", "Sen", "Okt", "Noy", "Dek", "Yan", "Fev", "Mar", "Apr", "May", "Iyun", "Iyul"];
@@ -72,10 +72,10 @@ const pieData = [
 // Mock data for financial analytics
 const monthlyRevenue = [120000, 135000, 140000, 150000, 160000, 170000, 180000, 175000, 165000, 155000, 145000, 130000];
 const discountTypeRevenue = [
-  { type: "Talaba", value: 42000, color: "#6366f1" },
-  { type: "Nogiron", value: 32000, color: "#10b981" },
-  { type: "Keksalar", value: 21000, color: "#f59e0b" },
-  { type: "Oilaviy", value: 18000, color: "#ef4444" },
+  { type: "Talaba", value: 42000, color: "#38bdf8" },
+  { type: "Nogiron", value: 32000, color: "#38bdf8" },
+  { type: "Keksalar", value: 21000, color: "#38bdf8" },
+  { type: "Oilaviy", value: 18000, color: "#38bdf8" },
 ];
 const totalDiscountRevenue = discountTypeRevenue.reduce((sum, t) => sum + t.value, 0);
 const totalRevenue = 250000;
@@ -165,7 +165,7 @@ const metricColors = [
 ];
 
 // Use a green-blue gradient for all bars and badges in the metrics section
-const metricGreenBlueGradient = 'linear-gradient(90deg, #34d399 0%, #38bdf8 100%)';
+const metricGreenBlueGradient = '#38bdf8';
 
 // Add an animated progress bar component for efficiency
 function AnimatedEfficiencyBar({ label, percent, color, percentColor }) {
@@ -284,7 +284,7 @@ export const TelegrammalarChegirmalar = () => {
               series={[{
                 data: chegirmaliBySeason.map(item => item.value),
                 label: 'Chegirmali telegrammalar',
-                color: '#4ECDC4',
+                color: '#38bdf8',
               }]}
               xAxis={[{ scaleType: 'band', data: chegirmaliBySeason.map(item => item.season) }]}
               yAxis={[{ label: 'Telegrammalar soni', width: 60 }]}

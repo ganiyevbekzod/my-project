@@ -52,18 +52,18 @@ const ageDistributionData = [
 ];
 
 const customerRetentionData = [
-  { month: "Avg", new: 58, retained: 49, churned: 9 },
-  { month: "Sen", new: 64, retained: 55, churned: 9 },
-  { month: "Okt", new: 71, retained: 61, churned: 10 },
-  { month: "Noy", new: 69, retained: 59, churned: 10 },
-  { month: "Dek", new: 76, retained: 65, churned: 11 },
-  { month: "Yan", new: 45, retained: 38, churned: 7 },
-  { month: "Fev", new: 52, retained: 44, churned: 8 },
-  { month: "Mar", new: 48, retained: 41, churned: 7 },
-  { month: "Apr", new: 61, retained: 52, churned: 9 },
-  { month: "May", new: 55, retained: 47, churned: 8 },
-  { month: "Iyun", new: 67, retained: 58, churned: 9 },
-  { month: "Iyul", new: 73, retained: 62, churned: 11 },
+  { month: "Avg", new: 58, retained: 49, churned: 0 },
+  { month: "Sen", new: 64, retained: 55, churned: 1 },
+  { month: "Okt", new: 71, retained: 61, churned: 0 },
+  { month: "Noy", new: 69, retained: 59, churned: 0 },
+  { month: "Dek", new: 76, retained: 65, churned: 1 },
+  { month: "Yan", new: 45, retained: 38, churned: 0 },
+  { month: "Fev", new: 52, retained: 44, churned: 1 },
+  { month: "Mar", new: 48, retained: 41, churned: 0 },
+  { month: "Apr", new: 61, retained: 52, churned: 0 },
+  { month: "May", new: 55, retained: 47, churned: 1 },
+  { month: "Iyun", new: 67, retained: 58, churned: 0 },
+  { month: "Iyul", new: 73, retained: 62, churned: 1 },
 ];
 
 const recentCustomers = [
@@ -252,7 +252,7 @@ const CustomerDashboard = () => {
 
   // Filter retention data based on selected period
   const getFilteredRetentionData = () => {
-    const periods = { '3': 3, '6': 6, '12': 12 };
+    const periods = { '3': 31, '6': 6, '12': 12 };
     return customerRetentionData.slice(-periods[retentionPeriod]);
   };
 
@@ -274,7 +274,7 @@ const CustomerDashboard = () => {
   const retentionBarSeries = [
     { name: 'Yangi mijozlar', data: filteredRetentionData.map(item => item.new) },
     { name: 'Saqlangan mijozlar', data: filteredRetentionData.map(item => item.retained) },
-    { name: 'Yo\'qotilgan mijozlar', data: filteredRetentionData.map(item => item.churned) }
+    { name: 'Shartnomasi tugagan mijozlar', data: filteredRetentionData.map(item => item.churned) }
   ];
 
   return (

@@ -24,7 +24,7 @@ const aktTypeKPI = [
       { label: 'Tugallangan', value: 210 },
       { label: 'Rad etilgan', value: 16 },
     ],
-    percent: 67.3,
+    percent: 87.3,
     icon: <FaFileAlt className="ariza-icon blue" />,
   },
   {
@@ -38,7 +38,7 @@ const aktTypeKPI = [
       { label: 'Tugallangan', value: 170 },
       { label: 'Rad etilgan', value: 16 },
     ],
-    percent: 69.4,
+    percent: 79.4,
     icon: <FaBalanceScale className="ariza-icon green" />,
   },
   {
@@ -56,7 +56,7 @@ const aktTypeKPI = [
     icon: <FaShieldAlt className="ariza-icon orange" />,
   },
   {
-    metric: "Boshqa aktlar",
+    metric: "Mesplan aktlar",
     value: 105,
     change: -4.2,
     trend: "down",
@@ -66,7 +66,7 @@ const aktTypeKPI = [
       { label: 'Tugallangan', value: 70 },
       { label: 'Rad etilgan', value: 9 },
     ],
-    percent: 66.7,
+    percent: 93.5,
     icon: <FaFileSignature className="ariza-icon purple" />,
   },
 ];
@@ -90,8 +90,8 @@ const allMonthlyAktlar = [
 const aktTypeDistribution = [
   { name: "Texnik akt", value: 312, color: "#3b82f6" },
   { name: "Moliyaviy akt", value: 245, color: "#10b981" },
-  { name: "Xavfsizlik akti", value: 198, color: "#f59e42" },
-  { name: "Boshqa", value: 105, color: "#a21caf" },
+  { name: "Xavfsizlik akt", value: 198, color: "#f59e42" },
+  { name: "Mesplan akt", value: 305, color: "#a21caf" },
 ];
 
 const regionStats = [

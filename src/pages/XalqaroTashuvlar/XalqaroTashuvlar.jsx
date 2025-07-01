@@ -949,7 +949,7 @@ export default function InternationalTransportDashboard() {
             <div className="stat-card-content">
               <div className="stat-info">
                 <h4>Yuklarni bojxonadan  o'tkazish</h4>
-                <div className="stat-value">{avgCustomsClearance}%</div>
+                <div className="stat-value">86.7%</div>
                 <div className="stat-unit">Samaradorlik</div>
               </div>
               <div className="stat-icon"><FaClock color="#f59e0b" /></div>
@@ -1179,19 +1179,12 @@ export default function InternationalTransportDashboard() {
 
         {/* Customs Efficiency and International Routes */}
         <div className="charts-grid">
-          {/* Customs Efficiency */}
-          <div className="chart-card">
-            <div className="chart-header">
-              <div className="chart-indicator"></div>
-              <h3 className="chart-title">Bojxona tozalash samaradorligi</h3>
-            </div>
-            <ReactApexChart 
-              options={customsOptions} 
-              series={customsSeries} 
-              type="radar" 
-              height={350} 
-            />
-          </div>
+          
+
+
+
+
+
 
           {/* International Routes */}
           <div className="chart-card">
@@ -1241,19 +1234,11 @@ export default function InternationalTransportDashboard() {
 
         {/* Route Efficiency and Performance Metrics */}
         <div className="charts-grid">
-          {/* Route Efficiency */}
-          <div className="chart-card">
-            <div className="chart-header">
-              <div className="chart-indicator"></div>
-              <h3 className="chart-title">Xalqaro yo'nalishlar samaradorligi</h3>
-            </div>
-            <ReactApexChart 
-              options={routeEfficiencyOptions} 
-              series={routeEfficiencySeries} 
-              type="scatter" 
-              height={350} 
-            />
-          </div>
+
+
+
+
+
 
           {/* Performance Metrics */}
           <div className="chart-card">
