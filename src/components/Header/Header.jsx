@@ -95,8 +95,6 @@ const Header = () => {
                                         <a class="dropdown-item link_edit" href="#">Edit Profile</a></li>
                                     <li className="adminItem_link">
                                         <a class="dropdown-item link_view" href="#">View profile</a></li>
-                                    <li className="adminItem_link">
-                                        <a class="dropdown-item link_setting" href="#">Setting</a></li>
                                 </ul>
                             </div>
                         </div>

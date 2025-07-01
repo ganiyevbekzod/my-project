@@ -108,7 +108,7 @@ Link{
     transition: background 0.2s;
 }
 .toggle-button:hover {
-    background: #6366f1;
+  background: linear-gradient(90deg, #6366f1 60%, #34d399 100%);
 }
 
 .sidebar-header {

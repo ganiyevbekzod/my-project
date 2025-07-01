@@ -1,0 +1,367 @@
+/* Aktlar Dashboard Styles */
+.aktlar-dashboard {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+
+.aktlar-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.aktlar-title {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #3730a3, #6366f1, #7f9cf5, #4f46e5);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 8px rgba(80,80,180,0.1);
+  }
+.aktlar-subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+.aktlar-divider {
+    width: 120px;
+    height: 5px;
+    background: linear-gradient(90deg, #6366f1, #7f9cf5);
+    margin: 0 auto;
+    border-radius: 2px;
+    animation: expandWidth 1.5s ease-out 0.5s both;
+  }
+
+/* KPI Cards for Akt Types */
+.aktlar-type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.aktlar-type-card {
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.08);
+  border: 1px solid #ede9fe;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.aktlar-type-card:hover {
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
+  transform: translateY(-4px);
+}
+.aktlar-type-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.aktlar-type-info h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6366f1;
+  margin-bottom: 8px;
+}
+.aktlar-type-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+.aktlar-type-change {
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+.aktlar-trend {
+  font-weight: 600;
+  margin-right: 6px;
+}
+.aktlar-trend.up { color: #10b981; }
+.aktlar-trend.down { color: #ef4444; }
+.aktlar-trend-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+.aktlar-type-icon-wrapper {
+  font-size: 2.2rem;
+  opacity: 0.85;
+  margin-left: 10px;
+}
+.aktlar-type-details-row {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.aktlar-type-stats-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.aktlar-type-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+  position: relative;
+  cursor: pointer;
+}
+.aktlar-type-stat::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -5px;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #a21caf, #10b981);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.7s cubic-bezier(.4,0,.2,1);
+  z-index: 1;
+}
+.aktlar-type-stat:hover::after {
+  transform: scaleX(1);
+}
+.aktlar-type-stat-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #3730a3;
+}
+.aktlar-type-stat-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+.aktlar-type-progress-row {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.aktlar-type-progress-bar {
+  flex: 1;
+  height: 8px;
+  background: linear-gradient(90deg, #e0e7ff 0%, #ede9fe 100%);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.aktlar-type-progress-fill {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(270deg, #6366f1, #a21caf, #10b981, #6366f1);
+  background-size: 400% 100%;
+  animation: aktlar-progress-bar-move 2.5s linear infinite;
+  transition: width 1s;
+  animation: arizaProgressGradient 2.5s ease-in-out infinite;
+  transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes aktlar-progress-bar-move {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+.aktlar-type-progress-label {
+  font-size: 0.8rem;
+  color: #6366f1;
+  font-weight: 600;
+  min-width: 70px;
+  text-align: right;
+}
+
+/* Area/Bar/Pie Chart Cards */
+.aktlar-chart-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.08);
+  border: 1px solid #ede9fe;
+  margin-bottom: 30px;
+}
+.aktlar-chart-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+.aktlar-chart-indicator {
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #6366f1, #a21caf);
+  border-radius: 50%;
+}
+.aktlar-chart-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #3730a3;
+  flex: 1;
+}
+.aktlar-chart-badge {
+  font-size: 1rem;
+  color: #a21caf;
+  background: #ede9fe;
+  border-radius: 8px;
+  padding: 2px 10px;
+  margin-left: 10px;
+}
+.aktlar-retention-filters {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+.aktlar-filter-btn {
+  padding: 6px 12px;
+  border: 1px solid #e0e7ff;
+  background: white;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6366f1;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.aktlar-filter-btn.active {
+  background: linear-gradient(135deg, #6366f1, #a21caf);
+  color: white;
+  border: none;
+}
+.aktlar-filter-btn:hover {
+  border-color: #a21caf;
+  color: #a21caf;
+}
+
+/* KPI Cards (summary) */
+.aktlar-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 35px;
+}
+.aktlar-kpi-card {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e0e7ff 100%);
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.07);
+  border: 1px solid #ede9fe;
+  display: flex;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.aktlar-kpi-card:hover {
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.13);
+  transform: translateY(-2px);
+}
+.aktlar-kpi-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.aktlar-kpi-info h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #a21caf;
+  margin-bottom: 6px;
+}
+.aktlar-kpi-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3730a3;
+  margin-bottom: 2px;
+}
+.aktlar-kpi-change {
+  font-size: 0.85rem;
+  color: #6366f1;
+}
+.aktlar-kpi-icon {
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+/* Pie/Bar Chart Row */
+.aktlar-charts-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .aktlar-type-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .aktlar-kpi-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .aktlar-charts-row {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .aktlar-content {
+    padding: 15px;
+  }
+  .aktlar-type-grid, .aktlar-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+  .aktlar-title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .aktlar-title {
+    font-size: 1.3rem;
+  }
+  .aktlar-type-value, .aktlar-kpi-value {
+    font-size: 1.1rem;
+  }
+  .aktlar-type-card, .aktlar-kpi-card, .aktlar-chart-card {
+    padding: 10px;
+  }
+}
+
+/* Animations */
+@keyframes aktlar-fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes aktlar-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes aktlar-scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.aktlar-header, .aktlar-title, .aktlar-divider {
+  animation: aktlar-fadeInUp 0.8s cubic-bezier(.4,0,.2,1);
+}
+.aktlar-type-card, .aktlar-kpi-card, .aktlar-chart-card, .aktlar-extra-card {
+  animation: aktlar-fadeInUp 0.7s cubic-bezier(.4,0,.2,1);
+  animation-fill-mode: both;
+}
+.aktlar-type-card, .aktlar-kpi-card, .aktlar-extra-card {
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+}
+.aktlar-type-card:hover, .aktlar-kpi-card:hover, .aktlar-extra-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(102, 126, 234, 0.18);
+  background: linear-gradient(135deg, #ede9fe 0%, #e0e7ff 100%);
+}
+.aktlar-chart-card {
+  animation: aktlar-fadeIn 1s cubic-bezier(.4,0,.2,1);
+}
+.aktlar-chart-header, .aktlar-chart-title {
+  animation: aktlar-fadeIn 1.2s cubic-bezier(.4,0,.2,1);
+}
+.aktlar-type-progress-fill {
+  animation: aktlar-scaleIn 1.2s cubic-bezier(.4,0,.2,1);
+}
+.aktlar-type-icon-wrapper {
+  animation: aktlar-scaleIn 1s cubic-bezier(.4,0,.2,1);
+}

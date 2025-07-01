@@ -13,8 +13,8 @@ import { PulTushumlari } from "./pages/PulTushulari/PulTushumlari"
 import DaromadlarDashboard from "./pages/Daromadlar/Daromadlar"
 import RevenueDashboard from "./pages/Daromadlar/Daromadlar.jsx"
 import { TelegrammalarChegirmalar } from "./pages/TelegrammalarChegirmalar/TelegrammalarChegirmalar"
-import { Aktlar } from "./pages/Aktlar/Aktlar"
-import { Vagon } from "./pages/Vagon/Vagon"
+import  Aktlar  from "./pages/Aktlar/Aktlar"
+import Vagon  from "./pages/Vagon/Vagon"
 import { useTheme } from "./Context/ThemeContext"
 import { useRtl } from "./Context/RtlContext"
 import { useCompact } from "./Context/CompactContext"
@@ -129,7 +129,7 @@ const App = () => {
                         <Route path="/XalqaroTashuvlar" element={<International />} />
                         <Route path="/PulTushumlari" element={<PulTushumlari />} />
                         <Route path="/Daromadlar" element={<RevenueDashboard/>} />
-                        <Route path="/TelegrammalarChegirmalar" element={<TelegrammalarChegirmalar />} />
+                        <Route path="/TelegrammaChegirmalar" element={<TelegrammalarChegirmalar />} />
                         <Route path="/KonvensionTaqiqlar" element={<KonvensionTaqiqlar />} />
                         <Route path="/Aktlar" element={<Aktlar />} />
                         <Route path="/Vagon" element={<Vagon />} />
