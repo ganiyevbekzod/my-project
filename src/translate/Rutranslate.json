@@ -13,18 +13,18 @@
   },
   "sidebar": {
     "customers": "Клиенты",
-    "orders": "Заказы",
+    "orders": "Заявления",
     "local_transport": "Локальные перевозки",
     "international_transport": "Международные перевозки",
-    "income": "Доходы",
+    "income": "Денежные поступления",
     "revenue": "Доходы",
-    "expenses": "Расходы",
+    "expenses": "Телеграммы и скидки",
     "reports": "Отчеты",
     "acts": "Акты",
     "vagon": "Вангон",
     "insurance": "Страхование",
     "expeditors": "Экспедиторы",
-    "shahobchaYo'llari": "Шахобчайоллари",
+    "shahobchaYo'llari": "Подъездные пути",
     "poyezdlar": "Поезда"
   },
   "aktlar": {
