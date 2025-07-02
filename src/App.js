@@ -122,7 +122,7 @@ const App = () => {
                 </HeaderProvider>
                 <div className="item3">
                     <Routes>
-                        <Route path="/" element={<Dashboard />} />
+                        <Route path="/" element={<CustomerDashboard />} />
                         <Route path="/Mijozlar" element={<CustomerDashboard/>} />
                         <Route path="/Arizalar" element={<Arizalar />} />
                         <Route path="/MahalliyTashuvlar" element={<MahalliyTashuvlar />} />

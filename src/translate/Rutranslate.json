@@ -11,6 +11,22 @@
     "login": "Войти",
     "register": "Регистрация"
   },
+  "sidebar": {
+    "customers": "Клиенты",
+    "orders": "Заказы",
+    "local_transport": "Локальные перевозки",
+    "international_transport": "Международные перевозки",
+    "income": "Доходы",
+    "revenue": "Доходы",
+    "expenses": "Расходы",
+    "reports": "Отчеты",
+    "acts": "Акты",
+    "vagon": "Вангон",
+    "insurance": "Страхование",
+    "expeditors": "Экспедиторы",
+    "shahobchaYo'llari": "Шахобчайоллари",
+    "poyezdlar": "Поезда"
+  },
   "aktlar": {
     "title": "Дашборд Актов",
     "subtitle": "Полная аналитика и отчеты по актам",

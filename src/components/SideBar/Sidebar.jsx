@@ -13,8 +13,10 @@ import { Link, useLocation } from "react-router-dom"
 import { useSidebar } from "../../Context/SidebarContext"
 import { useLayout } from "../../Context/LayoutContext"
 import { useRef, useEffect } from "react"
+import { useTranslation } from 'react-i18next';
 
 const Sidebar = () => {
+    const { t, i18n } = useTranslation();
     const { isOpen } = useSidebar()
     const { toggleSidebar, sidebarColor } = useSidebar();
     const location = useLocation();
@@ -30,20 +32,20 @@ const Sidebar = () => {
   ////////////////////////
     const menuItems = [
     //   { to: "/", icon: Dashboard_logo, label: "Dashboard" },
-      { to: "/Mijozlar", icon: Avatar, label: "Mijozlar" },
-      { to: "/Arizalar", icon: Request_icon, label: "Arizalar" },
-      { to: "/MahalliyTashuvlar", icon: Coach1, label: "Mahalliy tashuvlar" },
-      { to: "/XalqaroTashuvlar", icon: Coach1, label: "Xalqaro tashuvlar" },
-      { to: "/PulTushumlari", icon: Cash_logo, label: "Pul tushumlari" },
-      { to: "/Daromadlar", icon: Income_logo, label: "Daromadlar" },
-      { to: "/TelegrammaChegirmalar", icon:discounts , label: "Telegrammalar va chegirmalar" },
-      { to: "/KonvensionTaqiqlar", icon: null, label: "Konvensiyon taqiqlar", emoji: "🌍" },
-      { to: "/Aktlar", icon: null, label: "Aktlar", emoji: "📝" },
-      { to: "/Vagon", icon: null, label: "Vagon", emoji: "🚂" },
-      { to: "/Sug'urtaDaromadlari", icon: null, label: "Sug'urta", emoji: "🛡️" },
-      { to: "/Ekspeditorlar", icon: null, label: "Ekspeditorlar", emoji: "🚚" },
-      { to: "/ShahobchaYo'llari", icon: null, label: "Shahobcha Yo'llari", emoji: "🛤️" },
-      { to: "/Poyezdlar", icon: null, label: "Poyezdlar", emoji: "🚆" },
+      { to: "/Mijozlar", icon: Avatar, label: `${t('sidebar.customers')}` },
+      { to: "/Arizalar", icon: Request_icon, label: `${t('sidebar.orders')}` },
+      { to: "/MahalliyTashuvlar", icon: Coach1, label: `${t('sidebar.local_transport')}` },
+      { to: "/XalqaroTashuvlar", icon: null, label: `${t('sidebar.international_transport')}`, emoji: "🌐" },
+      { to: "/PulTushumlari", icon: Cash_logo, label: `${t('sidebar.income')}` },
+      { to: "/Daromadlar", icon: Income_logo, label: `${t('sidebar.revenue')}` },
+      { to: "/TelegrammaChegirmalar", icon:discounts , label: `${t('sidebar.expenses')}` },
+      { to: "/KonvensionTaqiqlar", icon: null, label: `${t('sidebar.reports')}`, emoji: "🚫" },
+      { to: "/Aktlar", icon: null, label: `${t('sidebar.acts')}`, emoji: "📝" },
+      { to: "/Vagon", icon: null, label: `${t('sidebar.vagon')}`, emoji: "🚃" },
+      { to: "/Sug'urtaDaromadlari", icon: null, label: `${t('sidebar.insurance')}`, emoji: "🛡️" },
+      { to: "/Ekspeditorlar", icon: null, label: `${t('sidebar.expeditors')}`, emoji: "🚂" },
+      { to: "/ShahobchaYo'llari", icon: null, label: `${t('sidebar.shahobchaYo\'llari')}`, emoji: "🛤️" },
+      { to: "/Poyezdlar", icon: null, label: `${t('sidebar.poyezdlar')}`, emoji: "🚆" },
     ];
 
     // --- Carousel logic for horizontal sidebar ---

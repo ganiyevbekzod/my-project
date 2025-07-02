@@ -11,6 +11,22 @@
     "login": "Kirish",
     "register": "Ro'yxatdan o'tish"
   },
+  "sidebar": {
+    "customers": "Mijozlar",
+    "orders": "Arizalar",
+    "local_transport": "Mahalliy tashuvlar",
+    "international_transport": "Xalqaro tashuvlar",
+    "income": "Pul tushumlari",
+    "revenue": "Daromadlar",
+    "expenses": "Telegrammalar va chegirmalar",
+    "reports": "Konvensiyon taqiqlar",
+    "acts": "Aktlar",
+    "vagon": "Vagon",
+    "insurance": "Sug'urta",
+    "expeditors": "Ekspeditorlar",
+    "shahobchaYo'llari": "Shahobcha Yo'llari",
+    "poyezdlar": "Poyezdlar"
+  },
   "aktlar": {
     "title": "Aktlar Dashboard",
     "subtitle": "Aktlar bo'yicha to'liq analitika va hisobotlar",
