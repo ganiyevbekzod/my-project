@@ -157,6 +157,7 @@ const Aktlar = () => {
   };
   const barChartSeries = [{ name: 'Aktlar', data: regionStats.map(item => item.count) }];
 ////////////////////////////////////////
+//////////////////////////////////////////////////
   return (
     <div className="aktlar-dashboard">
       <div className="aktlar-content">
