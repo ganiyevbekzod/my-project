@@ -1,7 +1,11 @@
 {
   "header": {
     "title": "Mening loyiham",
-    "description": "Xush kelibsiz!"
+    "description": "Xush kelibsiz!",
+    "search": "Qidiruv",
+    "admin": "Admin",
+    "editProfile": "Profilni tahrirlash",
+    "viewProfile": "Profilni ko'rish"
   },
   "buttons": {
     "login": "Kirish",
@@ -88,31 +92,35 @@
     "labels": {
       "comparedToLastMonth": "o'tgan oyga nisbatan",
       "customersLabel": "Mijozlar soni",
-      "customersLabel2":"Foiz"
+      "customersLabel2":"Foiz",
+      "regionDistributionLabel": "Mijozlar",
+      "regionDistributionLabel2": "Umumiy mijozlar",
+      "regionDistributionLabel3": "Hudud",
+      "regionDistributionLabel4": "O'rtacha"
     },
     "charts": {
       "typeDistribution": "Mijozlar turlari bo'yicha taqsimot",
-      "monthlyTrend": "Oylik mijozlar dinamikasi",
+      "monthlyTrend": "Mijozlarning o'rtacha oylik daromad dinamikasi",
       "revenueTrend": "Oylik daromad dinamikasi",
       "satisfaction": "Mijozlar qoniqish darajasi",
       "ageDistribution": "Yosh bo'yicha taqsimot",
       "regionDistribution": "Hududlar bo'yicha mijozlar"
     },
     "regions":{
-      "Toshkent": "Toshkent",
-      "Andijon": "Andijon",
-      "Buxoro": "Buxoro",
-      "Farg'ona": "Farg'ona",
-      "Jizzax": "Jizzax",
-      "Namangan": "Namangan",
-      "Navoiy": "Navoiy",
-      "Samarqand": "Samarqand",
-      "Sirdaryo": "Sirdaryo",
-      "Surxondaryo": "Surxondaryo",
-      "Xorazm": "Xorazm",
-      "Qashqadaryo": "Qashqadaryo",
-      "Qoraqalpog'iston": "Qoraqalpog'iston",
-      "Boshqalar": "Boshqalar"
+      "toshkent": "Toshkent",
+      "andijon": "Andijon",
+      "bukhara": "Buxoro",
+      "fargona": "Farg'ona",
+      "jizzax": "Jizzax",
+      "namangan": "Namangan",
+      "navoiy": "Navoiy",
+      "samarkand": "Samarqand",
+      "sirdaryo": "Sirdaryo",
+      "surxondaryo": "Surxondaryo",
+      "xorazm": "Xorazm",
+      "qashqadaryo": "Qashqadaryo",
+      "qoraqalpog'iston": "Qoraqalpog'iston",
+      "boshqalar": "Boshqalar"
     },
     "status": {
       "active": "Faol",
@@ -129,7 +137,8 @@
     "filters": {
       "3months": "3 oy",
       "6months": "6 oy",
-      "12months": "12 oy"
+      "12months": "12 oy",
+      "million": "Million"
     },
     "month": {
       "yan": "Yan",

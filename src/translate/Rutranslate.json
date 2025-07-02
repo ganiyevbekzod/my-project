@@ -1,7 +1,11 @@
 {
   "header": {
     "title": "Мой проект",
-    "description": "Добро пожаловать!"
+    "description": "Добро пожаловать!",
+    "search": "Поиск",
+    "admin": "Админ",
+    "editProfile": "Редактировать профиль",
+    "viewProfile": "Просмотр профиля"
   },
   "buttons": {
     "login": "Войти",
@@ -88,31 +92,35 @@
     "labels": {
       "comparedToLastMonth": "по сравнению с прошлым месяцем",
       "customersLabel": "Количество клиентов",
-      "customersLabel2":"Процент"
+      "customersLabel2":"Процент",
+      "regionDistributionLabel": "Клиенты",
+      "regionDistributionLabel2": "Всего клиентов",
+      "regionDistributionLabel3": "Регион",
+      "regionDistributionLabel4": "Среднее"
     },
     "charts": {
       "typeDistribution": "Распределение по типам клиентов",
-      "monthlyTrend": "Динамика клиентов по месяцам",
+      "monthlyTrend": "Динамика среднемесячного дохода клиентов",
       "revenueTrend": "Динамика дохода по месяцам",
       "satisfaction": "Уровень удовлетворенности клиентов",
       "ageDistribution": "Распределение по возрасту",
       "regionDistribution": "Клиенты по регионам"
     },
     "regions":{
-      "Toshkent": "Ташкент",
-      "Andijon": "Андижан",
-      "Buxoro": "Бухара",
-      "Farg'ona": "Фергана",
-      "Jizzax": "Джизак",
-      "Namangan": "Наманган",
-      "Navoiy": "Навои",
-      "Samarqand": "Самарканд",
-      "Sirdaryo": "Сырдарья",
-      "Surxondaryo": "Сурхандарьинская",
-      "Xorazm": "Хорезм",
-      "Qashqadaryo": "Кашкадарья",
-      "Qoraqalpog'iston": "Каракалпакстан",
-      "Boshqalar": "Другие"
+      "toshkent": "Ташкент",
+      "andijon": "Андижан",
+      "bukhara": "Бухара",
+      "fargona": "Фергана",
+      "jizzax": "Джизак",
+      "namangan": "Наманган",
+      "navoiy": "Навои",
+      "samarkand": "Самарканд",
+      "sirdaryo": "Сырдарья",
+      "surxondaryo": "Сурхандарьинская",
+      "xorazm": "Хорезм",
+      "qashqadaryo": "Кашкадарья",
+      "qoraqalpog'iston": "Каракалпакстан",
+      "boshqalar": "Другие"
     },
     "status": {
       "active": "Активный",
@@ -129,7 +137,8 @@
     "filters": {
       "3months": "3 месяца",
       "6months": "6 месяцев",
-      "12months": "12 месяцев"
+      "12months": "12 месяцев",
+      "million": "Миллион"
     },
     "month": {
       "yan": "Янв",

@@ -29,12 +29,12 @@ const customerTypeData = React.useMemo(() => [
 ], [t, i18n.language]);
 
 const regionData = [
-  { region: t('customer.region.toshkent'), count: 245, percentage: 35 },
-  { region: t('customer.region.samarkand'), count: 156, percentage: 22 },
-  { region: t('customer.region.bukhara'), count: 98, percentage: 14 },
-  { region: t('customer.region.andijon'), count: 87, percentage: 12 },
-  { region: t('customer.region.fargona'), count: 76, percentage: 11 },
-  { region: t('customer.region.Boshqalar'), count: 42, percentage: 6 },
+  { region: 'toshkent', count: 245, percentage: 35 },
+  { region: 'samarkand', count: 156, percentage: 22 },
+  { region: 'bukhara', count: 98, percentage: 14 },
+  { region: 'andijon', count: 87, percentage: 12 },
+  { region: 'fargona', count: 76, percentage: 11 },
+  { region: 'boshqalar', count: 42, percentage: 6 },
 ];
 
 // New data for additional charts
@@ -170,7 +170,7 @@ const goodReviews = [
     dataLabels: { enabled: false },
     stroke: { curve: 'smooth', width: 3 },
     xaxis: { categories: filteredRevenueData.map(item => item.month), labels: { style: { colors: '#3730a3' } } },
-    yaxis: { title: { text: 'Daromad (million)', style: { color: '#3730a3' } }, labels: { style: { colors: '#3730a3' } } },
+    yaxis: { title: { text:` ${t("customer.table.revenue")}`, style: { color: '#3730a3' } }, labels: { style: { colors: '#3730a3' } } },
     colors: ['#8b5cf6'],
     grid: { borderColor: 'rgba(112, 156, 245, 0.1)', strokeDashArray: 3 }
   };
@@ -336,13 +336,13 @@ const goodReviews = [
         <div className="chart-card">
           <div className="chart-header">
             <div className="chart-indicator"></div>
-            <h3 className="chart-title">Mijozlarning o'rtacha oylik daromad dinamikasi</h3>
+            <h3 className="chart-title">{t("customer.charts.monthlyTrend")}</h3>
             <div className="revenue-filters">
-              <button className={`filter-btn ${revenuePeriod === '3' ? 'active' : ''}`} onClick={() => setRevenuePeriod('3')}>3 oy</button>
-              <button className={`filter-btn ${revenuePeriod === '6' ? 'active' : ''}`} onClick={() => setRevenuePeriod('6')}>6 oy</button>
-              <button className={`filter-btn ${revenuePeriod === '12' ? 'active' : ''}`} onClick={() => setRevenuePeriod('12')}>1 yil</button>
+              <button className={`filter-btn ${revenuePeriod === '3' ? 'active' : ''}`} onClick={() => setRevenuePeriod('3')}>{t("customer.filters.3months")}</button>
+              <button className={`filter-btn ${revenuePeriod === '6' ? 'active' : ''}`} onClick={() => setRevenuePeriod('6')}>{t("customer.filters.6months")}</button>
+              <button className={`filter-btn ${revenuePeriod === '12' ? 'active' : ''}`} onClick={() => setRevenuePeriod('12')}>{t("customer.filters.12months")}</button>
             </div>
-            <span className="chart-badge">Million</span>
+            <span className="chart-badge">{t("customer.filters.million")}</span>
           </div>
           <ReactApexChart options={lineChartOptions} series={lineChartSeries} type="line" height={350} />
         </div>
@@ -408,57 +408,57 @@ const goodReviews = [
           <div className="chart-card">
             <div className="chart-header">
               <div className="chart-indicator"></div>
-              <h3 className="chart-title">Hududiy taqsimot</h3>
-              <span className="chart-badge">Mijozlar</span>
+              <h3 className="chart-title">{t("customer.charts.regionDistribution")}</h3>
+              <span className="chart-badge">{t("customer.labels.regionDistributionLabel")}</span>
             </div>
             <div className="region-distribution">
               <div className="region-stats">
                 <div className="total-regions">
                   <div className="total-icon">🌍</div>
                   <div className="total-number">{regionData.reduce((sum, region) => sum + region.count, 0).toLocaleString()}</div>
-                  <div className="total-label">Jami mijozlar</div>
+                  <div className="total-label">{t("customer.labels.regionDistributionLabel2")}</div>
                 </div>
                 <div className="region-count-info">
                   <div className="region-count-item">
                     <div className="count-icon">📍</div>
                     <span className="count-number">{regionData.length}</span>
-                    <span className="count-label">Hudud</span>
+                    <span className="count-label">{t("customer.labels.regionDistributionLabel3")}</span>
                   </div>
                   <div className="region-count-item">
                     <div className="count-icon">📈</div>
                     <span className="count-number">{Math.round(regionData.reduce((sum, region) => sum + region.count, 0) / regionData.length).toLocaleString()}</span>
-                    <span className="count-label">O'rtacha</span>
+                    <span className="count-label">{t("customer.labels.regionDistributionLabel4")}</span>
                   </div>
                 </div>
               </div>
               
               <div className="region-list">
-                {regionData.map((region, index) => (
+                {regionData.map((item, index) => (
                   <div key={index} className="region-item">
                     <div className="region-header">
                       <div className="region-info">
-                        <span className="region-name">{region.region}</span>
-                        <span className="region-count">{region.count.toLocaleString()} mijoz</span>
+                        <span className="region-name">{t(`customer.regions.${item.region}`)}</span>
+                        <span className="region-count">{item.count.toLocaleString()} mijoz</span>
                       </div>
                     </div>
                       <div className="region-percentage-display">
                         <div className="percentage-circle">
                           <svg className="percentage-svg" viewBox="0 0 36 36">
                           <path className="percentage-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                          <path className="percentage-fill" strokeDasharray={`${region.percentage}, 100`} d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                          <path className="percentage-fill" strokeDasharray={`${item.percentage}, 100`} d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                           </svg>
-                          <div className="percentage-text">{region.percentage}%</div>
+                          <div className="percentage-text">{item.percentage}%</div>
                         </div>
                       </div>
                     <div className="progress-container">
                       <div className="progress-bar">
-                        <div className="progress-fill" style={{ width: `${region.percentage}%`, background: getRegionGradient(index) }}>
+                        <div className="progress-fill" style={{ width: `${item.percentage}%`, background: getRegionGradient(index) }}>
                           <div className="progress-shine"></div>
                         </div>
                       </div>
                       <div className="progress-stats">
-                        <span className="percentage-text">{region.percentage}%</span>
-                        <span className="count-text">{region.count.toLocaleString()} mijoz</span>
+                        <span className="percentage-text">{item.percentage}%</span>
+                        <span className="count-text">{item.count.toLocaleString()} mijoz</span>
                       </div>
                     </div>
                   </div>
@@ -470,7 +470,7 @@ const goodReviews = [
                   <div className="summary-icon">🏆</div>
                   <div className="summary-content">
                     <div className="summary-title">Eng ko'p mijozlar</div>
-                    <div className="summary-value">{regionData[0].region}</div>
+                    <div className="summary-value">{t(`customer.regions.${regionData[0].region}`)}</div>
                     <div className="summary-subtitle">{regionData[0].count.toLocaleString()} mijoz</div>
                   </div>
                 </div>

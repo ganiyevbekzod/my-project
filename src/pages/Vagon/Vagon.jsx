@@ -269,7 +269,7 @@ vagonUsageData.reduce((sum, v) => sum + v.efficiency, 0) / vagonUsageData.length
           <div className="vagon-chart-card">
             <div className="vagon-chart-header">
               <div className="vagon-chart-indicator"></div>
-              <h3 className="vagon-chart-title">6 ta temir yo'l uzeli bo'yicha turib qolgan vagonlar va vaqti</h3>
+              <h3 className="vagon-chart-title">Temir yo'l uzellari bo'yicha turib qolgan vagonlar soni va vaqti</h3>
               <Box sx={{ display: 'flex', gap: 2, mt: 1, mb: 2 }}>
                 <TextField
                   label="Boshlanish sanasi"

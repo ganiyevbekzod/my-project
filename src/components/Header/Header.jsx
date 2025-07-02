@@ -9,7 +9,9 @@ import AdminIcon from "../../assets/img/HeaderIcons/admin.svg"
 import Logout from "../../assets/img/HeaderIcons/logout.svg"
 import RightSlideModal from "../RightSlideModal/RightSlideModal";
 import { useHeader } from "../../Context/HeaderContext";
+import { useTranslation } from 'react-i18next';
 const Header = () => {
+    const { t, i18n } = useTranslation();
      const { headerBgColor, headerTextColor } = useHeader();
     return (
         <>
@@ -23,7 +25,7 @@ const Header = () => {
                                 <span className="header_span">
                                     <img src={Search_icon} alt="Search_icon" width={25} height={25} />
                                 </span>
-                                <input  className="header_input" type="text" placeholder="Qidiruv" />
+                                <input  className="header_input" type="text" placeholder={t("header.search")}/>
                             </div>
                         </li>
                     </ul>
@@ -78,13 +80,13 @@ const Header = () => {
                             <div class="dropdown">
                                 <button class="btn admin_button" role="button" data-bs-toggle="dropdown" >
                                     <img className="me-1 " src={AdminIcon} alt="admin icon" width={26} height={26} />
-                                    <span className="admin_name_span">Admin</span>
+                                    <span className="admin_name_span">{t("header.admin")}</span>
                                 </button>
                                 <ul class="dropdown-menu dropdownadmin_list ">
                                     <li className="admin_item">
                                         <div className="d-flex align-items-center">
                                             <img className="me-1 " src={AdminIcon} alt="admin icon" width={26} height={26} />
-                                            <span className="admin_name_span">Admin</span>
+                                            <span className="admin_name_span">{t("header.admin")}</span>
                                         </div>
                                         <button className="btn logout_button">
                                             <img src={Logout} alt="log out button" width={25} height={25} />
@@ -92,9 +94,9 @@ const Header = () => {
                                     </li>
                                     <hr />
                                     <li className="adminItem_link">
-                                        <a class="dropdown-item link_edit" href="#">Edit Profile</a></li>
+                                        <a class="dropdown-item link_edit" href="#">{t("header.editProfile")}</a></li>
                                     <li className="adminItem_link">
-                                        <a class="dropdown-item link_view" href="#">View profile</a></li>
+                                        <a class="dropdown-item link_view" href="#">{t("header.viewProfile")}</a></li>
                                 </ul>
                             </div>
                         </div>
