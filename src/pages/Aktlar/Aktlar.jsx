@@ -116,7 +116,7 @@ const Aktlar = () => {
     return allMonthlyAktlar.slice(0, count).reverse();
   };
   const filteredMonthlyAktlar = getFilteredMonthlyAktlar();
-
+///////////////////////////////
   // Area chart options
   const areaChartOptions = {
     chart: { type: 'area', height: 300, toolbar: { show: false }, background: 'transparent' },
