@@ -156,7 +156,7 @@ const Aktlar = () => {
     grid: { borderColor: 'rgba(112, 156, 245, 0.1)', strokeDashArray: 3 }
   };
   const barChartSeries = [{ name: 'Aktlar', data: regionStats.map(item => item.count) }];
-
+////////////////////////////////////////
   return (
     <div className="aktlar-dashboard">
       <div className="aktlar-content">
