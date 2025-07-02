@@ -6,5 +6,150 @@
   "buttons": {
     "login": "Войти",
     "register": "Регистрация"
+  },
+  "aktlar": {
+    "title": "Дашборд Актов",
+    "subtitle": "Полная аналитика и отчеты по актам",
+    "stats": {
+      "total": "Всего актов",
+      "accepted": "Принятые",
+      "rejected": "Отклоненные",
+      "inProgress": "В процессе"
+    },
+    "types": {
+      "technical": "Технические акты",
+      "financial": "Финансовые акты",
+      "security": "Акты безопасности",
+      "mesplan": "Акты Месплана"
+    },
+    "status": {
+      "waiting": "Ожидающие",
+      "inProgress": "В процессе",
+      "completed": "Завершенные",
+      "rejected": "Отклоненные"
+    },
+    "charts": {
+      "monthlyTrend": "Динамика месячных актов (по типам)",
+      "regionBreakdown": "Акты по регионам",
+      "typeDistribution": "Распределение по типам",
+      "technicalAct": "Технический акт",
+      "financialAct": "Финансовый акт",
+      "securityAct": "Акт безопасности",
+      "other": "Другие"
+    },
+    "filters": {
+      "3months": "3 месяца",
+      "6months": "6 месяцев",
+      "1year": "1 год"
+    },
+    "labels": {
+      "comparedToLastMonth": "по сравнению с прошлым месяцем",
+      "completed": "завершено",
+      "actsCount": "Количество актов"
+    },
+    "months": {
+      "jan": "Янв",
+      "feb": "Фев",
+      "mar": "Мар",
+      "apr": "Апр",
+      "may": "Май",
+      "jun": "Июнь",
+      "jul": "Июль",
+      "aug": "Авг",
+      "sep": "Сен",
+      "oct": "Окт",
+      "nov": "Ноя",
+      "dec": "Дек"
+    },
+    "regions":{
+      "Toshkent": "Ташкент",
+      "Andijon": "Андижан",
+      "Buxoro": "Бухара",
+      "Farg'ona": "Фергана",
+      "Jizzax": "Джизак",
+      "Namangan": "Наманган",
+      "Navoiy": "Навои",
+      "Samarqand": "Самарканд",
+      "Sirdaryo": "Сырдарья",
+      "Surxondaryo": "Сурхандарьинская",
+      "Xorazm": "Хорезм",
+      "Qashqadaryo": "Кашкадарья",
+      "Qoraqalpog'iston": "Каракалпакстан"
+    }
+  },
+  "customer": {
+    "title": "Дашборд Клиенты ",
+    "subtitle": "Статистика и анализ клиентов",
+    "types": {
+      "individual": "Физические лица",
+      "legal": "Юридические лица",
+      "sole": "Индивидуальные предприниматели"
+    },
+    "labels": {
+      "comparedToLastMonth": "по сравнению с прошлым месяцем",
+      "customersLabel": "Количество клиентов",
+      "customersLabel2":"Процент"
+    },
+    "charts": {
+      "typeDistribution": "Распределение по типам клиентов",
+      "monthlyTrend": "Динамика клиентов по месяцам",
+      "revenueTrend": "Динамика дохода по месяцам",
+      "satisfaction": "Уровень удовлетворенности клиентов",
+      "ageDistribution": "Распределение по возрасту",
+      "regionDistribution": "Клиенты по регионам"
+    },
+    "regions":{
+      "Toshkent": "Ташкент",
+      "Andijon": "Андижан",
+      "Buxoro": "Бухара",
+      "Farg'ona": "Фергана",
+      "Jizzax": "Джизак",
+      "Namangan": "Наманган",
+      "Navoiy": "Навои",
+      "Samarqand": "Самарканд",
+      "Sirdaryo": "Сырдарья",
+      "Surxondaryo": "Сурхандарьинская",
+      "Xorazm": "Хорезм",
+      "Qashqadaryo": "Кашкадарья",
+      "Qoraqalpog'iston": "Каракалпакстан",
+      "Boshqalar": "Другие"
+    },
+    "status": {
+      "active": "Активный",
+      "pending": "В ожидании"
+    },        
+    "table": {
+      "name": "Имя",
+      "type": "Тип",
+      "status": "Статус",
+      "date": "Дата",
+      "revenue": "Доход"
+    },
+
+    "filters": {
+      "3months": "3 месяца",
+      "6months": "6 месяцев",
+      "12months": "12 месяцев"
+    },
+    "month": {
+      "yan": "Янв",
+      "fev": "Фев",
+      "mar": "Мар",
+      "apr": "Апр",
+      "may": "Май",
+      "iyun": "Июнь",
+      "iyul": "Июль",
+      "avg": "Авг",
+      "sen": "Сен",
+      "okt": "Окт",
+      "noy": "Ноя",
+      "dek": "Дек"
+    },        
+    "metrics": {
+      "newCustomers": "Новые клиенты",
+      "activeCustomers": "Активные клиенты",
+      "churnRate": "Завершение контрактов клиентов",
+      "averageRevenue": "Средний доход"
+    }
   }
 }

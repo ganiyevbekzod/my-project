@@ -1,4 +1,5 @@
 import "./assets/styles/index.css"
+import "./i18n/i18n.js"
 import { SidebarProvider } from "./Context/SidebarContext.js"
 import Sidebar from "./components/SideBar/Sidebar"
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -26,7 +27,6 @@ import { KonvensionTaqiqlar } from "./pages/KonvensionTaqiqlar/KonvensionTaqiqla
 import { Polis } from "./pages/Sugurta/Sugurta"
 import { Ekspeditorlar } from "./pages/Ekspeditorlar/Ekspeditorlar"
 import { ShahobchaYollari } from "./pages/ShahobchaYollari/ShahobchaYollari"
-import { MesplanKelishuvlar } from "./pages/MesplanKelishuvlar/MesplanKelishuvlar"
 import { Poyezdlar } from "./pages/Poyezdlar/Poyezdlar"
 import International from "./pages/XalqaroTashuvlar/XalqaroTashuvlar.jsx"
 import { HeaderProvider } from "./Context/HeaderContext.js"
@@ -136,7 +136,6 @@ const App = () => {
                         <Route path="/Sug'urtaDaromadlari" element={<Polis />} />
                         <Route path="/Ekspeditorlar" element={<Ekspeditorlar />} />
                         <Route path="/ShahobchaYo'llari" element={<ShahobchaYollari />} />
-                        <Route path="/MesplanKelishuvlar" element={<MesplanKelishuvlar />} />
                         <Route path="/Poyezdlar" element={<Poyezdlar />} />
                     </Routes>
                 </div>

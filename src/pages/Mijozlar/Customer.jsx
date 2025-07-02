@@ -2,36 +2,39 @@ import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 import { FaStar, FaSmileBeam } from 'react-icons/fa';
 import './Customer.css';
+import { useTranslation } from 'react-i18next';
+const CustomerDashboard = () => {
+  const { t, i18n } = useTranslation();
 
 // Sample data
 const monthlyData = [
-  { month: "Avg", yuridik: 69, jismoniy: 162, yakka: 55, revenue: 88 },
-  { month: "Sen", yuridik: 78, jismoniy: 175, yakka: 62, revenue: 85 },
-  { month: "Okt", yuridik: 82, jismoniy: 180, yakka: 65, revenue: 98 },
-  { month: "Noy", yuridik: 75, jismoniy: 172, yakka: 60, revenue: 128 },
-  { month: "Dek", yuridik: 88, jismoniy: 190, yakka: 70, revenue: 114 },
-  { month: "Yan", yuridik: 45, jismoniy: 120, yakka: 35, revenue: 135 },
-  { month: "Fev", yuridik: 52, jismoniy: 135, yakka: 42, revenue: 142 },
-  { month: "Mar", yuridik: 48, jismoniy: 128, yakka: 38, revenue: 118 },
-  { month: "Apr", yuridik: 61, jismoniy: 145, yakka: 45, revenue: 105 },
-  { month: "May", yuridik: 55, jismoniy: 142, yakka: 48, revenue: 132 },
-  { month: "Iyun", yuridik: 67, jismoniy: 158, yakka: 52, revenue: 115 },
-  { month: "Iyul", yuridik: 73, jismoniy: 165, yakka: 58, revenue: 145 },
+  { month: t('customer.month.avg'), yuridik: 69, jismoniy: 162, yakka: 55, revenue: 88 },
+  { month: t('customer.month.sen'), yuridik: 78, jismoniy: 175, yakka: 62, revenue: 85 },
+  { month: t("customer.month.okt"), yuridik: 82, jismoniy: 180, yakka: 65, revenue: 98 },
+  { month: t("customer.month.noy"), yuridik: 75, jismoniy: 172, yakka: 60, revenue: 128 },
+  { month: t("customer.month.dek"), yuridik: 88, jismoniy: 190, yakka: 70, revenue: 114 },
+  { month: t("customer.month.yan"), yuridik: 45, jismoniy: 120, yakka: 35, revenue: 135 },
+  { month: t("customer.month.fev"), yuridik: 52, jismoniy: 135, yakka: 42, revenue: 142 },
+  { month: t("customer.month.mar"), yuridik: 48, jismoniy: 128, yakka: 38, revenue: 118 },
+  { month: t("customer.month.apr"), yuridik: 61, jismoniy: 145, yakka: 45, revenue: 105 },
+  { month: t("customer.month.may"), yuridik: 55, jismoniy: 142, yakka: 48, revenue: 132 },
+  { month: t("customer.month.iyun"), yuridik: 67, jismoniy: 158, yakka: 52, revenue: 115 },
+  { month: t("customer.month.iyul"), yuridik: 73, jismoniy: 165, yakka: 58, revenue: 145 },
 ];
 
-const customerTypeData = [
-  { name: "Jismoniy shaxslar", value: 65, color: "#3b82f6" },
-  { name: "Yuridik shaxslar", value: 25, color: "#ef4444" },
-  { name: "Yakka tartibdagilar", value: 10, color: "#10b981" },
-];
+const customerTypeData = React.useMemo(() => [
+  { name: t('customer.types.individual'), value: 65, color: "#3b82f6" },
+  { name: t('customer.types.legal'), value: 25, color: "#ef4444" },
+  { name: t('customer.types.sole'), value: 10, color: "#10b981" },
+], [t, i18n.language]);
 
 const regionData = [
-  { region: "Toshkent", count: 245, percentage: 35 },
-  { region: "Samarqand", count: 156, percentage: 22 },
-  { region: "Buxoro", count: 98, percentage: 14 },
-  { region: "Andijon", count: 87, percentage: 12 },
-  { region: "Farg'ona", count: 76, percentage: 11 },
-  { region: "Boshqalar", count: 42, percentage: 6 },
+  { region: t('customer.region.toshkent'), count: 245, percentage: 35 },
+  { region: t('customer.region.samarkand'), count: 156, percentage: 22 },
+  { region: t('customer.region.bukhara'), count: 98, percentage: 14 },
+  { region: t('customer.region.andijon'), count: 87, percentage: 12 },
+  { region: t('customer.region.fargona'), count: 76, percentage: 11 },
+  { region: t('customer.region.Boshqalar'), count: 42, percentage: 6 },
 ];
 
 // New data for additional charts
@@ -52,18 +55,18 @@ const ageDistributionData = [
 ];
 
 const customerRetentionData = [
-  { month: "Avg", new: 58, retained: 49, churned: 0 },
-  { month: "Sen", new: 64, retained: 55, churned: 1 },
-  { month: "Okt", new: 71, retained: 61, churned: 0 },
-  { month: "Noy", new: 69, retained: 59, churned: 0 },
-  { month: "Dek", new: 76, retained: 65, churned: 1 },
-  { month: "Yan", new: 45, retained: 38, churned: 0 },
-  { month: "Fev", new: 52, retained: 44, churned: 1 },
-  { month: "Mar", new: 48, retained: 41, churned: 0 },
-  { month: "Apr", new: 61, retained: 52, churned: 0 },
-  { month: "May", new: 55, retained: 47, churned: 1 },
-  { month: "Iyun", new: 67, retained: 58, churned: 0 },
-  { month: "Iyul", new: 73, retained: 62, churned: 1 },
+  { month: t('customer.month.avg'), new: 58, retained: 49, churned: 0 },
+  { month: t('customer.month.sen'), new: 64, retained: 55, churned: 1 },
+  { month: t("customer.month.okt"), new: 71, retained: 61, churned: 0 },
+  { month: t("customer.month.noy"), new: 69, retained: 59, churned: 0 },
+  { month: t("customer.month.dek"), new: 76, retained: 65, churned: 1 },
+  { month: t("customer.month.yan"), new: 45, retained: 38, churned: 0 },
+  { month: t("customer.month.fev"), new: 52, retained: 44, churned: 1 },
+  { month: t("customer.month.mar"), new: 48, retained: 41, churned: 0 },
+  { month: t("customer.month.apr"), new: 61, retained: 52, churned: 0 },
+  { month: t("customer.month.may"), new: 55, retained: 47, churned: 1 },
+  { month: t("customer.month.iyun"), new: 67, retained: 58, churned: 0 },
+  { month: t("customer.month.iyul"), new: 73, retained: 62, churned: 1 },
 ];
 
 const recentCustomers = [
@@ -86,10 +89,10 @@ const recentCustomers = [
 ];
 
 const performanceData = [
-  { metric: "Yangi mijozlar", value: 156, change: 12.5, trend: "up" },
-  { metric: "Faol mijozlar", value: 1247, change: 8.3, trend: "up" },
-  { metric: "Churn rate", value: 2.1, change: -0.8, trend: "down" },
-  { metric: "O'rtacha daromad", value: 4250000, change: 15.2, trend: "up" },
+  { metric: t('customer.metrics.newCustomers'), value: 156, change: 12.5, trend: "up" },
+  { metric: t('customer.metrics.activeCustomers'), value: 1247, change: 8.3, trend: "up" },
+  { metric: t('customer.metrics.churnRate'), value: 2.1, change: -0.8, trend: "down" },
+  { metric: t('customer.metrics.averageRevenue'), value: 4250000, change: 15.2, trend: "up" },
 ];
 
 const goodReviews = [
@@ -100,7 +103,6 @@ const goodReviews = [
   { name: "Javohir S.", text: "Tavsiya qilaman!", rating: 4 }
 ];
 
-const CustomerDashboard = () => {
   // State for retention data filtering
   const [retentionPeriod, setRetentionPeriod] = React.useState('6'); // Default to 6 months
   // State for revenue data filtering
@@ -146,11 +148,11 @@ const CustomerDashboard = () => {
     grid: { borderColor: 'rgba(112, 156, 245, 0.1)', strokeDashArray: 3 }
   };
 
-  const areaChartSeries = [
-    { name: 'Jismoniy shaxslar', data: monthlyData.map(item => item.jismoniy) },
-    { name: 'Yuridik shaxslar', data: monthlyData.map(item => item.yuridik) },
-    { name: 'Yakka tartibdagilar', data: monthlyData.map(item => item.yakka) }
-  ];
+  const areaChartSeries = React.useMemo(() => [
+    { name: t('customer.types.individual'), data: monthlyData.map(item => item.jismoniy) },
+    { name: t('customer.types.legal'), data: monthlyData.map(item => item.yuridik) },
+    { name: t('customer.types.sole'), data: monthlyData.map(item => item.yakka) }
+  ], [t, i18n.language, monthlyData]);
 
   // Pie chart options for customer type distribution
   const pieChartOptions = {
@@ -272,9 +274,9 @@ const CustomerDashboard = () => {
   };
 
   const retentionBarSeries = [
-    { name: 'Yangi mijozlar', data: filteredRetentionData.map(item => item.new) },
-    { name: 'Saqlangan mijozlar', data: filteredRetentionData.map(item => item.retained) },
-    { name: 'Shartnomasi tugagan mijozlar', data: filteredRetentionData.map(item => item.churned) }
+    { name: t('customer.metrics.newCustomers'), data: filteredRetentionData.map(item => item.new) },
+    { name: t('customer.metrics.activeCustomers'), data: filteredRetentionData.map(item => item.retained) },
+    { name: t('customer.metrics.churnRate'), data: filteredRetentionData.map(item => item.churned) }
   ];
 
   return (
@@ -282,8 +284,8 @@ const CustomerDashboard = () => {
       <div className="customer-content">
         {/* Header */}
         <div className="customer-header">
-          <h1 className="customer-title">Mijozlar Dashboard</h1>
-          <p className="customer-subtitle">Mijozlar bo'yicha to'liq analitika va hisobotlar</p>
+          <h1 className="customer-title">{t('customer.title')}</h1>
+          <p className="customer-subtitle">{t('customer.subtitle')}</p>
           <div className="customer-divider"></div>
         </div>
 
@@ -301,7 +303,7 @@ const CustomerDashboard = () => {
                   </div>
                   <div className="kpi-change">
                     <span className={`trend ${item.trend}`}>{item.change > 0 ? "+" : ""}{item.change}%</span>
-                    <span className="trend-label">o'tgan oyga nisbatan</span>
+                    <span className="trend-label">{t("customer.labels.comparedToLastMonth")}</span>
                   </div>
                 </div>
                 <div className="kpi-icon">{item.trend === "up" ? "📈" : "📉"}</div>
@@ -315,8 +317,8 @@ const CustomerDashboard = () => {
           <div className="chart-card">
             <div className="chart-header">
               <div className="chart-indicator"></div>
-              <h3 className="chart-title">Oylik ro'yxatdan o'tish dinamikasi</h3>
-              <span className="chart-badge">Mijozlar</span>
+              <h3 className="chart-title">{t("customer.charts.monthlyTrend")}</h3>
+              <span className="chart-badge">{t("customer.labels.customersLabel")}</span>
             </div>
             <ReactApexChart options={areaChartOptions} series={areaChartSeries} type="area" height={300} />
           </div>
@@ -324,7 +326,8 @@ const CustomerDashboard = () => {
           <div className="chart-card">
             <div className="chart-header">
               <div className="chart-indicator"></div>
-              <h3 className="chart-title">Mijozlar taqsimoti</h3>
+              <h3 className="chart-title">{t("customer.charts.typeDistribution")}</h3>
+              <span className="chart-badge">{t("customer.labels.customersLabel2")}</span>
             </div>
             <ReactApexChart options={pieChartOptions} series={pieChartSeries} type="pie" height={300} />
           </div>

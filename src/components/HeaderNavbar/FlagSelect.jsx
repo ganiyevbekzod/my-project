@@ -1,12 +1,21 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import './FlagSelect.css';
+
 function FlagSelect() {
-  const [selected, setSelected] = useState('uz');
+  const { i18n } = useTranslation();
+  const [selected, setSelected] = useState(i18n.language || 'uz');
   const [open, setOpen] = useState(false);
+
+  // Update selected state when i18n language changes
+  useEffect(() => {
+    setSelected(i18n.language || 'uz');
+  }, [i18n.language]);
+
   const handleSelect = (code) => {
     setSelected(code);
     setOpen(false);
+    i18n.changeLanguage(code);
   };
 
   const flags = {

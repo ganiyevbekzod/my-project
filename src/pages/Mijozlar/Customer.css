@@ -265,9 +265,10 @@ padding:24px 16px;
 .chart-badge {
   background: linear-gradient(135deg, #6366f1, #7f9cf5);
   color: white;
+  text-align: center;
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   font-weight: 600;
 }
 

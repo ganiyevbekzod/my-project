@@ -38,12 +38,11 @@ const Sidebar = () => {
       { to: "/Daromadlar", icon: Income_logo, label: "Daromadlar" },
       { to: "/TelegrammaChegirmalar", icon:discounts , label: "Telegrammalar va chegirmalar" },
       { to: "/KonvensionTaqiqlar", icon: null, label: "Konvensiyon taqiqlar", emoji: "🌍" },
-      { to: "/Aktlar", icon: null, label: "Aktlar", emoji: "🛒" },
+      { to: "/Aktlar", icon: null, label: "Aktlar", emoji: "📝" },
       { to: "/Vagon", icon: null, label: "Vagon", emoji: "🚂" },
       { to: "/Sug'urtaDaromadlari", icon: null, label: "Sug'urta", emoji: "🛡️" },
       { to: "/Ekspeditorlar", icon: null, label: "Ekspeditorlar", emoji: "🚚" },
       { to: "/ShahobchaYo'llari", icon: null, label: "Shahobcha Yo'llari", emoji: "🛤️" },
-      { to: "/MesplanKelishuvlar", icon: null, label: "Mesplan Kelishuvlar", emoji: "📝" },
       { to: "/Poyezdlar", icon: null, label: "Poyezdlar", emoji: "🚆" },
     ];
 

@@ -6,5 +6,150 @@
   "buttons": {
     "login": "Kirish",
     "register": "Ro'yxatdan o'tish"
+  },
+  "aktlar": {
+    "title": "Aktlar Dashboard",
+    "subtitle": "Aktlar bo'yicha to'liq analitika va hisobotlar",
+    "stats": {
+      "total": "Jami aktlar",
+      "accepted": "Qabul qilingan",
+      "rejected": "Rad etilgan",
+      "inProgress": "Jarayonda"
+    },
+    "types": {
+      "technical": "Texnik aktlar",
+      "financial": "Moliyaviy aktlar",
+      "security": "Xavfsizlik aktlari",
+      "mesplan": "Mesplan aktlar"
+    },
+    "status": {
+      "waiting": "Kutilmoqda",
+      "inProgress": "Jarayonda",
+      "completed": "Tugallangan",
+      "rejected": "Rad etilgan"
+    },
+    "charts": {
+      "monthlyTrend": "Oylik aktlar dinamikasi (turlari bo'yicha)",
+      "regionBreakdown": "Hududlar bo'yicha aktlar",
+      "typeDistribution": "Turlari bo'yicha taqsimot",
+      "technicalAct": "Texnik akt",
+      "financialAct": "Moliyaviy akt",
+      "securityAct": "Xavfsizlik akt",
+      "other": "Boshqa"
+    },
+    "filters": {
+      "3months": "3 oy",
+      "6months": "6 oy",
+      "1year": "1 yil"
+    },
+    "labels": {
+      "comparedToLastMonth": "o'tgan oyga nisbatan",
+      "completed": "tugallangan",
+      "actsCount": "Aktlar soni"
+    },
+    "months": {
+      "jan": "Yan",
+      "feb": "Fev",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "May",
+      "jun": "Iyun",
+      "jul": "Iyul",
+      "aug": "Avg",
+      "sep": "Sen",
+      "oct": "Okt",
+      "nov": "Noy",
+      "dec": "Dek"
+    },
+    "regions":{
+      "Toshkent": "Toshkent",
+      "Andijon": "Andijon",
+      "Buxoro": "Buxoro",
+      "Farg'ona": "Farg'ona",
+      "Jizzax": "Jizzax",
+      "Namangan": "Namangan",
+      "Navoiy": "Navoiy",
+      "Samarqand": "Samarqand",
+      "Sirdaryo": "Sirdaryo",
+      "Surxondaryo": "Surxondaryo",
+      "Xorazm": "Xorazm",
+      "Qashqadaryo": "Qashqadaryo",
+      "Qoraqalpog'iston": "Qoraqalpog'iston"
+    }
+  },
+  "customer": {
+    "title": "Mijozlar Dashboard",
+    "subtitle": "Mijozlar statistikasi va tahlili",
+    "types": {
+      "individual": "Jismoniy shaxslar",
+      "legal": "Yuridik shaxslar",
+      "sole": "Yakka tartibdagilar"
+    },
+    "labels": {
+      "comparedToLastMonth": "o'tgan oyga nisbatan",
+      "customersLabel": "Mijozlar soni",
+      "customersLabel2":"Foiz"
+    },
+    "charts": {
+      "typeDistribution": "Mijozlar turlari bo'yicha taqsimot",
+      "monthlyTrend": "Oylik mijozlar dinamikasi",
+      "revenueTrend": "Oylik daromad dinamikasi",
+      "satisfaction": "Mijozlar qoniqish darajasi",
+      "ageDistribution": "Yosh bo'yicha taqsimot",
+      "regionDistribution": "Hududlar bo'yicha mijozlar"
+    },
+    "regions":{
+      "Toshkent": "Toshkent",
+      "Andijon": "Andijon",
+      "Buxoro": "Buxoro",
+      "Farg'ona": "Farg'ona",
+      "Jizzax": "Jizzax",
+      "Namangan": "Namangan",
+      "Navoiy": "Navoiy",
+      "Samarqand": "Samarqand",
+      "Sirdaryo": "Sirdaryo",
+      "Surxondaryo": "Surxondaryo",
+      "Xorazm": "Xorazm",
+      "Qashqadaryo": "Qashqadaryo",
+      "Qoraqalpog'iston": "Qoraqalpog'iston",
+      "Boshqalar": "Boshqalar"
+    },
+    "status": {
+      "active": "Faol",
+      "pending": "Kutilmoqda"
+    },
+    "table": {
+      "name": "Ism",
+      "type": "Turi",
+      "status": "Holati",
+      "date": "Sana",
+      "revenue": "Daromad"
+    },
+
+    "filters": {
+      "3months": "3 oy",
+      "6months": "6 oy",
+      "12months": "12 oy"
+    },
+    "month": {
+      "yan": "Yan",
+      "fev": "Fev",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "May",
+      "iyun": "Iyun",
+      "iyul": "Iyul",
+      "avg": "Avg",
+      "sen": "Sen",
+      "okt": "Okt",
+      "noy": "Noy",
+      "dek": "Dek"
+    },    
+    "metrics": {
+      "newCustomers": "Yangi mijozlar",
+      "activeCustomers": "Faol mijozlar",
+      "churnRate": "Shartnomalarning tugatilish darajasi",
+      "averageRevenue": "O'rtacha daromad"
+    }
   }
 }
