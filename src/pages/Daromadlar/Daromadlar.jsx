@@ -12,16 +12,16 @@ const allMonths = [
 
 export default function RevenueDashboard() {
   const revenueData = [
-    { name: "Toshkent", value: 1380, color: "#00D4FF", region: "Markaziy", growth: 15.2 },
-    { name: "Qo'ng'irot", value: 1200, color: "#FF6B35", region: "Shimoliy", growth: 8.7 },
-    { name: "Samarqand", value: 1100, color: "#4ECDC4", region: "Markaziy", growth: 12.1 },
-    { name: "Jizzax", value: 690, color: "#FF8A95", region: "Markaziy" },
-    { name: "Surhandaryo", value: 580, color: "#45B7D1", region: "Janubiy" },
-    { name: "Qarshi", value: 540, color: "#96CEB4", region: "Janubiy" },
-    { name: "Andijon", value: 470, color: "#FFEAA7", region: "Sharqiy" },
-    { name: "Xorazm", value: 448, color: "#DDA0DD", region: "Shimoliy" },
-    { name: "Qo'qon", value: 430, color: "#98D8C8", region: "Sharqiy" },
-    { name: "Buxoro", value: 400, color: "#F7DC6F", region: "Markaziy" },
+    { name: "Toshkent", value: 148000, color: "#00D4FF", region: "Markaziy", growth: 15.2 },
+    { name: "Qo'ng'irot", value: 120000, color: "#FF6B35", region: "Shimoliy", growth: 8.7 },
+    { name: "Samarqand", value: 110000, color: "#4ECDC4", region: "Markaziy", growth: 12.1 },
+    { name: "Jizzax", value: 69700, color: "#FF8A95", region: "Markaziy", growth: 12.1  },
+    { name: "Surhandaryo", value: 58000, color: "#45B7D1", region: "Janubiy", growth: 12.1  },
+    { name: "Qarshi", value: 54000, color: "#96CEB4", region: "Janubiy", growth: 12.1  },
+    { name: "Andijon", value: 47500, color: "#FFEAA7", region: "Sharqiy", growth: 12.1  },
+    { name: "Xorazm", value: 44800, color: "#DDA0DD", region: "Shimoliy", growth: 12.1  },
+    { name: "Qo'qon", value: 43800, color: "#98D8C8", region: "Sharqiy", growth: 12.1  },
+    { name: "Buxoro", value: 40900, color: "#F7DC6F", region: "Markaziy", growth: 12.1  },
   ]
 
   const totalRevenue = revenueData.reduce((sum, item) => sum + item.value, 0)
@@ -88,7 +88,7 @@ export default function RevenueDashboard() {
     },
     yaxis: {
       title: {
-        text: 'Daromad (TexPD)',
+        text: 'Daromad ',
         style: {
           color: '#3730a3'
         }
@@ -106,7 +106,7 @@ export default function RevenueDashboard() {
     tooltip: {
       y: {
         formatter: function (val) {
-          return val + " TexPD"
+          return val + " dollar"
         }
       }
     },
@@ -213,7 +213,7 @@ export default function RevenueDashboard() {
       background: 'transparent',
     },
     xaxis: {
-      title: { text: 'Daromad (TexPD)', style: { color: '#3730a3' } },
+      title: { text: 'Daromad (Dollar)', style: { color: '#3730a3' } },
       labels: { style: { colors: '#3730a3' } },
     },
     yaxis: {
@@ -251,8 +251,8 @@ export default function RevenueDashboard() {
 
   // Maqsadlar (target) har bir hudud uchun
   const targets = {
-    "Toshkent": 1500, "Qo'ng'irot": 1300, "Samarqand": 1200, "Jizzax": 800,
-    "Surhandaryo": 650, "Qarshi": 600, "Andijon": 550, "Xorazm": 500, "Qo'qon": 480, "Buxoro": 450
+    "Toshkent": 150000, "Qo'ng'irot": 130000, "Samarqand": 120000, "Jizzax": 80000,
+    "Surhandaryo": 65000, "Qarshi": 60000, "Andijon": 55000, "Xorazm": 50000, "Qo'qon": 48000, "Buxoro": 45000
   };
 
   // Filtered data
@@ -378,9 +378,6 @@ export default function RevenueDashboard() {
           <p className="daromadlar-subtitle">Hududlar bo'yicha daromadlar tahlili</p>
           <div className="daromadlar-divider"></div>
         </div>
-
-
-
         {/* Stats Cards */}
         <div className="stats-grid">
           <div className="stat-card cyan">
@@ -388,7 +385,7 @@ export default function RevenueDashboard() {
               <div className="stat-info">
                 <h4>Jami Daromad</h4>
                 <div className="stat-value">{totalRevenue.toLocaleString()}</div>
-                <div className="stat-unit">TexPD</div>
+                <div className="stat-unit">Dollar</div>
               </div>
               <div className="stat-icon">💰</div>
             </div>
@@ -399,7 +396,7 @@ export default function RevenueDashboard() {
               <div className="stat-info">
                 <h4>O'rtacha Daromad</h4>
                 <div className="stat-value">{averageRevenue.toLocaleString()}</div>
-                <div className="stat-unit">TexPD</div>
+                <div className="stat-unit">Dollar</div>
               </div>
               <div className="stat-icon">📊</div>
             </div>
@@ -410,7 +407,7 @@ export default function RevenueDashboard() {
               <div className="stat-info">
                 <h4>Eng Yuqori</h4>
                 <div className="stat-value">{topPerformer.name}</div>
-                <div className="stat-unit">{topPerformer.value} TexPD</div>
+                <div className="stat-unit">{topPerformer.value } dollar TexPD</div>
               </div>
               <div className="stat-icon">🏆</div>
             </div>
@@ -482,7 +479,7 @@ export default function RevenueDashboard() {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Hududlar bo'yicha Daromadlar</h3>
-              <span className="chart-badge">TexPD</span>
+              <span className="chart-badge">Dollar</span>
             </div>
             <ReactApexChart 
               options={barChartOptions} 
@@ -497,6 +494,8 @@ export default function RevenueDashboard() {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Hududlar bo'yicha Taqsimot</h3>
+              <span className="chart-badge">Foiz</span>
+
             </div>
             <ReactApexChart 
               options={pieChartOptions} 
@@ -561,8 +560,8 @@ export default function RevenueDashboard() {
               return (
                 <div key={region} className="compare-card">
                   <h4>{region}</h4>
-                  <div>Daromad: <b>{d.value}</b> TexPD</div>
-                  <div>Maqsad: <b>{targets[region]}</b> TexPD</div>
+                  <div>Daromad: <b>{d.value}</b> Dollar</div>
+                  <div>Maqsad: <b>{targets[region]}</b> Dollar</div>
                   <div>O'sish: <b>{d.growth || 0}%</b></div>
                   <ProgressBar value={d.value} target={targets[region]} color={d.color} />
                 </div>
@@ -584,12 +583,12 @@ export default function RevenueDashboard() {
                 .slice(0, 3)
                 .map((item, idx) => (
                   <div key={item.name} className="analytics-item">
-                    <div className="analytics-rank">#{idx + 1}</div>
+                    <div className="analytics-rank">{idx + 1}</div>
                     <div className="analytics-info">
                       <div className="analytics-name">{item.name}</div>
-                      <div className="analytics-value">{item.value.toLocaleString()} TexPD</div>
+                      <div className="analytics-value">{item.value.toLocaleString()} Dollar </div>
                     </div>
-                    <div className="analytics-growth positive">+{item.growth}%</div>
+                    <div className="analytics-growth positive">{item.growth}%</div>
                   </div>
                 ))}
             </div>
@@ -607,7 +606,7 @@ export default function RevenueDashboard() {
                 .slice(0, 3)
                 .map((item, idx) => (
                   <div key={item.name} className="analytics-item">
-                    <div className="analytics-rank">#{idx + 1}</div>
+                    <div className="analytics-rank">{idx + 1}</div>
                     <div className="analytics-info">
                       <div className="analytics-name">{item.name}</div>
                       <div className="analytics-value">{item.growth}%</div>
@@ -629,13 +628,14 @@ export default function RevenueDashboard() {
                 .slice(0, 3)
                 .map((item, idx) => (
                   <div key={item.name} className="analytics-item">
-                    <div className="analytics-rank">#{idx + 1}</div>
+                    <div className="analytics-rank">{idx + 1}</div>
                     <div className="analytics-info">
                       <div className="analytics-name">{item.name}</div>
+                      <div className="analytics-value">TexPD</div>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                       <div className="analytics-efficiency" style={{ backgroundColor: item.color }}></div>
-                      <span className="analytics-value">{item.efficiency}%</span>
+                      <span className="analytics-value">+{(item.growth*5.25).toFixed(2)}%</span>
                     </div>
                   </div>
                 ))}

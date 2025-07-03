@@ -552,19 +552,19 @@ export default function InternationalTransportDashboard() {
 
   const areaChartSeries = [
     {
-      name: 'Xalqaro temir yo\'l reyslar',
+      name: 'Xalqaro temir yo\'l reyslar soni',
       data: filteredTrendData.map(item => item.trips)
     },
     {
-      name: 'Xalqaro temir yo\'l yuk ortish',
+      name: 'Xalqaro temir yo\'l yuk ortish hajmi (tonna)',
       data: filteredTrendData.map(item => item.loading)
     },
     {
-      name: 'Xalqaro temir yo\'l yuk tushirish',
+      name: 'Xalqaro temir yo\'l yuk tushirish hajmi (tonna)',
       data: filteredTrendData.map(item => item.unloading)
     },
     {
-      name: 'Bojxona tozalash (%)',
+      name: 'Yuklarni bojxonadan o\'tkazish (%)',
       data: filteredTrendData.map(item => item.customs)
     }
   ];
@@ -917,7 +917,7 @@ export default function InternationalTransportDashboard() {
               <div className="stat-info">
                 <h4>JAMI XALQARO REYSLAR</h4>
                 <div className="stat-value">{totalTrips.toLocaleString()}</div>
-                <div className="stat-unit">reyxat</div>
+                <div className="stat-unit">soni</div>
               </div>
               <div className="stat-icon"><FaGlobe color="#3b82f6" /></div>
             </div>
@@ -1254,23 +1254,6 @@ export default function InternationalTransportDashboard() {
             />
           </div>
         </div>
-
-        {/* Weekly Trends */}
-        <div className="charts-grid">
-          <div className="chart-card">
-            <div className="chart-header">
-              <div className="chart-indicator"></div>
-              <h3 className="chart-title">Haftalik xalqaro tashuvlar trendi</h3>
-            </div>
-            <ReactApexChart 
-              options={weeklyTrendOptions} 
-              series={weeklyTrendSeries} 
-              type="line" 
-              height={300} 
-            />
-          </div>
-        </div>
-
         {/* Cargo Operations Table */}
         <div className="data-table-container">
           <div className="chart-header">

@@ -296,7 +296,7 @@ export const KonvensionTaqiqlar = () => {
             <div className="stat-card-content">
               <div className="stat-info">
                 <h4>ENG KO'P TAQIQLAR</h4>
-                <div className="stat-value">{topRestriction.name}</div>
+                <div className="stat-value"> { topRestriction.name }</div>
               </div>
               <div className="stat-icon"><FaExclamationTriangle color="#3b82f6" /></div>
             </div>
@@ -319,7 +319,9 @@ export const KonvensionTaqiqlar = () => {
           <div className="chart-card">
             <div className="chart-header">
               <div className="chart-indicator"></div>
-              <h3 className="chart-title">Oylar bo'yicha taqiqlarning kamayish sur'ati (%)</h3>
+              <h3 className="chart-title">Oylar bo'yicha taqiqlarning kamayish sur'ati</h3>
+              <span className="chart-badge">Foiz</span>
+
             </div>
             <ReactApexChart 
               options={trendLineOptions} 
@@ -333,6 +335,8 @@ export const KonvensionTaqiqlar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Taqiqlar darajasi bo'yicha</h3>
+              <span className="chart-badge">Foiz</span>
+
             </div>
             <ReactApexChart 
               options={severityPieOptions} 
@@ -348,6 +352,7 @@ export const KonvensionTaqiqlar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Yillik taqiqlar kamayish trendi</h3>
+              <span className="chart-badge">Soni</span>
             </div>
             <ReactApexChart 
               options={yearlyTrendOptions} 
@@ -361,6 +366,8 @@ export const KonvensionTaqiqlar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Eng ko'p taqiqlar bo'lgan viloyatlar</h3>
+              <span className="chart-badge">Soni</span>
+
             </div>
             <ReactApexChart 
               options={regionsBarOptions} 
@@ -376,6 +383,8 @@ export const KonvensionTaqiqlar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Taqiqlar prognozi (keyingi 6 oy)</h3>
+              <span className="chart-badge">Soni</span>
+
             </div>
             <ReactApexChart 
               options={forecastLineOptions} 
@@ -389,7 +398,7 @@ export const KonvensionTaqiqlar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Yangi taqiqlar va hal qilish</h3>
-              <span className="chart-badge"><FaShieldAlt color="#ef4444" /></span>
+              <span className="chart-badge"> Soni</span>
               <div className="trend-filters">
                 <button 
                   className={`filter-btn ${txFilter === '3' ? 'active' : ''}`} 
@@ -471,7 +480,9 @@ export const KonvensionTaqiqlar = () => {
           <div className="chart-card">
             <div className="chart-header">
               <div className="chart-indicator"></div>
-              <h3 className="chart-title">Oylik taqiqlar dinamikasi</h3>
+              <h3 className="chart-title">Oylik cheklovlar dinamikasi</h3>
+              <span className="chart-badge"> Soni</span>
+
               <div className="trend-filters">
                 <button 
                   className={`filter-btn ${trendPeriod === '3' ? 'active' : ''}`} 
@@ -506,6 +517,8 @@ export const KonvensionTaqiqlar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Taqiqlar turlari bo'yicha ulushi</h3>
+              <span className="chart-badge">Foiz</span>
+
             </div>
             <ReactApexChart 
               options={pieChartOptions} 
@@ -522,6 +535,8 @@ export const KonvensionTaqiqlar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Taqiqlar turlari bo'yicha taqqoslash</h3>
+              <span className="chart-badge"> Soni</span>
+
             </div>
             <ReactApexChart 
               options={barChartOptions} 

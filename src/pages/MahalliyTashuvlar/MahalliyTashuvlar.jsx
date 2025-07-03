@@ -484,11 +484,11 @@ export default function LocalTransportDashboard() {
       data: filteredTrendData.map(item => item.trips)
     },
     {
-      name: 'Yuk ortish',
+      name: 'Yuk ortish hajmi (tonna)',
       data: filteredTrendData.map(item => item.loading)
     },
     {
-      name: 'Yuk tushirish',
+      name: 'Yuk tushirish hajmi (tonna)',
       data: filteredTrendData.map(item => item.unloading)
     }
   ];
@@ -631,7 +631,7 @@ export default function LocalTransportDashboard() {
               <div className="stat-info">
                 <h4>JAMI REYSLAR</h4>
                 <div className="stat-value">{totalTrips.toLocaleString()}</div>
-                <div className="stat-unit">reyxat</div>
+                <div className="stat-unit">soni</div>
               </div>
               <div className="stat-icon"><FaTrain color="#3b82f6" /></div>
             </div>

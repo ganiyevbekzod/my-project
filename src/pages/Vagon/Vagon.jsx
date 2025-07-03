@@ -201,7 +201,7 @@ vagonUsageData.reduce((sum, v) => sum + v.efficiency, 0) / vagonUsageData.length
               <div className="vagon-stat-info">
                 <h4>Jami vagonlar</h4>
                 <div className="vagon-stat-value">{totalVagons}</div>
-                <div className="vagon-stat-unit">ta</div>
+                <div className="vagon-stat-unit">dona</div>
               </div>
               <div className="vagon-stat-icon"><FaTrain color="#3b82f6" /></div>
             </div>
@@ -211,7 +211,7 @@ vagonUsageData.reduce((sum, v) => sum + v.efficiency, 0) / vagonUsageData.length
               <div className="vagon-stat-info">
                 <h4>O'rtacha samaradorlik</h4>
                 <div className="vagon-stat-value">{avgEfficiency}%</div>
-                <div className="vagon-stat-unit">%</div>
+                <div className="vagon-stat-unit">Foiz</div>
               </div>
               <div className="vagon-stat-icon"><FaCogs color="#10b981" /></div>
             </div>
@@ -231,7 +231,7 @@ vagonUsageData.reduce((sum, v) => sum + v.efficiency, 0) / vagonUsageData.length
               <div className="vagon-stat-info">
                 <h4>Mijozlar mamnunligi</h4>
                 <div className="vagon-stat-value">{customerSatisfaction.satisfied}%</div>
-                <div className="vagon-stat-unit">%</div>
+                <div className="vagon-stat-unit">Foiz</div>
               </div>
               <div className="vagon-stat-icon"><FaSmile color="#a21caf" /></div>
             </div>
@@ -245,6 +245,8 @@ vagonUsageData.reduce((sum, v) => sum + v.efficiency, 0) / vagonUsageData.length
             <div className="vagon-chart-header">
               <div className="vagon-chart-indicator"></div>
               <h3 className="vagon-chart-title">Oylik vagonlar ishlatilishi</h3>
+              <span className="chart-badge"> Soni</span>
+
               <div className="vagon-trend-filters">
                 <button className={`vagon-filter-btn ${trendPeriod === '3' ? 'active' : ''}`} onClick={() => setTrendPeriod('3')}>3 oy</button>
                 <button className={`vagon-filter-btn ${trendPeriod === '6' ? 'active' : ''}`} onClick={() => setTrendPeriod('6')}>6 oy</button>
@@ -259,6 +261,8 @@ vagonUsageData.reduce((sum, v) => sum + v.efficiency, 0) / vagonUsageData.length
             <div className="vagon-chart-header">
               <div className="vagon-chart-indicator"></div>
               <h3 className="vagon-chart-title">Vagon turlari taqsimoti</h3>
+              <span className="chart-badge">Foiz</span>
+
             </div>
             <ReactApexChart options={typePieOptions} series={typePieSeries} type="pie" height={350} />
           </div>
@@ -302,6 +306,8 @@ vagonUsageData.reduce((sum, v) => sum + v.efficiency, 0) / vagonUsageData.length
             <div className="vagon-chart-header">
               <div className="vagon-chart-indicator"></div>
               <h3 className="vagon-chart-title">Oylik samaradorlik trendi</h3>
+              <span className="chart-badge">Foiz</span>
+
             </div>
             <ReactApexChart options={efficiencyLineOptions} series={efficiencyLineSeries} type="line" height={300} />
           </div>
@@ -311,6 +317,8 @@ vagonUsageData.reduce((sum, v) => sum + v.efficiency, 0) / vagonUsageData.length
             <div className="vagon-chart-header">
               <div className="vagon-chart-indicator"></div>
               <h3 className="vagon-chart-title">Mijozlar mamnunligi</h3>
+              <span className="chart-badge">Foiz</span>
+
             </div>
             <ReactApexChart options={satisfactionPieOptions} series={satisfactionPieSeries} type="pie" height={250} />
             <div className="vagon-satisfaction-legend">

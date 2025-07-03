@@ -355,7 +355,8 @@ export const PulTushumlari = () => {
           <div className="chart-card">
             <div className="chart-header">
               <div className="chart-indicator"></div>
-              <h3 className="chart-title">Oylik tushumlar o'sish sur'ati (%)</h3>
+              <h3 className="chart-title">Oylik tushumlar o'sish sur'ati</h3>
+              <span className="chart-badge">Foiz</span>
             </div>
             <ReactApexChart 
               options={growthLineOptions} 
@@ -369,6 +370,7 @@ export const PulTushumlari = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Tushum segmentatsiyasi</h3>
+              <span className="chart-badge">Foiz</span>
             </div>
             <ReactApexChart 
               options={segmentPieOptions} 
@@ -384,6 +386,7 @@ export const PulTushumlari = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Yillik tushumlar trendi</h3>
+              <span className="chart-badge">Dollar</span>
             </div>
             <ReactApexChart 
               options={yearlyTrendOptions} 
@@ -397,6 +400,8 @@ export const PulTushumlari = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Eng yuqori tushum bo'lgan oylar</h3>
+              <span className="chart-badge">Dollar</span>
+
             </div>
             <ReactApexChart 
               options={topMonthsBarOptions} 
@@ -412,6 +417,8 @@ export const PulTushumlari = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Tushum prognozi (keyingi 6 oy)</h3>
+              <span className="chart-badge">Dollar</span>
+
             </div>
             <ReactApexChart 
               options={forecastLineOptions} 
@@ -425,7 +432,7 @@ export const PulTushumlari = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Tushum va xarajatlar</h3>
-              <span className="chart-badge"><FaBalanceScale color="#ef4444" /></span>
+              <span className="chart-badge">Dollar</span>
               <div className="trend-filters">
                 <button 
                   className={`filter-btn ${txFilter === '3' ? 'active' : ''}`} 
@@ -463,6 +470,8 @@ export const PulTushumlari = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Oylik tushumlar dinamikasi</h3>
+              <span className="chart-badge">Dollar</span>
+
               <div className="trend-filters">
                 <button 
                   className={`filter-btn ${trendPeriod === '3' ? 'active' : ''}`} 
@@ -497,6 +506,8 @@ export const PulTushumlari = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">TexPDlar bo'yicha tushum ulushi</h3>
+              <span className="chart-badge">Foiz</span>
+
             </div>
             <ReactApexChart 
               options={pieChartOptions} 
@@ -507,29 +518,6 @@ export const PulTushumlari = () => {
           </div>
         </div>
 
-        {/* Bar Chart: TexPDlar bo'yicha tushum */}
-        <div className="charts-grid">
-
-
-        {/* Tushum va xarajatlar */}
-        <div className="chart-card">
-          <div className="chart-header">
-            <div className="chart-indicator"></div>
-            <h3 className="chart-title">Tushum va xarajatlar</h3>
-            <span className="chart-badge"><FaBalanceScale color="#ef4444" /></span>
-          </div>
-          <ReactApexChart 
-            options={revenueExpenseOptions} 
-            series={revenueExpenseSeries} 
-            type="bar" 
-            height={250} 
-          />
-        </div>
-
-
-
-
-        </div>
         {/* Efficiency and Safety */}
         <div className="charts-grid">
           <div className="chart-card">

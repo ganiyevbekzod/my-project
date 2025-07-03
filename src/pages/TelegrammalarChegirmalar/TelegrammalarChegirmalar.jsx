@@ -70,7 +70,7 @@ const pieData = [
 ];
 
 // Mock data for financial analytics
-const monthlyRevenue = [120000, 135000, 140000, 150000, 160000, 170000, 180000, 175000, 165000, 155000, 145000, 130000];
+const monthlyRevenue = [6000, 7500, 8000, 9000, 8500, 9600, 10000, 11500, 10500, 12300, 14500, 13000];
 const discountTypeRevenue = [
   { type: "Talaba", value: 42000, color: "#38bdf8" },
   { type: "Nogiron", value: 32000, color: "#38bdf8" },
@@ -252,6 +252,8 @@ export const TelegrammalarChegirmalar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Oylik telegrammalar dinamikasi</h3>
+              <span className="chart-badge">Dona</span>
+
             </div>
             <ReactApexChart 
               options={areaChartOptions} 
@@ -265,6 +267,8 @@ export const TelegrammalarChegirmalar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Telegramma turlari ulushi</h3>
+              <span className="chart-badge">Foiz</span>
+
             </div>
             <ReactApexChart 
               options={pieChartOptions} 
@@ -278,6 +282,8 @@ export const TelegrammalarChegirmalar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Fasllar bo'yicha eng ko'p chegirmali telegrammalar</h3>
+              <span className="chart-badge">Soni</span>
+
             </div>
             <BarChart
               height={300}
@@ -297,6 +303,8 @@ export const TelegrammalarChegirmalar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Chegirmali va chegirmasiz telegrammalar ulushi</h3>
+              <span className="chart-badge">Soni</span>
+
             </div>
             <PieChart
               height={260}
@@ -319,6 +327,8 @@ export const TelegrammalarChegirmalar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Chegirma turlari bo'yicha telegrammalar</h3>
+              <span className="chart-badge">Soni</span>
+
             </div>
             <BarChart
               height={300}
@@ -337,7 +347,9 @@ export const TelegrammalarChegirmalar = () => {
           <div className="chart-card">
             <div className="chart-header">
               <div className="chart-indicator"></div>
-              <h3 className="chart-title">Oylik o'sish sur'ati (%)</h3>
+              <h3 className="chart-title">Oylik o'sish sur'ati</h3>
+              <span className="chart-badge">Foiz</span>
+
             </div>
             <LineChart
               height={300}
@@ -356,10 +368,12 @@ export const TelegrammalarChegirmalar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Oylik chegirmalardan tushgan mablag' trendi</h3>
+              <span className="chart-badge">Dollar</span>
+
             </div>
             <LineChart
               height={300}
-              series={[{ data: monthlyRevenue, label: "Chegirmalardan tushgan mablag' (so'm)", color: "#6366f1" }]}
+              series={[{ data: monthlyRevenue, label: "Chegirmalardan tushgan mablag'", color: "#6366f1" }]}
               xAxis={[{ scaleType: 'point', data: monthsFull }]}
               yAxis={[{ width: 60 }]}
               sx={{ background: 'transparent', borderRadius: 3, boxShadow: '0 4px 16px 0 rgba(80, 80, 180, 0.13)' }}
@@ -371,6 +385,8 @@ export const TelegrammalarChegirmalar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Chegirma turlari bo'yicha tushum</h3>
+              <span className="chart-badge">Dollar</span>
+
             </div>
             <BarChart
               height={300}
@@ -392,6 +408,8 @@ export const TelegrammalarChegirmalar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Eng ko'p chegirmalardan foydalanadigan hududlar</h3>
+              <span className="chart-badge">Soni</span>
+
             </div>
             <BarChart
               height={300}
@@ -411,6 +429,8 @@ export const TelegrammalarChegirmalar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Chegirmalarning umumiy ulushi</h3>
+              <span className="chart-badge">Dollar</span>
+
             </div>
             <PieChart
               height={260}
@@ -421,7 +441,7 @@ export const TelegrammalarChegirmalar = () => {
                 ],
                 innerRadius: 60,
                 outerRadius: 100,
-                arcLabel: (params) => params.value.toLocaleString() + ' so\'m',
+                arcLabel: (params) => params.value.toLocaleString() + ' dollar',
                 arcLabelMinAngle: 18,
                 highlightScope: { faded: 'global', highlighted: 'item' },
                 faded: { additionalRadius: -8, color: 'rgba(200,200,200,0.2)' },
@@ -483,6 +503,8 @@ export const TelegrammalarChegirmalar = () => {
             <div className="chart-header" style={{ width: '100%' }}>
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Chegirmalarning umumiy samaradorlik indeksi</h3>
+              <span className="chart-badge">Foiz</span>
+
             </div>
             <div style={{ position: 'relative', width: 180, height: 180, margin: '0 auto' }}>
               <svg width={180} height={180}>
@@ -538,6 +560,8 @@ export const TelegrammalarChegirmalar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Foydalanuvchi segmentatsiyasi</h3>
+              <span className="chart-badge">Soni</span>
+
             </div>
             <BarChart
               height={300}
@@ -557,6 +581,8 @@ export const TelegrammalarChegirmalar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Eng ko'p chegirmalardan foydalanilgan 3 oy</h3>
+              <span className="chart-badge">Oy</span>
+
             </div>
             <BarChart
               height={300}
@@ -597,6 +623,8 @@ export const TelegrammalarChegirmalar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Telegramma va Chegirmalar Ko'rsatkichlari</h3>
+              <span className="chart-badge">Soni</span>
+
             </div>
             <BarChart
               height={350}
