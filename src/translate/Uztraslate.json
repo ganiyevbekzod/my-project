@@ -118,7 +118,7 @@
     "charts": {
       "typeDistribution": "Mijozlar turlari bo'yicha taqsimot",
       "monthlyTrend": "Mijozlarning o'rtacha oylik daromad dinamikasi",
-      "revenueTrend": "Oylik daromad dinamikasi",
+      "revenueTrend": "Mijozlar sonining oylik dinamikasi",
       "satisfaction": "Mijozlar qoniqish darajasi",
       "ageDistribution": "Yosh bo'yicha taqsimot",
       "regionDistribution": "Hududlar bo'yicha mijozlar"

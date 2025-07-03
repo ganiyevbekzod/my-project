@@ -317,7 +317,7 @@ const goodReviews = [
           <div className="chart-card">
             <div className="chart-header">
               <div className="chart-indicator"></div>
-              <h3 className="chart-title">{t("customer.charts.monthlyTrend")}</h3>
+              <h3 className="chart-title">{t("customer.charts.revenueTrend")}</h3>
               <span className="chart-badge">{t("customer.labels.customersLabel")}</span>
             </div>
             <ReactApexChart options={areaChartOptions} series={areaChartSeries} type="area" height={300} />
