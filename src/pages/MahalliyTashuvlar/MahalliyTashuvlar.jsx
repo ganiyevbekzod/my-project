@@ -817,6 +817,8 @@ export default function LocalTransportDashboard() {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Eng samarador yuk turlari</h3>
+            <span className="chart-badge">Foiz</span>
+
             </div>
             <PieChart
               height={260}
@@ -855,6 +857,8 @@ export default function LocalTransportDashboard() {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Eng samarador TexPDlar</h3>
+            <span className="chart-badge">Foiz</span>
+
             </div>
             <BarChart
               height={260}

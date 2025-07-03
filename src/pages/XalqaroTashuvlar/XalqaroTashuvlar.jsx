@@ -1104,6 +1104,8 @@ export default function InternationalTransportDashboard() {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Xalqaro temir yo'l transport turlari</h3>
+            <span className="chart-badge">Foiz</span>
+
             </div>
             <PieChart
               height={260}
@@ -1142,6 +1144,8 @@ export default function InternationalTransportDashboard() {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Xalqaro temir yo'l yo'nalishlari</h3>
+            <span className="chart-badge">Foiz</span>
+
             </div>
             <BarChart
               height={260}
@@ -1245,6 +1249,8 @@ export default function InternationalTransportDashboard() {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Xalqaro tashuvlar ko'rsatkichlari</h3>
+            <span className="chart-badge">Foiz</span>
+
             </div>
             <ReactApexChart 
               options={performanceOptions} 

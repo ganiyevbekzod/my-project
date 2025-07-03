@@ -244,6 +244,8 @@ const areaChartSeries =React.useMemo(()=> [
           <div className="aktlar-chart-header">
             <div className="aktlar-chart-indicator"></div>
             <h3 className="aktlar-chart-title">{t('aktlar.charts.regionBreakdown')}</h3>
+            <span className="chart-badge">Soni</span>
+
           </div>
           <ReactApexChart options={barChartOptions} series={barChartSeries} type="bar" height={350} />
         </div>
@@ -254,6 +256,8 @@ const areaChartSeries =React.useMemo(()=> [
             <div className="aktlar-chart-header">
               <div className="aktlar-chart-indicator"></div>
               <h3 className="aktlar-chart-title">{t('aktlar.charts.typeDistribution')}</h3>
+            <span className="chart-badge">Foiz</span>
+
             </div>
             <ReactApexChart options={pieChartOptions} series={pieChartSeries} type="donut" height={320} />
           </div>

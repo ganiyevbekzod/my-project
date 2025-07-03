@@ -240,7 +240,7 @@ const Arizalar = () => {
           <div className="chart-header">
             <div className="chart-indicator"></div>
             <h3 className="chart-title">Oylik arizalar dinamikasi (turlari bo'yicha)</h3>
-            <span className="chart-badge">Arizalar</span>
+            <span className="chart-badge">Soni</span>
             <div className="retention-filters">
               <button className={`filter-btn ${period === '3' ? 'active' : ''}`} onClick={() => setPeriod('3')}>3 oy</button>
               <button className={`filter-btn ${period === '6' ? 'active' : ''}`} onClick={() => setPeriod('6')}>6 oy</button>
@@ -272,6 +272,8 @@ const Arizalar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Hududlar bo'yicha arizalar</h3>
+            <span className="chart-badge">Foiz</span>
+
             </div>
             <ReactApexChart options={barChartOptions} series={barChartSeries} type="bar" height={350} />
           </div>
@@ -281,6 +283,8 @@ const Arizalar = () => {
             <div className="chart-header">
               <div className="chart-indicator"></div>
               <h3 className="chart-title">Turlari bo'yicha taqsimot</h3>
+            <span className="chart-badge">Foiz</span>
+
             </div>
             <ReactApexChart options={pieChartOptions} series={pieChartSeries} type="donut" height={320} />
           </div>
