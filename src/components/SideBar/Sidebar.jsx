@@ -103,7 +103,7 @@ const Sidebar = () => {
                 {layout !== "topbar" && (
                     <div className="sidebar_logocontent">
                         <img src={UTY_logo} alt="" width={50} height={50} />
-                        <h2 style={linkStyle} className={!isOpen ? "hidden" : ""}>UTY</h2>
+                        <h2 style={linkStyle} className={!isOpen ? "hidden" : ""}>{t('header.logo')}</h2>
                     </div>
                 )}
                 <ul
