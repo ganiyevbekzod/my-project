@@ -113,7 +113,11 @@
       "regionDistributionLabel": "Клиенты",
       "regionDistributionLabel2": "Всего клиентов",
       "regionDistributionLabel3": "Регион",
-      "regionDistributionLabel4": "Среднее"
+      "regionDistributionLabel4": "Среднее",
+      "satisfactionLabel":"Отзывы",
+      "satisfactionLabel2":"Дилшод Р.:Отличная работа!",
+      "satisfactionLabel3":"Гулноза А.:Быстрая и удобная работа!",
+      "ageDistributionLabel":"Возрастные группы"
     },
     "charts": {
       "typeDistribution": "Распределение по типам клиентов",
@@ -121,7 +125,8 @@
       "revenueTrend": "Динамика клиентов по месяцам", 
       "satisfaction": "Уровень удовлетворенности клиентов",
       "ageDistribution": "Распределение по возрасту",
-      "regionDistribution": "Клиенты по регионам"
+      "regionDistribution": "Клиенты по регионам",
+      "retention": "Уровень удовлетворенности клиентов"
     },
     "regions":{
       "toshkent": "Ташкент",
@@ -155,6 +160,7 @@
       "3months": "3 месяца",
       "6months": "6 месяцев",
       "12months": "12 месяцев",
+      "1years": "1 год",
       "million": "Миллион"
     },
     "month": {

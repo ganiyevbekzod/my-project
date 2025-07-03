@@ -96,11 +96,8 @@ const performanceData = [
 ];
 
 const goodReviews = [
-  { name: "Dilshod R.", text: "Xizmatdan juda mamnunman! 👏", rating: 5 },
-  { name: "Gulnoza A.", text: "Tez va qulay xizmat uchun rahmat!", rating: 5 },
-  { name: "Azizbek T.", text: "Yaxshi qo'llab-quvvatlash va qulay interfeys.", rating: 4 },
-  { name: "Malika K.", text: "Hammasi zo'r, yana foydalanaman!", rating: 5 },
-  { name: "Javohir S.", text: "Tavsiya qilaman!", rating: 4 }
+  { name: t("customer.labels.satisfactionLabel2"), text: "Xizmatdan juda mamnunman! 👏", rating: 5 },
+  { name: t("customer.labels.satisfactionLabel3"), text: "Tez va qulay xizmat uchun rahmat!", rating: 5 },
 ];
 
   // State for retention data filtering
@@ -250,11 +247,11 @@ const goodReviews = [
     grid: { borderColor: 'rgba(112, 156, 245, 0.1)', strokeDashArray: 3 }
   };
 
-  const ageBarSeries = [{ name: 'Yosh guruhlari', data: ageDistributionData.map(item => item.percentage) }];
+  const ageBarSeries = [{ name: t("customer.labels.ageDistributionLabel"), data: ageDistributionData.map(item => item.percentage) }];
 
   // Filter retention data based on selected period
   const getFilteredRetentionData = () => {
-    const periods = { '3': 31, '6': 6, '12': 12 };
+    const periods = { '3': 3, '6': 6, '12': 12 };
     return customerRetentionData.slice(-periods[retentionPeriod]);
   };
 
@@ -267,7 +264,7 @@ const goodReviews = [
     dataLabels: { enabled: true, formatter: (val) => val, style: { fontSize: '12px', colors: ["#fff"] } },
     stroke: { show: true, width: 2, colors: ['transparent'] },
     xaxis: { categories: filteredRetentionData.map(item => item.month), labels: { style: { colors: '#3730a3' } } },
-    yaxis: { title: { text: 'Mijozlar soni', style: { color: '#3730a3' } }, labels: { style: { colors: '#3730a3' } } },
+    yaxis: { title: { text: t("customer.labels.customersLabel"), style: { color: '#3730a3' } }, labels: { style: { colors: '#3730a3' } } },
     fill: { opacity: 1, colors: ['#10b981', '#3b82f6', '#ef4444'] },
     legend: { position: 'top', labels: { colors: '#3730a3' } },
     grid: { borderColor: 'rgba(112, 156, 245, 0.1)', strokeDashArray: 3 }
@@ -350,7 +347,7 @@ const goodReviews = [
         <div className="charts-grid">
           <div className="chart-card satisfaction-widget">
             <div className="satisfaction-header">
-              <h3 className="chart-title">Mijozlar mamnuniyati</h3>
+              <h3 className="chart-title">{t("customer.charts.satisfaction")}</h3>
               <div className="satisfaction-summary">
                 <div className="summary-avg-rating">
                   <span className="rating-value animated">{averageSatisfactionRating}</span>
@@ -359,7 +356,7 @@ const goodReviews = [
                 </div>
                 <div className="summary-total-responses">
                   <span className="total-value">{totalSatisfactionResponses.toLocaleString()}</span>
-                  <span className="total-label">sharhlar</span>
+                  <span className="total-label">{t("customer.labels.satisfactionLabel")}</span>
                 </div>
               </div>
             </div>
@@ -376,7 +373,6 @@ const goodReviews = [
                 <div className="good-review" key={idx}>
                   <FaStar className="good-review-star" />
                   <span className="good-review-name">{review.name}:</span>
-                  <span className="good-review-text">{review.text}</span>
                 </div>
               ))}
             </div>
@@ -385,7 +381,7 @@ const goodReviews = [
           <div className="chart-card">
             <div className="chart-header">
               <div className="chart-indicator"></div>
-              <h3 className="chart-title">Yosh guruhlari</h3>
+              <h3 className="chart-title">{t("customer.charts.ageDistribution")}</h3>
             </div>
             <ReactApexChart options={ageBarOptions} series={ageBarSeries} type="bar" height={300} />
           </div>
@@ -394,11 +390,11 @@ const goodReviews = [
         <div className="chart-card">
           <div className="chart-header">
             <div className="chart-indicator"></div>
-            <h3 className="chart-title">Mijozlar saqlanishi</h3>
+            <h3 className="chart-title">{t("customer.charts.retention")}</h3>
             <div className="retention-filters">
-              <button className={`filter-btn ${retentionPeriod === '3' ? 'active' : ''}`} onClick={() => setRetentionPeriod('3')}>3 oy</button>
-              <button className={`filter-btn ${retentionPeriod === '6' ? 'active' : ''}`} onClick={() => setRetentionPeriod('6')}>6 oy</button>
-              <button className={`filter-btn ${retentionPeriod === '12' ? 'active' : ''}`} onClick={() => setRetentionPeriod('12')}>1 yil</button>
+              <button className={`filter-btn ${retentionPeriod === '3' ? 'active' : ''}`} onClick={() => setRetentionPeriod('3')}>{t("customer.filters.3months")}</button>
+              <button className={`filter-btn ${retentionPeriod === '6' ? 'active' : ''}`} onClick={() => setRetentionPeriod('6')}>{t("customer.filters.6months")}</button>
+              <button className={`filter-btn ${retentionPeriod === '12' ? 'active' : ''}`} onClick={() => setRetentionPeriod('12')}>{t("customer.filters.1years")}</button>
             </div>
           </div>
           <ReactApexChart options={retentionBarOptions} series={retentionBarSeries} type="bar" height={300} />
@@ -438,7 +434,7 @@ const goodReviews = [
                     <div className="region-header">
                       <div className="region-info">
                         <span className="region-name">{t(`customer.regions.${item.region}`)}</span>
-                        <span className="region-count">{item.count.toLocaleString()} mijoz</span>
+                        <span className="region-count">{item.count.toLocaleString()} {t("customer.labels.customersLabel")}</span>
                       </div>
                     </div>
                       <div className="region-percentage-display">
@@ -458,7 +454,7 @@ const goodReviews = [
                       </div>
                       <div className="progress-stats">
                         <span className="percentage-text">{item.percentage}%</span>
-                        <span className="count-text">{item.count.toLocaleString()} mijoz</span>
+                        <span className="count-text">{item.count.toLocaleString()}  {t("customer.labels.customersLabel")}</span>
                       </div>
                     </div>
                   </div>

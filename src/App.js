@@ -24,7 +24,7 @@ import { useColorScheme } from "./Context/ColorContext"
 import { usePreset } from "./Context/PresetContext"
 import { useFont } from "./Context/FontContext"
 import { KonvensionTaqiqlar } from "./pages/KonvensionTaqiqlar/KonvensionTaqiqlar"
-import { Polis } from "./pages/Sugurta/Sugurta"
+import Sugurta, { Polis } from "./pages/Sugurta/Sugurta"
 import { Ekspeditorlar } from "./pages/Ekspeditorlar/Ekspeditorlar"
 import { ShahobchaYollari } from "./pages/ShahobchaYollari/ShahobchaYollari"
 import { Poyezdlar } from "./pages/Poyezdlar/Poyezdlar"
@@ -133,7 +133,7 @@ const App = () => {
                         <Route path="/KonvensionTaqiqlar" element={<KonvensionTaqiqlar />} />
                         <Route path="/Aktlar" element={<Aktlar />} />
                         <Route path="/Vagon" element={<Vagon />} />
-                        <Route path="/Sug'urtaDaromadlari" element={<Polis />} />
+                        <Route path="/Sug'urtaDaromadlari" element={<Sugurta />} />
                         <Route path="/Ekspeditorlar" element={<Ekspeditorlar />} />
                         <Route path="/ShahobchaYo'llari" element={<ShahobchaYollari />} />
                         <Route path="/Poyezdlar" element={<Poyezdlar />} />

@@ -113,7 +113,11 @@
       "regionDistributionLabel": "Mijozlar",
       "regionDistributionLabel2": "Umumiy mijozlar",
       "regionDistributionLabel3": "Hudud",
-      "regionDistributionLabel4": "O'rtacha"
+      "regionDistributionLabel4": "O'rtacha",
+      "satisfactionLabel":"Sharhlar",
+      "satisfactionLabel2":"Dilshod R.:Xizmatdan juda mamnunman!",
+      "satisfactionLabel3":"Gulnoza A.:Tez va qulay xizmat uchun rahmat!",
+      "ageDistributionLabel":"Yosh guruhlari"
     },
     "charts": {
       "typeDistribution": "Mijozlar turlari bo'yicha taqsimot",
@@ -121,6 +125,7 @@
       "revenueTrend": "Mijozlar sonining oylik dinamikasi",
       "satisfaction": "Mijozlar qoniqish darajasi",
       "ageDistribution": "Yosh bo'yicha taqsimot",
+      "retention": "Mijozlarning saqlanish darajasi",
       "regionDistribution": "Hududlar bo'yicha mijozlar"
     },
     "regions":{
@@ -155,6 +160,7 @@
       "3months": "3 oy",
       "6months": "6 oy",
       "12months": "12 oy",
+      "1years": "1 yil",
       "million": "Million"
     },
     "month": {
