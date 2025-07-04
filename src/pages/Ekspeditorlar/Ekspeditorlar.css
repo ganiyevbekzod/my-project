@@ -620,8 +620,9 @@
   margin-top: 6px;
 }
 
-.progress-bar {
+.ekspeditors-progress-bar {
   width: 100%;
+  height: 5px;
   background: linear-gradient(90deg, #f1f5f9 60%, #e0e7ff 100%);
   border-radius: 7px;
   overflow: hidden;

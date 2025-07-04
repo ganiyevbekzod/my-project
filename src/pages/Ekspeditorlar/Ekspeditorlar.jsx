@@ -262,7 +262,7 @@ function EkspeditorPadkodBox({ ekspeditor, delay }) {
           <div className="padkod-stat"><span className="stat-label">Tranzit padkodlar soni:</span> <span className="stat-value" style={{ color: '#8b5cf6' }}>{ekspeditor.tranzit}</span></div>
         </div>
         <div className="ekspeditor-padkod-progress">
-          <div className="progress-bar">
+          <div className="ekspeditors-progress-bar">
             <div className="progress-fill" style={{ width: percent + '%', backgroundColor: ekspeditor.color }}></div>
           </div>
           <span className="progress-text">Jami: {ekspeditor.eksport + ekspeditor.import + ekspeditor.tranzit} ta padkod</span>
