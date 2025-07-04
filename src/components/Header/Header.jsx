@@ -31,49 +31,6 @@ const Header = () => {
                     </ul>
                     <div className="header_navbar_right">
                         <FlagSelect />
-                        <div class="dropdown_important ">
-                            <div class="dropdown">
-                                <button  class="important_button btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src={View_comfy} alt="Railway_logo" width={24} height={24} />
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <div className="important_block  ">
-                                        <ul className="important_list">
-                                            <li className="important_item">
-                                                <img src={header_uty} alt="UTY_logopicture" width={80} height={80} />
-                                            </li>
-                                            <li className="important_item">
-                                                <a class="dropdown-item_strong" href="#">Xalqaro yuk ortish</a>
-                                            </li>
-                                        </ul>
-                                        <ul className="important_list">
-                                            <li className="important_item">
-                                                <img src={header_uty} alt="UTY_logopicture" width={80} height={80} />
-                                            </li>
-                                            <li className="important_item">
-                                                <a class="dropdown-item_strong" href="#">Xalqaro yuk bo'shatish</a>
-                                            </li>
-                                        </ul>
-                                        <ul className="important_list">
-                                            <li className="important_item">
-                                                <img src={header_uty} alt="UTY_logopicture" width={80} height={80} />
-                                            </li>
-                                            <li className="important_item">
-                                                <a class="dropdown-item_strong" href="#">Mahalliy yuk ortish</a>
-                                            </li>
-                                        </ul>
-                                        <ul className="important_list">
-                                            <li className="important_item">
-                                                <img src={header_uty} alt="UTY_logopicture" width={80} height={80} />
-                                            </li>
-                                            <li className="important_item"> <a class="dropdown-item_strong" href="#">Mahalliy yuk bo'shatish</a>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <FullscreenButton />
                         <Message />
                         <div class="dropdown_admin">

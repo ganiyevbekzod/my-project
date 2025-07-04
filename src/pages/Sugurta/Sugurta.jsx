@@ -5,10 +5,46 @@ import { FaShieldAlt, FaChartPie, FaChartLine, FaArrowUp, FaArrowDown, FaBalance
 
 // Mock data for Sug'urta
 const insuranceTypes = [
-  { name: "Hayot sug'urtasi", value: 120000, growth: 8.5, share: 35, color: "#00D4FF", monthly: [9000, 9500, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000] },
-  { name: "Avto sug'urta", value: 95000, growth: 7.2, share: 28, color: "#FF6B35", monthly: [7000, 7500, 8000, 8500, 9000, 9500, 10000, 10500, 11000, 11500, 12000, 12500] },
-  { name: "Mol-mulk sug'urtasi", value: 80000, growth: 6.1, share: 22, color: "#4ECDC4", monthly: [6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000, 10500, 11000, 11500] },
-  { name: "Sog'liqni sug'urta", value: 48000, growth: 5.4, share: 15, color: "#F7DC6F", monthly: [4000, 4200, 4400, 4600, 4800, 5000, 5200, 5400, 5600, 5800, 6000, 6200] },
+  { name: "Vagon sug'urtasi", value: 120000, growth: 8.5, share: 35, color: "#00D4FF", monthly: [9000, 9500, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000] },
+  { name: "Lokomotiv sug'urtasi", value: 95000, growth: 7.2, share: 28, color: "#FF6B35", monthly: [7000, 7500, 8000, 8500, 9000, 9500, 10000, 10500, 11000, 11500, 12000, 12500] },
+  { name: "Yuk sug'urtasi", value: 80000, growth: 6.1, share: 22, color: "#4ECDC4", monthly: [6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000, 10500, 11000, 11500] },
+  { name: "Infratuzilma sug'urtasi", value: 48000, growth: 5.4, share: 15, color: "#F7DC6F", monthly: [4000, 4200, 4400, 4600, 4800, 5000, 5200, 5400, 5600, 5800, 6000, 6200] },
+];
+
+// Insurance type boxes data
+const insuranceTypeBoxes = [
+  {
+    name: 'Vagon sug\'urtalari soni',
+    value: 820,
+    icon: <FaShieldAlt size={38} />,
+    gradient:  'linear-gradient(120deg, #74ebd5 20%, #9face6 100%)',
+    shadow: '0 6px 24px 0 rgba(0, 212, 255, 0.15)',
+  },
+  {
+    name: 'Lokomotiv sug\'urtalari soni',
+    value: 120,
+    icon: <FaChartPie size={38} />,
+    gradient:  'linear-gradient(120deg, #74ebd5 20%, #9face6 100%)',
+
+
+    shadow: '0 6px 24px 0 rgba(255, 107, 53, 0.15)',
+  },
+  {
+    name: 'Yuk sug\'urtalari soni',
+    value: 320,
+    icon: <FaChartLine size={38} />,
+    gradient:  'linear-gradient(120deg, #74ebd5 20%, #9face6 100%)',
+
+    shadow: '0 6px 24px 0 rgba(78, 205, 196, 0.15)',
+  },
+  {
+    name: 'Infratuzilma sug\'urtalari soni',
+    value: 80,
+    icon: <FaBalanceScale size={38} />,
+    gradient:  'linear-gradient(120deg, #74ebd5 20%, #9face6 100%)',
+
+    shadow: '0 6px 24px 0 rgba(247, 220, 111, 0.15)',
+  },
 ];
 const months = ["Avg", "Sen", "Okt", "Noy", "Dek", "Yan", "Fev", "Mar", "Apr", "May", "Iyun", "Iyul"];
 const totalPremium = insuranceTypes.reduce((sum, t) => sum + t.value, 0);
@@ -65,6 +101,8 @@ const audit = 1;
 export const Sugurta = () => {
   // State for period filtering
   const [trendPeriod, setTrendPeriod] = React.useState('12');
+  const [claimPeriod, setClaimPeriod] = React.useState('12');
+
   // Helper to get filtered months and data
   const getFilteredMonths = () => {
     const periods = { '3': 3, '6': 6, '12': 12 };
@@ -77,6 +115,24 @@ export const Sugurta = () => {
       data: t.monthly.slice(-periods[trendPeriod])
     }));
   };
+
+  // Helper functions for claim data
+  const getClaimMonths = () => {
+    const periods = { '3': 3, '6': 6, '12': 7 };
+    const allMonths = ["Yan", "Fev", "Mar", "Apr", "May", "Iyun", "Iyul", "Avg", "Sen", "Okt", "Noy", "Dek"];
+    return allMonths.slice(0, periods[claimPeriod]);
+  };
+
+  const getClaimData = (type) => {
+    const periods = { '3': 3, '6': 6, '12': 7 };
+    const data = {
+      approved: [8, 12, 10, 9, 13, 15, 18, 20, 22, 25, 28, 30],
+      rejected: [1, 0, 2, 1, 1, 2, 1, 3, 2, 1, 2, 1],
+      pending: [0, 1, 1, 0, 1, 2, 1, 0, 1, 2, 1, 0]
+    };
+    return data[type].slice(0, periods[claimPeriod]);
+  };
+
   const filteredMonths = getFilteredMonths();
   const filteredAreaChartSeries = getFilteredSeries();
 
@@ -85,7 +141,7 @@ export const Sugurta = () => {
       <div className="insurance-content">
         {/* Header */}
         <div className="insurance-header">
-          <h1 className="insurance-title">Sug'urta Analitika</h1>
+          <h1 className="insurance-title">Sug'urta Dashboard</h1>
           <p className="insurance-subtitle">Sug'urta turlari va da'volar bo'yicha analitik ma'lumotlar</p>
           <div className="insurance-divider"></div>
         </div>
@@ -135,6 +191,91 @@ export const Sugurta = () => {
           </div>
         </div>
 
+        {/* 1. Da'volar statistikasi (Stacked Bar) */}
+        <section className="insurance-section modern-section">
+          <div className="insurance-chart-header">
+            <div className="insurance-chart-indicator"></div>
+            <h3 className="insurance-chart-title">Da'volar statistikasi</h3>
+            <div className="insurance-trend-filters">
+              <button
+                className={`insurance-filter-btn ${claimPeriod === '3' ? 'active' : ''}`}
+                onClick={() => setClaimPeriod('3')}
+              >
+                3 oy
+              </button>
+              <button
+                className={`insurance-filter-btn ${claimPeriod === '6' ? 'active' : ''}`}
+                onClick={() => setClaimPeriod('6')}
+              >
+                6 oy
+              </button>
+              <button
+                className={`insurance-filter-btn ${claimPeriod === '12' ? 'active' : ''}`}
+                onClick={() => setClaimPeriod('12')}
+              >
+                1 yil
+              </button>
+            </div>
+          </div>
+          <ReactApexChart
+            options={{
+              chart: {
+                type: 'bar',
+                stacked: true,
+                animations: { enabled: true },
+                background: 'transparent',
+                toolbar: { show: false }
+              },
+              xaxis: {
+                categories: getClaimMonths(),
+                labels: { style: { colors: '#3730a3', fontWeight: 500 } }
+              },
+              yaxis: {
+                labels: { style: { colors: '#3730a3' } },
+                title: { text: "Da'volar soni", style: { color: '#3730a3' } }
+              },
+              colors: ['#60a5fa', '#ef4444', '#10b981'],
+              legend: {
+                position: 'top',
+                labels: { colors: '#334155', fontWeight: 600 },
+                markers: { radius: 6 }
+              },
+              fill: {
+                type: 'solid'
+              },
+              plotOptions: {
+                bar: {
+                  borderRadius: 8,
+                  columnWidth: '70%',
+                  distributed: false
+                }
+              },
+              grid: {
+                borderColor: 'rgba(112, 156, 245, 0.1)',
+                strokeDashArray: 3,
+                xaxis: { lines: { show: false } }
+              },
+              dataLabels: { enabled: false },
+              stroke: { width: 2, colors: ['transparent'] }
+            }}
+            series={[
+              {
+                name: "Qanoatlantirilgan",
+                data: getClaimData('approved')
+              },
+              {
+                name: "Rad etilgan",
+                data: getClaimData('rejected')
+              },
+              {
+                name: "Jarayonda",
+                data: getClaimData('pending')
+              },
+            ]}
+            type="bar"
+            height={300}
+          />
+        </section>
         {/* Charts Section */}
         <div className="insurance-charts-grid">
           <div className="insurance-chart-card">
@@ -157,6 +298,43 @@ export const Sugurta = () => {
             <ReactApexChart options={pieChartOptions} series={pieChartSeries} type="pie" height={350} />
           </div>
         </div>
+
+                {/* Insurance Type Boxes */}
+                <div className="insurance-type-boxes-grid">
+          {insuranceTypeBoxes.map((type, idx) => (
+            <div
+              key={type.name}
+              className="insurance-type-card"
+              style={{
+                background: type.gradient,
+                boxShadow: type.shadow,
+                borderRadius: 18,
+                padding: '2rem 1.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative',
+                cursor: 'pointer',
+                transition: 'transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s',
+                animation: `fadeInBox 0.7s ${0.1 * idx}s both`,
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'scale(1.06)';
+                e.currentTarget.style.boxShadow = '0 12px 32px 0 rgba(80, 80, 180, 0.18), 0 3px 12px 0 rgba(0,0,0,0.13)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.style.boxShadow = type.shadow;
+              }}
+            >
+              <div style={{ marginBottom: 18, animation: 'iconPop 0.7s' }}>{type.icon}</div>
+              <div style={{ fontSize: 32, fontWeight: 700, color: '#fff', textShadow: '0 2px 8px rgba(80,80,180,0.13)' }}>{type.value.toLocaleString()}</div>
+              <div style={{ fontSize: 16, fontWeight: 500, color: '#fff', opacity: 0.92, marginTop: 8, textAlign: 'center' }}>{type.name}</div>
+            </div>
+          ))}
+        </div>
+
         <div className="insurance-charts-grid">
           <div className="insurance-chart-card">
             <div className="insurance-chart-header">
@@ -165,23 +343,7 @@ export const Sugurta = () => {
             </div>
             <ReactApexChart options={barChartOptions} series={barChartSeries} type="bar" height={350} />
           </div>
-          <div className="insurance-chart-card">
-            <div className="insurance-chart-header">
-              <div className="insurance-chart-indicator"></div>
-              <h3 className="insurance-chart-title">Da'volar statistikasi</h3>
-            </div>
-            <ul className="insurance-claim-list">
-              {claimStats.map((s, i) => (
-                <li key={i} className="insurance-claim-item" style={{ borderLeft: `6px solid ${s.color}` }}>
-                  <span className="insurance-claim-label">{s.label}</span>
-                  <span className="insurance-claim-value">{s.value}%</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        {/* Efficiency and Safety */}
-        <div className="insurance-charts-grid">
+
           <div className="insurance-chart-card">
             <div className="insurance-chart-header">
               <div className="insurance-chart-indicator"></div>
@@ -198,79 +360,143 @@ export const Sugurta = () => {
             </div>
             <SafetyCard />
           </div>
-          <div className="insurance-chart-card">
+        </div>
+        {/* Efficiency and Safety */}
+        <div className="insurance-charts-grid">
+        <div className="insurance-chart-card">
             <div className="insurance-chart-header">
               <div className="insurance-chart-indicator"></div>
-              <h3 className="insurance-chart-title">Eng yuqori o'sish ko'rsatkichlari</h3>
+              <h3 className="insurance-chart-title">Da'volar analitikasi bo'limi</h3>
             </div>
-            <div className="insurance-top-list">
+            <div className="insurance-claim-boxes">
+              <ClaimBox
+                title="Qanoatlantirilgan da'volar"
+                value={92}
+                percentage={92}
+                icon={<FaCheckCircle />}
+                gradient="linear-gradient(135deg, #10b981, #059669, #047857)"
+                color="#10b981"
+                animationDelay="0s"
+              />
+              <ClaimBox
+                title="Rad etilgan da'volar"
+                value={6}
+                percentage={6}
+                icon={<FaExclamationTriangle />}
+                gradient="linear-gradient(135deg, #ef4444, #dc2626, #b91c1c)"
+                color="#ef4444"
+                animationDelay="0.2s"
+              />
+              <ClaimBox
+                title="Jarayondagi da'volar"
+                value={2}
+                percentage={2}
+                icon={<FaBalanceScale />}
+                gradient="linear-gradient(135deg, #f59e0b, #d97706, #b45309)"
+                color="#f59e0b"
+                animationDelay="0.4s"
+              />
+            </div>
+          </div>
+
+          {/* Eng yuqori o'sish ko'rsatkichlari */}
+          <section className="insurance-chart-card">
+            <div className="insurance-chart-header" >
+              <div style={{width: 6, height: 32, borderRadius: 4, background: 'linear-gradient(180deg, #38bdf8, #ef4444, #10b981)', marginRight: 14}}></div>
+              <h3 className="insurance-chart-title" style={{fontWeight: 700, fontSize: '1.25rem', color: '#22223b', margin: 0}}>Eng yuqori o'sish ko'rsatkichlari</h3>
+            </div>
+            <div className="insurance-claim-boxes">
               {insuranceTypes
                 .sort((a, b) => b.growth - a.growth)
                 .slice(0, 3)
-                .map((item, index) => (
-                  <div key={index} className="insurance-top-item">
-                    <div className="insurance-top-rank">{index + 1}</div>
-                    <div className="insurance-top-info">
-                      <div className="insurance-top-name">{item.name}</div>
-                      <div className="insurance-top-details">
-                        <span className="insurance-top-value">{item.growth}% o'sish</span>
-                        <span className="insurance-top-premium">{item.value.toLocaleString()} so'm</span>
+                .map((item, idx) => {
+                  const gradients = [
+                    { main: 'linear-gradient(90deg, #38bdf8, #6366f1)', bg: 'linear-gradient(90deg, #e0f2fe 60%, #f0f9ff 100%)' },
+                    { main: 'linear-gradient(90deg, #f87171, #ef4444)', bg: 'linear-gradient(90deg, #fee2e2 60%, #fff 100%)' },
+                    { main: 'linear-gradient(90deg, #34d399, #10b981)', bg: 'linear-gradient(90deg, #d1fae5 60%, #fff 100%)' }
+                  ];
+                  const icons = [
+                    <FaChartLine size={28} />, // blue
+                    <FaChartPie size={28} />,  // red
+                    <FaBalanceScale size={28} /> // green
+                  ];
+                  return (
+                    <div 
+                      key={item.name}
+                      className="insurance-claim-box"
+                    >
+                      <div className="insurance-claim-box-icon" style={{ background: gradients[idx].main, }}>
+                        {icons[idx]}
                       </div>
+                      <div className="insurance-claim-box-content">
+                        <h4 className="insurance-claim-box-title" style={{ background: gradients[idx].main, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 700 }}>{item.name}</h4>
+                        <div className="insurance-claim-box-value" style={{ background: gradients[idx].main, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 700 }}>{item.growth}%</div>
+                        <div className="insurance-claim-box-progress">
+                          <div 
+                            className="insurance-claim-box-progress-fill"
+                            style={{ 
+                              width: `${item.growth}%`,
+                              background: gradients[idx].main
+                            }}
+                          />
+                        </div>
+                      </div>
+                      <div className="insurance-claim-box-glow" style={{ background: gradients[idx].main, opacity: 0.13 }}></div>
                     </div>
-                    <div className="insurance-top-color-indicator" style={{ backgroundColor: item.color }}></div>
-                  </div>
-                ))}
+                  );
+                })}
             </div>
-          </div>
-        </div>
-        {/* Detailed Table */}
-        <div className="insurance-data-table-container">
-          <div className="insurance-chart-header">
-            <div className="insurance-chart-indicator"></div>
-            <h3 className="insurance-chart-title">Sug'urta turlari bo'yicha batafsil ma'lumot</h3>
-          </div>
-          <div className="insurance-overflow-x-auto">
-            <table className="insurance-data-table">
-              <thead>
-                <tr>
-                  <th>Turi</th>
-                  <th>Yillik mukofot (so'm)</th>
-                  <th>O'sish (%)</th>
-                  <th>Ulush (%)</th>
-                  <th>Oylik mukofot (iyul)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {insuranceTypes.map((item, index) => (
-                  <tr key={index}>
-                    <td>
-                      <div className="insurance-color" style={{ backgroundColor: item.color }}></div>
-                      {item.name}
-                    </td>
-                    <td className="font-semibold">{item.value.toLocaleString()}</td>
-                    <td>
-                      <span className="insurance-percentage-badge" style={{ backgroundColor: item.growth > 7 ? '#10b981' : item.growth > 5 ? '#f59e0b' : '#ef4444' }}>
-                        {item.growth}%
-                      </span>
-                    </td>
-                    <td>
-                      <span className="insurance-percentage-badge">
-                        {item.share}%
-                      </span>
-                    </td>
-                    <td>{item.monthly[11].toLocaleString()}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          </section>
         </div>
       </div>
-      {/* Zamonaviy qo'shimcha bo'limlar */}
-      <ModernInsuranceSections />
     </div>
   );
 };
+
+// ClaimBox component
+function ClaimBox({ title, value, percentage, icon, gradient, color, animationDelay }) {
+  const [progress, setProgress] = React.useState(0);
+
+  React.useEffect(() => {
+    const timeout = setTimeout(() => setProgress(percentage), 300 + (parseFloat(animationDelay) * 1000));
+    return () => clearTimeout(timeout);
+  }, [percentage, animationDelay]);
+
+  return (
+    <div
+      className="insurance-claim-box"
+      style={{
+        animationDelay: animationDelay,
+        '--gradient': gradient,
+        '--color': color,
+        '--icon-bg': `${color}20`
+      }}
+    >
+      <div className="insurance-claim-box-icon">
+        {React.cloneElement(icon, {
+          style: {
+            color: color,
+            filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
+          }
+        })}
+      </div>
+      <div className="insurance-claim-box-content">
+        <h4 className="insurance-claim-box-title">{title}</h4>
+        <div className="insurance-claim-box-value">{value}%</div>
+        <div className="insurance-claim-box-progress">
+          <div
+            className="insurance-claim-box-progress-fill"
+            style={{
+              width: `${progress}%`,
+              background: gradient
+            }}
+          />
+        </div>
+      </div>
+      <div className="insurance-claim-box-glow" style={{ background: gradient }}></div>
+    </div>
+  );
+}
 
 // EfficiencyBar component
 function EfficiencyBar({ label, percent, color, percentColor }) {
@@ -330,106 +556,4 @@ function SafetyCard() {
     </div>
   );
 }
-
-// Zamonaviy qo'shimcha bo'limlar
-const ModernInsuranceSections = () => {
-  return (
-    <div className="insurance-sections">
-      {/* 1. Sug'urta turlari bo'yicha tahlil (Pie Chart) */}
-      <div className="insurance-charts-grid">
-        <section className="insurance-section modern-section">
-          <h2 className="insurance-section-title gradient-text">1. Sug'urta turlari bo'yicha tahlil</h2>
-          <ReactApexChart
-            options={{
-              chart: { type: 'pie', animations: { enabled: true } },
-              labels: ["Vagon", "Lokomotiv", "Yo'lovchi", "Yuk", "Infratuzilma"],
-              colors: ["#0ea5e9", "#6366f1", "#10b981", "#f59e0b", "#8b5cf6"],
-              legend: { position: 'bottom', labels: { colors: '#334155' } },
-              fill: { type: 'gradient' },
-            }}
-            series={[820, 120, 320, 220, 80]}
-            type="pie"
-            height={260}
-          />
-        </section>
-        {/* 2. Da'volar statistikasi (Stacked Bar) */}
-        <section className="insurance-section modern-section">
-          <h2 className="insurance-section-title gradient-text">2. Da'volar statistikasi</h2>
-          <ReactApexChart
-            options={{
-              chart: { type: 'bar', stacked: true, animations: { enabled: true } },
-              xaxis: { categories: ["Yan", "Fev", "Mar", "Apr", "May"] },
-              colors: ["#10b981", "#ef4444", "#f59e0b"],
-              legend: { position: 'top', labels: { colors: '#334155' } },
-              fill: { type: 'gradient' },
-            }}
-            series={[
-              { name: "Qanoatlantirilgan", data: [8, 12, 10, 9, 13] },
-              { name: "Rad etilgan", data: [1, 0, 2, 1, 1] },
-              { name: "Jarayonda", data: [0, 1, 1, 0, 1] },
-            ]}
-            type="bar"
-            height={260}
-          />
-        </section>
-      </div>
-      {/* 8. Sug'urta shartnomalari monitoringi (Donut Chart) */}
-      <section className="insurance-section modern-section">
-        <h2 className="insurance-section-title gradient-text">8. Sug'urta shartnomalari monitoringi</h2>
-        <ReactApexChart
-          options={{
-            chart: { type: 'donut', animations: { enabled: true } },
-            labels: ["Amaldagi", "Muddati tugagan"],
-            colors: ["#10b981", "#f59e0b"],
-            legend: { position: 'bottom', labels: { colors: '#334155' } },
-            fill: { type: 'gradient' },
-          }}
-          series={[1200, 80]}
-          type="donut"
-          height={220}
-        />
-      </section>
-      {/* 10. FAQ yoki yordam bo'limi (Accordion) */}
-      <section className="insurance-section modern-section">
-        <h2 className="insurance-section-title gradient-text">10. FAQ va yordam</h2>
-        <FAQAccordion />
-      </section>
-    </div>
-  );
-};
-
-// FAQAccordion component
-function FAQAccordion() {
-  const [open, setOpen] = useState(null);
-  const data = [
-    {
-      q: "Vagon sug'urtasi uchun qanday hujjatlar kerak?",
-      a: "Texnik pasport, shartnoma va to'lov kvitansiyasi."
-    },
-    {
-      q: "Da'vo berish uchun qayerga murojaat qilinadi?",
-      a: "'O'ztemiryo'lsug'urta' kompaniyasining rasmiy ofisiga yoki onlayn platformaga."
-    },
-    {
-      q: "Sug'urta to'lovlari qancha muddatda amalga oshiriladi?",
-      a: "O'rtacha 7 ish kuni ichida." 
-    }
-  ];
-  return (
-    <div className="insurance-faq-accordion">
-      {data.map((item, idx) => (
-        <div key={idx} className={`faq-item${open === idx ? ' open' : ''}`}>
-          <div className="faq-question gradient-border" onClick={() => setOpen(open === idx ? null : idx)}>
-            {item.q}
-            <span className="faq-arrow">{open === idx ? '▲' : '▼'}</span>
-          </div>
-          <div className="faq-answer" style={{ maxHeight: open === idx ? 200 : 0 }}>
-            {open === idx && <div>{item.a}</div>}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export default Sugurta;

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
-import { FaStar, FaSmileBeam } from 'react-icons/fa';
+import { FaStar, FaSmileBeam, FaUser, FaBuilding, FaBriefcase, FaUsers } from 'react-icons/fa';
 import './Customer.css';
 import { useTranslation } from 'react-i18next';
 const CustomerDashboard = () => {
@@ -23,9 +23,10 @@ const monthlyData = [
 ];
 
 const customerTypeData = React.useMemo(() => [
-  { name: t('customer.types.individual'), value: 65, color: "#3b82f6" },
-  { name: t('customer.types.legal'), value: 25, color: "#ef4444" },
-  { name: t('customer.types.sole'), value: 10, color: "#10b981" },
+  { name: t('customer.types.allUsers'),UzRailway: t('customer.types.UzRailway'), value: 16556, color: "#3b82f6"   },
+  { name: t('customer.types.individual'),UzRailway: t('customer.types.UzRailway'), value: 5657, color: "#3b82f6"   },
+  { name: t('customer.types.legal'),UzRailway: t('customer.types.UzRailway'), value: 10899, color: "#ef4444" },
+  { name: t('customer.types.sole'),UzRailway: t('customer.types.UzRailway'), value: 4367, color: "#10b981" },
 ], [t, i18n.language]);
 
 const regionData = [
@@ -309,6 +310,7 @@ const goodReviews = [
           ))}
         </div>
 
+
         {/* Charts Section */}
         <div className="charts-grid">
           <div className="chart-card">
@@ -342,6 +344,56 @@ const goodReviews = [
             <span className="chart-badge">{t("customer.filters.million")}</span>
           </div>
           <ReactApexChart options={lineChartOptions} series={lineChartSeries} type="line" height={350} />
+        </div>
+        {/* Customer Type Boxes */}
+        <div className="customer-type-boxes-grid">
+          {customerTypeData.map((type, idx) => {
+            const gradients = [
+              'linear-gradient(120deg, #74ebd5 20%, #9face6 100%)',
+              'linear-gradient(120deg, #74ebd5 20%, #9face6 100%)', // blue
+              'linear-gradient(120deg, #74ebd5 20%, #9face6 100%)', // red
+              'linear-gradient(120deg, #74ebd5 20%, #9face6 100%)', // green
+            ];
+            const icons = [
+              <FaUsers size={38} />,     
+              <FaUser size={38} />,  // user
+              <FaBuilding size={38} />, // building
+              <FaBriefcase size={38} /> // briefcase
+            ];
+            return (
+              <div
+                key={type.name}
+                className="customer-type-card"
+                style={{
+                  background: gradients[idx],
+                  boxShadow: '0 6px 24px 0 rgba(80, 80, 180, 0.10)',
+                  borderRadius: 18,
+                  padding: '2rem 1.5rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  position: 'relative',
+                  cursor: 'pointer',
+                  transition: 'transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s',
+                  animation: `fadeInBox 0.7s ${0.1 * idx}s both`,
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = 'scale(1.06)';
+                  e.currentTarget.style.boxShadow = '0 12px 32px 0 rgba(80, 80, 180, 0.18), 0 3px 12px 0 rgba(0,0,0,0.13)';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.boxShadow = '0 6px 24px 0 rgba(80, 80, 180, 0.10)';
+                }}
+              >
+                <div style={{ marginBottom: 18, animation: 'iconPop 0.7s' }}>{icons[idx]}</div>
+                <div style={{ fontSize: 32, fontWeight: 700, color: '#fff', textShadow: '0 2px 8px rgba(80,80,180,0.13)' }}>{type.value.toLocaleString()}</div>
+                <div style={{ fontSize: 16, fontWeight: 500, color: '#fff', opacity: 0.92, marginTop: 8, textAlign: 'center' }}>{type.name}</div>
+                <div style={{ fontSize: 12, fontWeight: 500, color: '#080808', opacity: 0.92, marginTop: 8, textAlign: 'center' }}>{type.UzRailway}</div>
+              </div>
+            );
+          })}
         </div>
 
         <div className="charts-grid">

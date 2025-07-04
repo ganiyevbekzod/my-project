@@ -102,9 +102,11 @@
     "title": "Mijozlar Dashboard",
     "subtitle": "Mijozlar statistikasi va tahlili",
     "types": {
+      "allUsers": "Umumiy mijozlar",
       "individual": "Jismoniy shaxslar",
       "legal": "Yuridik shaxslar",
-      "sole": "Yakka tartibdagilar"
+      "sole": "Yakka tartibdagi tadbirkorlar",
+      "UzRailway": "O'zbekiston Temir yo'llari"
     },
     "labels": {
       "comparedToLastMonth": "o'tgan oyga nisbatan",

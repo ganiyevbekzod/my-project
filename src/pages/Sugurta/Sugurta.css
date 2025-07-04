@@ -144,21 +144,23 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  margin-bottom: 32px;
+  margin: 32px 0px;
 }
 .insurance-chart-card {
-  background: #fff;
+  background: linear-gradient(135deg, #f8fafc 60%, #e0e7ff 100%);
   border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 24px 18px 18px 18px;
   min-height: 340px;
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.2s, border 0.2s;
-  position: relative;
-  z-index: 1;
+  overflow: hidden;
+  box-shadow: 0 6px 24px 0 rgba(80, 80, 180, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.08);
+  animation: fadeInUp 0.7s cubic-bezier(.4,2,.3,1);
 }
-
+.insurance-chart-card:hover {
+  box-shadow: 0 12px 32px 0 rgba(80, 80, 180, 0.18), 0 3px 12px 0 rgba(0,0,0,0.13);
+  border-image: linear-gradient(90deg, #0ea5e9, #6366f1, #8b5cf6) 1;
+}
 .insurance-chart-header {
   display: flex;
   align-items: center;
@@ -180,20 +182,229 @@
 .insurance-trend-filters {
   display: flex;
   gap: 8px;
+  margin-left: auto;
 }
 .insurance-filter-btn {
-  background: #f1f5f9;
-  border: none;
-  border-radius: 8px;
-  padding: 6px 16px;
-  font-size: 1rem;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: #64748b;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-.insurance-filter-btn.active, .insurance-filter-btn:hover {
-  background: #00D4FF;
+.insurance-filter-btn:hover {
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  border-color: #0ea5e9;
+  color: #0ea5e9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(14, 165, 233, 0.15);
+}
+.insurance-filter-btn.active {
+  background: linear-gradient(135deg, #00D4FF, #0ea5e9);
+  border-color: #00D4FF;
   color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+}
+
+/* Claim Boxes */
+.insurance-claim-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 0 !important;
+}
+
+.insurance-claim-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  animation: slideInLeft 0.6s ease-out both;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.insurance-claim-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.insurance-claim-box-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--icon-bg);
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 2;
+  animation: pulseIcon 2s ease-in-out infinite;
+}
+
+.insurance-claim-box-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.insurance-claim-box-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.insurance-claim-box-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color);
+  margin: 0;
+}
+
+.insurance-claim-box-progress {
+  width: 100%;
+  height: 6px;
+  background: #f3f4f6;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.insurance-claim-box-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.insurance-claim-box-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.insurance-claim-box-glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  opacity: 0.1;
+  filter: blur(20px);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseIcon {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(1.1);
+  }
+}
+
+/* Insurance Type Boxes */
+.insurance-type-boxes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.insurance-type-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.insurance-type-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.insurance-type-card:hover::before {
+  left: 100%;
+}
+
+@keyframes fadeInBox {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes iconPop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Claim List */
@@ -377,6 +588,51 @@
   .insurance-stats-grid, .insurance-charts-grid {
     grid-template-columns: 1fr;
   }
+  
+  .insurance-claim-box {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .insurance-claim-box-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .insurance-claim-box-title {
+    font-size: 0.9rem;
+  }
+  
+  .insurance-claim-box-value {
+    font-size: 1.3rem;
+  }
+  
+  .insurance-type-boxes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .insurance-type-card {
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .insurance-trend-filters {
+    margin-left: 0;
+    margin-top: 12px;
+    justify-content: center;
+  }
+  
+  .insurance-filter-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .insurance-chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 }
 
 /* Qo'shimcha bo'limlar uchun CSS */
@@ -519,14 +775,13 @@
 .insurance-section.modern-section {
   background: linear-gradient(120deg, #f8fafc 70%, #e0e7ff 100%);
   border-radius: 18px;
-  box-shadow: 0 6px 24px 0 rgba(80, 80, 180, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.08);
   margin-bottom: 36px;
   padding: 36px 28px 28px 28px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 6px 24px 0 rgba(80, 80, 180, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.08);
   animation: fadeInUp 0.7s cubic-bezier(.4,2,.3,1);
-  border: 2px solid transparent;
-  transition: box-shadow 0.3s, border 0.3s;
+  
 }
 .insurance-section.modern-section:hover {
   box-shadow: 0 12px 32px 0 rgba(80, 80, 180, 0.18), 0 3px 12px 0 rgba(0,0,0,0.13);
@@ -705,8 +960,6 @@
   border: 1px solid #e5e7eb;
   font-size: 1rem;
   outline: none;
-  background: #fff;
-  transition: border 0.2s;
 }
 .insurance-filter-ui input:focus,
 .insurance-filter-ui select:focus {
@@ -732,4 +985,13 @@
   .insurance-section.modern-section {
     padding: 18px 6px 14px 6px;
   }
+}
+
+/* Remove extra space at the bottom of the first analytics section */
+.insurance-section.modern-section:first-of-type {
+  margin-bottom: 0 !important;
+  padding-bottom: 24px !important;
+}
+.insurance-claim-box:last-child {
+  margin-bottom: 0 !important;
 }
